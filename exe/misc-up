@@ -1,0 +1,195 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'fileutils'
+require 'optparse'
+require 'pathname'
+require 'securerandom'
+require 'tmpdir'
+require 'cgi'
+require 'shellwords'
+
+options = {
+  dir: nil,
+  move: false,
+  message_title: nil,
+  verbose: false,
+  noop: false
+}
+
+parser = OptionParser.new do |opts|
+  opts.banner = 'Usage: misc-up [--dir PATH] [--move] [-m TITLE] [-n] [-v] FILE...'
+
+  opts.on('--dir PATH', 'Use PATH under share/ as destination') do |value|
+    options[:dir] = value
+  end
+
+  opts.on('--move', 'Move files instead of copying') do
+    options[:move] = true
+  end
+
+  opts.on('-m TITLE', 'Use TITLE as the first line of commit message') do |value|
+    options[:message_title] = value
+  end
+
+  opts.on('-v', '--verbose', 'Show executed commands and file operations') do
+    options[:verbose] = true
+  end
+
+  opts.on('-n', '--noop', 'Do not modify files or run mutating git commands') do
+    options[:noop] = true
+  end
+
+  opts.on('-h', '--help', 'Show this help') do
+    puts opts
+    exit 0
+  end
+end
+
+parser.parse!(ARGV)
+source_args = ARGV.dup
+
+abort(parser.to_s) if source_args.empty?
+
+invocation_dir = Pathname.new(Dir.pwd)
+source_paths = source_args.map do |arg|
+  path = Pathname.new(arg)
+  path.absolute? ? path : invocation_dir.join(path)
+end
+
+missing_paths = source_paths.reject(&:exist?)
+unless missing_paths.empty?
+  abort("Missing files: #{missing_paths.map(&:to_s).join(', ')}")
+end
+
+script_dir = File.expand_path(__dir__)
+misc_dir = File.expand_path('..', script_dir)
+
+def format_command(*parts)
+  parts.map { |part| Shellwords.escape(part.to_s) }.join(' ')
+end
+
+def run_command(*parts, verbose:, noop: false, out: nil, err: nil)
+  puts "+ #{format_command(*parts)}" if verbose
+  return true if noop
+
+  io_options = {}
+  io_options[:out] = out unless out.nil?
+  io_options[:err] = err unless err.nil?
+  system(*parts, **io_options)
+end
+
+def print_commit_message(message)
+  puts 'commit message:'
+  message.each_line { |line| puts "  #{line.chomp}" }
+end
+
+unless run_command('git', '-C', misc_dir, 'rev-parse', '--is-inside-work-tree', verbose: options[:verbose], out: File::NULL, err: File::NULL)
+  abort("Not a git repository: #{misc_dir}")
+end
+
+share_root = File.join(misc_dir, 'share')
+puts "mkdir -p #{share_root}" if options[:verbose]
+FileUtils.mkdir_p(share_root) unless options[:noop]
+
+def normalize_requested_dir(raw)
+  return nil if raw.nil? || raw.empty?
+
+  path = Pathname.new(raw)
+  raise ArgumentError, '--dir must be a relative path' if path.absolute?
+
+  normalized = path.cleanpath.to_s
+  if normalized == '.' || normalized == '..' || normalized.start_with?('../')
+    raise ArgumentError, '--dir must stay under share/'
+  end
+
+  normalized
+end
+
+def random_dir_name(share_root, length = 6)
+  loop do
+    token = SecureRandom.alphanumeric(length).downcase
+    return token unless File.exist?(File.join(share_root, token))
+  end
+end
+
+requested_rel = normalize_requested_dir(options[:dir])
+relative_share_dir = requested_rel || random_dir_name(share_root)
+share_dir = File.join(share_root, relative_share_dir)
+puts "mkdir -p #{share_dir}" if options[:verbose]
+FileUtils.mkdir_p(share_dir) unless options[:noop]
+
+destination_names = source_paths.map { |path| path.basename.to_s }
+duplicate_destination_names = destination_names
+  .tally
+  .select { |_name, count| count > 1 }
+  .keys
+unless duplicate_destination_names.empty?
+  abort("Duplicate destination filenames: #{duplicate_destination_names.join(', ')}")
+end
+
+already_existing = destination_names.select do |name|
+  File.exist?(File.join(share_dir, name))
+end
+unless already_existing.empty?
+  abort("Files already exist in #{File.join('share', relative_share_dir)}: #{already_existing.join(', ')}")
+end
+
+source_paths.each do |source_path|
+  source = source_path.expand_path.to_s
+  if options[:move]
+    puts "mv #{source} #{share_dir}/" if options[:verbose]
+    FileUtils.mv(source, share_dir) unless options[:noop]
+  else
+    puts "cp #{source} #{share_dir}/" if options[:verbose]
+    FileUtils.cp(source, share_dir) unless options[:noop]
+  end
+end
+
+share_dir_for_git = File.join('share', relative_share_dir)
+
+unless run_command('git', '-C', misc_dir, 'add', '--', share_dir_for_git, verbose: options[:verbose], noop: options[:noop])
+  abort('git add failed')
+end
+
+if options[:move]
+  source_paths.each do |source_path|
+    source = source_path.expand_path.to_s
+    repo_prefix = misc_dir + File::SEPARATOR
+    next unless source.start_with?(repo_prefix)
+
+    rel = source.delete_prefix(repo_prefix)
+    abort("Invalid source path for git add: #{source}") if rel.empty?
+    unless run_command('git', '-C', misc_dir, 'add', '-A', '--', rel, verbose: options[:verbose], noop: options[:noop])
+      abort("git add -A failed for #{rel}")
+    end
+  end
+end
+
+commit_title = options[:message_title] || share_dir_for_git
+commit_message = ([commit_title, ''] + source_args).join("\n") + "\n"
+print_commit_message(commit_message) if options[:verbose]
+
+if options[:noop]
+  noop_message_path = File.join(misc_dir, '.misc-up-noop-commit-message.txt')
+  unless run_command('git', '-C', misc_dir, 'commit', '-F', noop_message_path, verbose: options[:verbose], noop: true)
+    abort('git commit failed')
+  end
+else
+  Dir.mktmpdir('misc-up') do |tmpdir|
+    message_path = File.join(tmpdir, 'commit_message.txt')
+    File.write(message_path, commit_message)
+
+    unless run_command('git', '-C', misc_dir, 'commit', '-F', message_path, verbose: options[:verbose])
+      abort('git commit failed')
+    end
+  end
+end
+
+abort('git push failed') unless run_command('git', '-C', misc_dir, 'push', verbose: options[:verbose], noop: options[:noop])
+
+encoded_share_dir = share_dir_for_git.split('/').map { |segment| CGI.escape(segment).gsub('+', '%20') }.join('/')
+destination_names.each do |name|
+  encoded_name = CGI.escape(name).gsub('+', '%20')
+  puts "http://ko1.github.io/misc/#{encoded_share_dir}/#{encoded_name}"
+end
