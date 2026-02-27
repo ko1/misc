@@ -9,6 +9,29 @@ require 'tmpdir'
 require 'cgi'
 require 'shellwords'
 
+# misc-up uploads local files into this repository's `share/` tree and publishes
+# them through GitHub Pages after committing and pushing.
+#
+# Options:
+# - --dir PATH: Destination subdirectory under `share/` (must be relative and
+#   stay under `share/`).
+# - --move: Move files instead of copying them.
+# - -m TITLE: Use TITLE as the first line of the commit message.
+# - -n, --noop: Dry-run mode. Skip file mutations and mutating git commands.
+# - -v, --verbose: Print executed commands and file operations.
+# - -h, --help: Show CLI help.
+#
+# Flow:
+# 1) Parse options and resolve each FILE path relative to the invocation directory.
+# 2) Validate inputs: files must exist; destination dir must be safe; destination
+#    filenames must be unique and not already present.
+# 3) Create `share/<dir>` (given by --dir or generated as a random 6-char token).
+# 4) Copy or move files into `share/<dir>`.
+# 5) Stage destination files (and moved source deletions when applicable).
+# 6) Build commit message (title + original source args), then `git commit`.
+# 7) `git push`.
+# 8) Print URL(s): `http://ko1.github.io/misc/share/<dir>/<filename>`.
+
 options = {
   dir: nil,
   move: false,
