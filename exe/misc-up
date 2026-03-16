@@ -164,8 +164,13 @@ source_paths.each do |source_path|
     puts "mv #{source} #{share_dir}/" if options[:verbose]
     FileUtils.mv(source, share_dir) unless options[:noop]
   else
-    puts "cp #{source} #{share_dir}/" if options[:verbose]
-    FileUtils.cp(source, share_dir) unless options[:noop]
+    if source_path.directory?
+      puts "cp -r #{source} #{share_dir}/" if options[:verbose]
+      FileUtils.cp_r(source, share_dir) unless options[:noop]
+    else
+      puts "cp #{source} #{share_dir}/" if options[:verbose]
+      FileUtils.cp(source, share_dir) unless options[:noop]
+    end
   end
 end
 
@@ -212,7 +217,25 @@ end
 abort('git push failed') unless run_command('git', '-C', misc_dir, 'push', verbose: options[:verbose], noop: options[:noop])
 
 encoded_share_dir = share_dir_for_git.split('/').map { |segment| CGI.escape(segment).gsub('+', '%20') }.join('/')
+
+def collect_files(dir)
+  files = []
+  Dir.glob(File.join(dir, '**', '*')).sort.each do |path|
+    files << path if File.file?(path)
+  end
+  files
+end
+
 destination_names.each do |name|
-  encoded_name = CGI.escape(name).gsub('+', '%20')
-  puts "http://ko1.github.io/misc/#{encoded_share_dir}/#{encoded_name}"
+  dest_path = File.join(share_dir, name)
+  if File.directory?(dest_path)
+    collect_files(dest_path).each do |file_path|
+      rel = Pathname.new(file_path).relative_path_from(Pathname.new(share_dir)).to_s
+      encoded_rel = rel.split('/').map { |seg| CGI.escape(seg).gsub('+', '%20') }.join('/')
+      puts "http://ko1.github.io/misc/#{encoded_share_dir}/#{encoded_rel}"
+    end
+  else
+    encoded_name = CGI.escape(name).gsub('+', '%20')
+    puts "http://ko1.github.io/misc/#{encoded_share_dir}/#{encoded_name}"
+  end
 end
