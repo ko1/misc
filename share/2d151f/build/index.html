@@ -959,79 +959,100 @@ mark.search-highlight {
                 <a href="#04-sampling-profiler--timer_createによるスレッド単位のサンプリング" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--timer_createによるスレッド単位のサンプリング')">4.2.2 timer_createによるスレッド単位のサンプリング</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--サンプリング間隔と精度" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--サンプリング間隔と精度')">4.3 サンプリング間隔と精度</a>
+                <a href="#04-sampling-profiler--シグナル以外のサンプリング方式" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--シグナル以外のサンプリング方式')">4.3 シグナル以外のサンプリング方式</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--統計的な考察" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--統計的な考察')">4.3.1 統計的な考察</a>
+                <a href="#04-sampling-profiler--専用スレッドによるポーリング方式" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--専用スレッドによるポーリング方式')">4.3.1 専用スレッドによるポーリング方式</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--サンプリング間隔の選択" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--サンプリング間隔の選択')">4.3.2 サンプリング間隔の選択</a>
+                <a href="#04-sampling-profiler--ptraceベースの外部プロセスサンプリング" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--ptraceベースの外部プロセスサンプリング')">4.3.2 ptraceベースの外部プロセスサンプリング</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--サンプリングバイアスの問題" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--サンプリングバイアスの問題')">4.3.3 サンプリングバイアスの問題</a>
+                <a href="#04-sampling-profiler--perf_event_open-mmapリングバッファ方式" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--perf_event_open-mmapリングバッファ方式')">4.3.3 perf_event_open + mmapリングバッファ方式</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--不均一なサンプリング間隔の補正" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--不均一なサンプリング間隔の補正')">4.4 不均一なサンプリング間隔の補正</a>
+                <a href="#04-sampling-profiler--セーフポイントポーリング方式" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--セーフポイントポーリング方式')">4.3.4 セーフポイントポーリング方式</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--なぜサンプリング間隔は不均一になるのか" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--なぜサンプリング間隔は不均一になるのか')">4.4.1 なぜサンプリング間隔は不均一になるのか</a>
+                <a href="#04-sampling-profiler--ebpfベースのカーネル内サンプリング" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--ebpfベースのカーネル内サンプリング')">4.3.5 eBPFベースのカーネル内サンプリング</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--原理重み付きサンプリング" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--原理重み付きサンプリング')">4.4.2 原理：重み付きサンプリング</a>
+                <a href="#04-sampling-profiler--方式の比較" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--方式の比較')">4.3.6 方式の比較</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--重みの決め方" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--重みの決め方')">4.4.3 重みの決め方</a>
+                <a href="#04-sampling-profiler--サンプリング間隔と精度" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--サンプリング間隔と精度')">4.4 サンプリング間隔と精度</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--実装例" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--実装例')">4.4.4 実装例</a>
+                <a href="#04-sampling-profiler--統計的な考察" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--統計的な考察')">4.4.1 統計的な考察</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--実際のツールにおける対応" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--実際のツールにおける対応')">4.4.5 実際のツールにおける対応</a>
+                <a href="#04-sampling-profiler--サンプリング間隔の選択" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--サンプリング間隔の選択')">4.4.2 サンプリング間隔の選択</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--適応的サンプリングレートでの注意点" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--適応的サンプリングレートでの注意点')">4.4.6 適応的サンプリングレートでの注意点</a>
+                <a href="#04-sampling-profiler--サンプリングバイアスの問題" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--サンプリングバイアスの問題')">4.4.3 サンプリングバイアスの問題</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--安全なスタックウォーク" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--安全なスタックウォーク')">4.5 安全なスタックウォーク</a>
+                <a href="#04-sampling-profiler--不均一なサンプリング間隔の補正" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--不均一なサンプリング間隔の補正')">4.5 不均一なサンプリング間隔の補正</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--シグナルハンドラ内での制約" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--シグナルハンドラ内での制約')">4.5.1 シグナルハンドラ内での制約</a>
+                <a href="#04-sampling-profiler--なぜサンプリング間隔は不均一になるのか" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--なぜサンプリング間隔は不均一になるのか')">4.5.1 なぜサンプリング間隔は不均一になるのか</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--事前割り当てバッファ方式" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--事前割り当てバッファ方式')">4.5.2 事前割り当てバッファ方式</a>
+                <a href="#04-sampling-profiler--原理重み付きサンプリング" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--原理重み付きサンプリング')">4.5.2 原理：重み付きサンプリング</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--ucontextからのスタックウォーク" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--ucontextからのスタックウォーク')">4.5.3 ucontextからのスタックウォーク</a>
+                <a href="#04-sampling-profiler--重みの決め方" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--重みの決め方')">4.5.3 重みの決め方</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--シンボル解決" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--シンボル解決')">4.6 シンボル解決</a>
+                <a href="#04-sampling-profiler--実装例" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--実装例')">4.5.4 実装例</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--elfシンボルテーブル" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--elfシンボルテーブル')">4.6.1 ELFシンボルテーブル</a>
+                <a href="#04-sampling-profiler--実際のツールにおける対応" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--実際のツールにおける対応')">4.5.5 実際のツールにおける対応</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--procpidmapsの解析" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--procpidmapsの解析')">4.6.2 /proc/pid/mapsの解析</a>
+                <a href="#04-sampling-profiler--適応的サンプリングレートでの注意点" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--適応的サンプリングレートでの注意点')">4.5.6 適応的サンプリングレートでの注意点</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--jitコードのシンボル解決" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--jitコードのシンボル解決')">4.6.3 JITコードのシンボル解決</a>
+                <a href="#04-sampling-profiler--安全なスタックウォーク" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--安全なスタックウォーク')">4.6 安全なスタックウォーク</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--wall-clock-プロファイリングとoff-cpu分析" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--wall-clock-プロファイリングとoff-cpu分析')">4.7 Wall-Clock プロファイリングとOff-CPU分析</a>
+                <a href="#04-sampling-profiler--シグナルハンドラ内での制約" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--シグナルハンドラ内での制約')">4.6.1 シグナルハンドラ内での制約</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--wall-clockサンプリング" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--wall-clockサンプリング')">4.7.1 Wall-Clockサンプリング</a>
+                <a href="#04-sampling-profiler--事前割り当てバッファ方式" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--事前割り当てバッファ方式')">4.6.2 事前割り当てバッファ方式</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--off-cpu分析" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--off-cpu分析')">4.7.2 Off-CPU分析</a>
+                <a href="#04-sampling-profiler--ucontextからのスタックウォーク" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--ucontextからのスタックウォーク')">4.6.3 ucontextからのスタックウォーク</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--サンプルデータの集約とストレージ" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--サンプルデータの集約とストレージ')">4.8 サンプルデータの集約とストレージ</a>
+                <a href="#04-sampling-profiler--シンボル解決" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--シンボル解決')">4.7 シンボル解決</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--スタックトレースのトライ木表現" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--スタックトレースのトライ木表現')">4.8.1 スタックトレースのトライ木表現</a>
+                <a href="#04-sampling-profiler--elfシンボルテーブル" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--elfシンボルテーブル')">4.7.1 ELFシンボルテーブル</a>
               </li>
               <li>
-                <a href="#04-sampling-profiler--pprof形式" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--pprof形式')">4.8.2 pprof形式</a>
+                <a href="#04-sampling-profiler--procpidmapsの解析" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--procpidmapsの解析')">4.7.2 /proc/pid/mapsの解析</a>
+              </li>
+              <li>
+                <a href="#04-sampling-profiler--jitコードのシンボル解決" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--jitコードのシンボル解決')">4.7.3 JITコードのシンボル解決</a>
+              </li>
+              <li>
+                <a href="#04-sampling-profiler--wall-clock-プロファイリングとoff-cpu分析" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--wall-clock-プロファイリングとoff-cpu分析')">4.8 Wall-Clock プロファイリングとOff-CPU分析</a>
+              </li>
+              <li>
+                <a href="#04-sampling-profiler--wall-clockサンプリング" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--wall-clockサンプリング')">4.8.1 Wall-Clockサンプリング</a>
+              </li>
+              <li>
+                <a href="#04-sampling-profiler--off-cpu分析" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--off-cpu分析')">4.8.2 Off-CPU分析</a>
+              </li>
+              <li>
+                <a href="#04-sampling-profiler--サンプルデータの集約とストレージ" class="toc-h2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--サンプルデータの集約とストレージ')">4.9 サンプルデータの集約とストレージ</a>
+              </li>
+              <li>
+                <a href="#04-sampling-profiler--スタックトレースのトライ木表現" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--スタックトレースのトライ木表現')">4.9.1 スタックトレースのトライ木表現</a>
+              </li>
+              <li>
+                <a href="#04-sampling-profiler--pprof形式" class="toc-h3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--pprof形式')">4.9.2 pprof形式</a>
               </li>
             </ul>
           </li>
@@ -2740,9 +2761,235 @@ void setup_thread_timer(pthread_t thread) {
 }
 </code></pre>
 
-<h2 id="04-sampling-profiler--サンプリング間隔と精度">4.3 サンプリング間隔と精度</h2>
+<h2 id="04-sampling-profiler--シグナル以外のサンプリング方式">4.3 シグナル以外のサンプリング方式</h2>
 
-<h3 id="04-sampling-profiler--統計的な考察">4.3.1 統計的な考察</h3>
+<p>シグナルベースのサンプリングは広く使われているが、唯一の選択肢ではない。async-signal-safetyの制約、セーフポイントバイアス、計装の要否など、それぞれ異なるトレードオフを持つ複数の方式が実用されている。</p>
+
+<h3 id="04-sampling-profiler--専用スレッドによるポーリング方式">4.3.1 専用スレッドによるポーリング方式</h3>
+
+<p>別スレッドが<code>nanosleep</code>等で周期的にスリープし、起床時に対象スレッドのスタックを取得する方式である。</p>
+
+<pre><code class="language-c">// 専用サンプリングスレッドの概念コード
+void *sampling_thread(void *arg) {
+    struct timespec interval = { 0, 10000000 }; // 10ms
+
+    while (profiling_enabled) {
+        nanosleep(&amp;interval, NULL);
+
+        for (int i = 0; i &lt; thread_count; i++) {
+            // 言語VMのAPIでスタック取得
+            // シグナルハンドラではないため、
+            // malloc等の制約を受けない
+            suspend_thread(threads[i]);
+            capture_stack(threads[i], &amp;sample);
+            resume_thread(threads[i]);
+        }
+    }
+    return NULL;
+}
+</code></pre>
+
+<p><span id="04-sampling-profiler--idx-2">async-profiler</span>（Java）のwall-clockモードはこの方式を採用し、専用スレッドが各Javaスレッドを巡回してJVM内部APIでスタックを取得する。Rubyの<span id="04-sampling-profiler--idx-3">Vernier</span>も、サンプリングスレッドがGVL（Giant VM Lock）の状態を観察しながら対象スレッドのスタックを取得する。</p>
+
+<p>最大の利点は、シグナルハンドラのasync-signal-safety制約を受けないことである。<code>malloc</code>やmutex操作も自由に使えるため、実装の自由度が高い。一方で、対象スレッドを安全に一時停止する手段が必要であり、言語VMの内部APIへの依存が生じる。</p>
+
+<h3 id="04-sampling-profiler--ptraceベースの外部プロセスサンプリング">4.3.2 ptraceベースの外部プロセスサンプリング</h3>
+
+<p>プロファイラが別プロセスとして動作し、<span id="04-sampling-profiler--idx-4">ptrace(2)</span>で対象プロセスを定期的に停止してレジスタとスタックメモリを読み取る方式である。</p>
+
+<pre><code class="language-c">// ptraceベースサンプリングの概念コード
+void sample_external(pid_t target_pid) {
+    // 対象プロセスを停止
+    ptrace(PTRACE_ATTACH, target_pid, NULL, NULL);
+    waitpid(target_pid, NULL, 0);
+
+    // レジスタ状態を取得
+    struct user_regs_struct regs;
+    ptrace(PTRACE_GETREGS, target_pid, NULL, &amp;regs);
+
+    // スタックメモリをリモートで読み取り
+    struct iovec local = { .iov_base = buf, .iov_len = len };
+    struct iovec remote = { .iov_base = (void *)regs.rsp,
+                            .iov_len = len };
+    process_vm_readv(target_pid, &amp;local, 1, &amp;remote, 1, 0);
+
+    // フレームポインタチェーンを辿ってスタックウォーク
+    walk_remote_stack(&amp;regs, buf, &amp;sample);
+
+    // 対象プロセスを再開
+    ptrace(PTRACE_DETACH, target_pid, NULL, NULL);
+}
+</code></pre>
+
+<p><span id="04-sampling-profiler--idx-5">py-spy</span>（Python）と<span id="04-sampling-profiler--idx-6">rbspy</span>（Ruby）がこの方式の代表例である。外部プロセスから<code>process_vm_readv</code>でPythonの<code>PyFrameObject</code>チェーンやRubyのVM制御フレームを直接読み取る。対象プログラムへの変更が一切不要であり、実行中の本番プロセスにもアタッチできる点が最大の利点である。</p>
+
+<p>ただし、ptraceによるプロセス停止はコンテキストスイッチを2回伴うため比較的重く、高頻度サンプリング（1ms以下）には不向きである。また、対象言語ランタイムの内部データ構造（フレームオブジェクトのレイアウトやポインタの辿り方）をプロファイラ側が知っている必要がある。</p>
+
+<h3 id="04-sampling-profiler--perf_event_open-mmapリングバッファ方式">4.3.3 perf_event_open + mmapリングバッファ方式</h3>
+
+<p>カーネルの<code>perf_event_open(2)</code>でPMUイベントやソフトウェアイベントを設定し、カーネルがサンプルをmmapされたリングバッファに直接書き込む方式である。ユーザー空間はリングバッファを読み取るだけでよく、シグナルもptraceも不要である。</p>
+
+<pre><code class="language-c">// perf_event_open + mmapリングバッファの概念コード
+struct perf_event_attr attr = {
+    .type = PERF_TYPE_SOFTWARE,
+    .config = PERF_COUNT_SW_CPU_CLOCK,
+    .sample_period = 10000000, // 10ms相当
+    .sample_type = PERF_SAMPLE_IP | PERF_SAMPLE_CALLCHAIN
+                   | PERF_SAMPLE_TID,
+    .disabled = 1,
+};
+
+int fd = perf_event_open(&amp;attr, pid, cpu, -1, 0);
+
+// リングバッファをmmap
+void *mmap_buf = mmap(NULL,
+    (1 + num_pages) * page_size,
+    PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+
+// カーネルがサンプルを書き込むので、
+// ユーザー空間は読み取るだけ
+ioctl(fd, PERF_EVENT_IOC_ENABLE, 0);
+
+// 読み取りループ
+struct perf_event_mmap_page *header = mmap_buf;
+while (profiling) {
+    // header-&gt;data_headとdata_tailで
+    // リングバッファの新しいデータを読み取る
+    process_samples(header);
+}
+</code></pre>
+
+<p><code>perf record</code>コマンドやAndroidの<code>simpleperf</code>がこの方式を使用している。カーネル空間でサンプリングとスタックウォーク（<code>PERF_SAMPLE_CALLCHAIN</code>）が完結するため、ユーザー空間への介入が最小限で済む。PMUイベント（キャッシュミス、分岐予測ミス等）をサンプリングのトリガーにできる点も、シグナルベースの方式にはない利点である。</p>
+
+<p>一方で、カーネルが取得できるのはネイティブコードのコールチェーンのみであり、JavaやPython等のマネージドスタックフレームはカーネルからは見えない。<code>CAP_PERFMON</code>権限が必要な場合もある。</p>
+
+<h3 id="04-sampling-profiler--セーフポイントポーリング方式">4.3.4 セーフポイントポーリング方式</h3>
+
+<p>言語ランタイムが<span id="04-sampling-profiler--idx-7">セーフポイント</span>（safepoint）と呼ばれる制御点を持ち、各スレッドが周期的にフラグを確認して、自発的にスタックを報告する方式である。</p>
+
+<pre><code>// セーフポイントポーリングの概念
+// コンパイラが生成するコードにセーフポイントチェックが挿入される
+
+loop:
+    // ... アプリケーションの処理 ...
+
+    // セーフポイントチェック（コンパイラが挿入）
+    if (*safepoint_flag) {
+        // プロファイラがフラグをセットしていれば
+        // ここでスタックを報告
+        report_stack_at_safepoint();
+    }
+
+    goto loop;
+</code></pre>
+
+<p>JVMの<span id="04-sampling-profiler--idx-8">JFR</span>（Java Flight Recorder）が代表例であり、JVMが各スレッドにセーフポイントを要求し、到達時にスタックを取得する。Goの<code>runtime/pprof</code>も、goroutineスケジューラがスケジューリングポイント（関数呼び出しやチャネル操作等）でスタックを記録する仕組みを持つ。.NETの<code>EventPipe</code>もGCセーフポイントでスタックを取得する。</p>
+
+<p>スタックが常に「安全な状態」で取得されるため、不完全なフレームや壊れたスタックのリスクがない点が最大の利点である。GCとの協調も容易である。</p>
+
+<p>ただし、<span id="04-sampling-profiler--idx-9">セーフポイントバイアス</span>が生じるという本質的な問題がある。CPU集約的なループ内にセーフポイントが存在しない場合、その区間がプロファイル結果に一切現れない。これはJVMの「counted loop問題」として知られており、カウンタ付きforループ内にセーフポイントが挿入されないことで、ループ内の処理がプロファイルから消えてしまう現象である。async-profilerがシグナルベースの<code>AsyncGetCallTrace</code>を採用した主要な動機の一つが、このセーフポイントバイアスの回避であった。</p>
+
+<h3 id="04-sampling-profiler--ebpfベースのカーネル内サンプリング">4.3.5 eBPFベースのカーネル内サンプリング</h3>
+
+<p><span id="04-sampling-profiler--idx-10">eBPF</span>プログラムをperfイベントやタイマーに接続し、カーネル内でスタックトレースの取得と集約まで行う方式である。</p>
+
+<pre><code class="language-c">// eBPFベースのプロファイラ（概念コード）
+// perfイベントに接続されたBPFプログラム
+SEC("perf_event")
+int do_sample(struct bpf_perf_event_data *ctx) {
+    u64 id = bpf_get_current_pid_tgid();
+    u32 pid = id &gt;&gt; 32;
+
+    // カーネル内でスタックトレースを取得
+    int stack_id = bpf_get_stackid(
+        ctx, &amp;stack_map,
+        BPF_F_USER_STACK | BPF_F_FAST_STACK_CMP);
+
+    // BPF map内で直接集約（カウント）
+    struct stack_count *count =
+        bpf_map_lookup_elem(&amp;counts, &amp;stack_id);
+    if (count) {
+        __sync_fetch_and_add(&amp;count-&gt;value, 1);
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>bcc toolsの<code>profile</code>ツール、<span id="04-sampling-profiler--idx-11">Parca</span> Agent、<span id="04-sampling-profiler--idx-12">Pyroscope</span>（Grafana）などが採用している。ユーザー空間への介入が最小限であり、カーネル内でスタックトレースの集約まで行うためデータ転送量が少ない。</p>
+
+<p>ただし、BPFプログラムの命令数制限やループ制限がスタックウォークの深さを制約する場合がある。また、perf_event_open方式と同様に、ユーザー空間のマネージドスタックはBPFから直接取得できない。</p>
+
+<h3 id="04-sampling-profiler--方式の比較">4.3.6 方式の比較</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>方式</th>
+      <th>計装の要否</th>
+      <th>オーバーヘッド</th>
+      <th>async-signal-safe制約</th>
+      <th>マネージドスタック対応</th>
+      <th>代表的ツール</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>シグナル</td>
+      <td>要</td>
+      <td>低〜中</td>
+      <td>あり</td>
+      <td>ハンドラ内で対応可能</td>
+      <td>gperftools, stackprof</td>
+    </tr>
+    <tr>
+      <td>専用スレッド</td>
+      <td>要</td>
+      <td>低〜中</td>
+      <td>なし</td>
+      <td>VM API経由で良好</td>
+      <td>async-profiler, Vernier</td>
+    </tr>
+    <tr>
+      <td>ptrace外部プロセス</td>
+      <td>不要</td>
+      <td>中〜高</td>
+      <td>なし</td>
+      <td>リモート読取が必要</td>
+      <td>py-spy, rbspy</td>
+    </tr>
+    <tr>
+      <td>perf_event_open + mmap</td>
+      <td>不要〜最小</td>
+      <td>非常に低</td>
+      <td>なし</td>
+      <td>カーネルからは不可</td>
+      <td>Linux perf, simpleperf</td>
+    </tr>
+    <tr>
+      <td>セーフポイント</td>
+      <td>不要（VM組込）</td>
+      <td>低</td>
+      <td>なし</td>
+      <td>完全対応</td>
+      <td>JFR, Go pprof</td>
+    </tr>
+    <tr>
+      <td>eBPF</td>
+      <td>不要</td>
+      <td>非常に低</td>
+      <td>なし</td>
+      <td>カーネルからは不可</td>
+      <td>bcc profile, Parca</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>シグナルベースの方式はUnix環境で最も手軽に実装できるが、async-signal-safetyの制約が実装を複雑にする。言語VMに組み込むプロファイラであれば専用スレッド方式やセーフポイント方式が有力であり、システム全体を俯瞰するプロファイリングにはperf_event_openやeBPFが適している。外部から既存プロセスをプロファイルする必要がある場合にはptraceベースの方式が唯一の選択肢となることもある。実際のプロファイラの多くは、これらの方式を組み合わせて使用している。たとえばasync-profilerは、CPUプロファイリングにはシグナル（<code>AsyncGetCallTrace</code>）を、wall-clockプロファイリングには専用スレッドを使い分けている。</p>
+
+<h2 id="04-sampling-profiler--サンプリング間隔と精度">4.4 サンプリング間隔と精度</h2>
+
+<h3 id="04-sampling-profiler--統計的な考察">4.4.1 統計的な考察</h3>
 
 <p>サンプリングプロファイラの精度は、収集したサンプル数に依存する。ある関数がプログラム全体の実行時間の <span class="math-inline" data-math="p"></span> を占める場合、<span class="math-inline" data-math="N"></span> 個のサンプル中でその関数が観測される回数の期待値は <span class="math-inline" data-math="Np"></span>、標準偏差は <span class="math-inline" data-math="\sqrt{Np(1-p)}"></span> である。</p>
 
@@ -2783,7 +3030,7 @@ void setup_thread_timer(pthread_t thread) {
   </tbody>
 </table>
 
-<h3 id="04-sampling-profiler--サンプリング間隔の選択">4.3.2 サンプリング間隔の選択</h3>
+<h3 id="04-sampling-profiler--サンプリング間隔の選択">4.4.2 サンプリング間隔の選択</h3>
 
 <p>典型的なサンプリング間隔と用途の関係は以下の通り。</p>
 
@@ -2819,9 +3066,9 @@ void setup_thread_timer(pthread_t thread) {
   </tbody>
 </table>
 
-<h3 id="04-sampling-profiler--サンプリングバイアスの問題">4.3.3 サンプリングバイアスの問題</h3>
+<h3 id="04-sampling-profiler--サンプリングバイアスの問題">4.4.3 サンプリングバイアスの問題</h3>
 
-<p>一定間隔でサンプリングすると、周期的なパターンを持つプログラムでバイアスが生じる可能性がある（<span id="04-sampling-profiler--idx-2">ロックステップ問題</span>）。この問題を回避するため、多くのプロファイラはサンプリング間隔にジッター（乱数による揺らぎ）を加える。</p>
+<p>一定間隔でサンプリングすると、周期的なパターンを持つプログラムでバイアスが生じる可能性がある（<span id="04-sampling-profiler--idx-13">ロックステップ問題</span>）。この問題を回避するため、多くのプロファイラはサンプリング間隔にジッター（乱数による揺らぎ）を加える。</p>
 
 <pre><code class="language-c">// ジッター付きサンプリング間隔の設定
 long jittered_interval(long base_interval_ns) {
@@ -2832,9 +3079,9 @@ long jittered_interval(long base_interval_ns) {
 }
 </code></pre>
 
-<h2 id="04-sampling-profiler--不均一なサンプリング間隔の補正">4.4 不均一なサンプリング間隔の補正</h2>
+<h2 id="04-sampling-profiler--不均一なサンプリング間隔の補正">4.5 不均一なサンプリング間隔の補正</h2>
 
-<h3 id="04-sampling-profiler--なぜサンプリング間隔は不均一になるのか">4.4.1 なぜサンプリング間隔は不均一になるのか</h3>
+<h3 id="04-sampling-profiler--なぜサンプリング間隔は不均一になるのか">4.5.1 なぜサンプリング間隔は不均一になるのか</h3>
 
 <p>前節で述べたジッターの意図的な導入に加え、実際のシステムではさまざまな要因でサンプリング間隔が不均一になる。</p>
 
@@ -2847,7 +3094,7 @@ long jittered_interval(long base_interval_ns) {
 
 <p>これらの要因により、「各サンプルが代表する時間」はサンプルごとに異なる。単純にサンプル数をカウントするだけでは、正確なプロファイル結果が得られない。</p>
 
-<h3 id="04-sampling-profiler--原理重み付きサンプリング">4.4.2 原理：重み付きサンプリング</h3>
+<h3 id="04-sampling-profiler--原理重み付きサンプリング">4.5.2 原理：重み付きサンプリング</h3>
 
 <p>不均一間隔に対する基本原理は、各サンプルに<strong>重み</strong>（weight）を付与し、重み付きで集計することである。</p>
 
@@ -2863,7 +3110,7 @@ long jittered_interval(long base_interval_ns) {
 
 <p>ここで <span class="math-inline" data-math="S_f"></span> は関数 <span class="math-inline" data-math="f"></span> がコールスタック上に存在するサンプルの集合である。</p>
 
-<h3 id="04-sampling-profiler--重みの決め方">4.4.3 重みの決め方</h3>
+<h3 id="04-sampling-profiler--重みの決め方">4.5.3 重みの決め方</h3>
 
 <p>サンプルの重み <span class="math-inline" data-math="w_i"></span> の決め方には、主に2つの方式がある。</p>
 
@@ -2881,7 +3128,7 @@ long jittered_interval(long base_interval_ns) {
 
 <p>統計学的にはより精度が高いが、最後のサンプルの処理に工夫が必要になる。</p>
 
-<h3 id="04-sampling-profiler--実装例">4.4.4 実装例</h3>
+<h3 id="04-sampling-profiler--実装例">4.5.4 実装例</h3>
 
 <p>以下に、タイムスタンプ付きサンプルの収集と重み付き集計の実装例を示す。</p>
 
@@ -2939,7 +3186,7 @@ void aggregate_weighted(struct timed_sample *samples, int count,
 <p>異常に長い間隔を上限値でクランプ（clamp）する処理は重要である。サンプルがドロップした場合、次のサンプルの重みが極端に大きくなり、プロファイル結果を歪める。一般的には名目間隔の2〜5倍を上限とする。</p>
 </div>
 
-<h3 id="04-sampling-profiler--実際のツールにおける対応">4.4.5 実際のツールにおける対応</h3>
+<h3 id="04-sampling-profiler--実際のツールにおける対応">4.5.5 実際のツールにおける対応</h3>
 
 <p>実際の主要プロファイラでは、以下のように不均一間隔への対応が行われている。</p>
 
@@ -2957,7 +3204,7 @@ void aggregate_weighted(struct timed_sample *samples, int count,
 
 <p><strong>async-profiler</strong>（Java）のwall-clockモードでは、スレッドの実際の経過時間を考慮して重み付けを行う。</p>
 
-<h3 id="04-sampling-profiler--適応的サンプリングレートでの注意点">4.4.6 適応的サンプリングレートでの注意点</h3>
+<h3 id="04-sampling-profiler--適応的サンプリングレートでの注意点">4.5.6 適応的サンプリングレートでの注意点</h3>
 
 <p>負荷に応じてサンプリングレートを動的に変更する適応的サンプリング（adaptive sampling）では、重み付き集計が必須となる。レート変更のタイミングとともに、その時点でのサンプリング間隔をメタデータとして記録することが重要である。</p>
 
@@ -2976,11 +3223,11 @@ void change_sampling_rate(uint64_t new_interval_ns) {
 
 <p>レート変更の記録がなければ、高負荷時（サンプリング頻度が低い期間）と低負荷時（サンプリング頻度が高い期間）の重みを正しく計算できず、低負荷時の処理が過大評価される結果となる。</p>
 
-<h2 id="04-sampling-profiler--安全なスタックウォーク">4.5 安全なスタックウォーク</h2>
+<h2 id="04-sampling-profiler--安全なスタックウォーク">4.6 安全なスタックウォーク</h2>
 
-<p>シグナルハンドラ内でのスタックウォークには、多くの制約がある。シグナルハンドラは<span id="04-sampling-profiler--idx-3">async-signal-safe</span>な関数しか呼び出せないため、<code>malloc</code>やmutex操作は使えない。</p>
+<p>シグナルハンドラ内でのスタックウォークには、多くの制約がある。シグナルハンドラは<span id="04-sampling-profiler--idx-14">async-signal-safe</span>な関数しか呼び出せないため、<code>malloc</code>やmutex操作は使えない。</p>
 
-<h3 id="04-sampling-profiler--シグナルハンドラ内での制約">4.5.1 シグナルハンドラ内での制約</h3>
+<h3 id="04-sampling-profiler--シグナルハンドラ内での制約">4.6.1 シグナルハンドラ内での制約</h3>
 
 <pre><code class="language-c">// シグナルハンドラ内で安全に使えるもの
 // - 揮発性変数への読み書き
@@ -2994,7 +3241,7 @@ void change_sampling_rate(uint64_t new_interval_ns) {
 // - C++例外
 </code></pre>
 
-<h3 id="04-sampling-profiler--事前割り当てバッファ方式">4.5.2 事前割り当てバッファ方式</h3>
+<h3 id="04-sampling-profiler--事前割り当てバッファ方式">4.6.2 事前割り当てバッファ方式</h3>
 
 <pre><code class="language-c">// 事前にバッファを確保し、シグナルハンドラではインデックスを進めるだけ
 #define BUFFER_SIZE (1024 * 1024)  // 1M エントリ
@@ -3018,7 +3265,7 @@ void sigprof_handler(int sig, siginfo_t *info, void *ucontext) {
 }
 </code></pre>
 
-<h3 id="04-sampling-profiler--ucontextからのスタックウォーク">4.5.3 ucontextからのスタックウォーク</h3>
+<h3 id="04-sampling-profiler--ucontextからのスタックウォーク">4.6.3 ucontextからのスタックウォーク</h3>
 
 <p>シグナルハンドラの第3引数<code>ucontext</code>には、シグナル受信時のCPUレジスタ状態が保存されている。ここからプログラムカウンタとフレームポインタを取得して、中断されたコンテキストのスタックをウォークできる。</p>
 
@@ -3051,22 +3298,22 @@ void walk_stack_from_ucontext(void *ucontext_ptr,
 }
 </code></pre>
 
-<h2 id="04-sampling-profiler--シンボル解決">4.6 シンボル解決</h2>
+<h2 id="04-sampling-profiler--シンボル解決">4.7 シンボル解決</h2>
 
-<p>サンプリングで取得したアドレスを人間が読めるシンボル名に変換するのが<span id="04-sampling-profiler--idx-4">シンボル解決</span>（symbolication）である。</p>
+<p>サンプリングで取得したアドレスを人間が読めるシンボル名に変換するのが<span id="04-sampling-profiler--idx-15">シンボル解決</span>（symbolication）である。</p>
 
-<h3 id="04-sampling-profiler--elfシンボルテーブル">4.6.1 ELFシンボルテーブル</h3>
+<h3 id="04-sampling-profiler--elfシンボルテーブル">4.7.1 ELFシンボルテーブル</h3>
 
 <div class="mermaid">
 graph LR
-    A[アドレス<br>0x4005f0] --> B[/proc/pid/maps<br>によるマッピング特定]
-    B --> C[ELFファイルの<br>.symtab/.dynsym]
+    A[アドレス 0x4005f0] --> B[proc maps による<br>マッピング特定]
+    B --> C[ELFファイルの<br>symtab, dynsym]
     C --> D[バイナリサーチで<br>シンボル特定]
     D --> E[関数名<br>my_function]
-    E --> F[.debug_lineから<br>ファイル名:行番号]
+    E --> F[debug_line から<br>ファイル名:行番号]
 </div>
 
-<h3 id="04-sampling-profiler--procpidmapsの解析">4.6.2 /proc/pid/mapsの解析</h3>
+<h3 id="04-sampling-profiler--procpidmapsの解析">4.7.2 /proc/pid/mapsの解析</h3>
 
 <pre><code>// /proc/pid/mapsの例
 00400000-00452000 r-xp 00000000 08:01 1234567  /usr/bin/myapp
@@ -3076,7 +3323,7 @@ graph LR
 
 <p>各行はメモリマッピングを表し、アドレスからファイルへのマッピングを特定できる。JITコンパイラが生成するコードは<code>/tmp/perf-&lt;pid&gt;.map</code>ファイルで対応付ける（<code>perf</code>の規約）。</p>
 
-<h3 id="04-sampling-profiler--jitコードのシンボル解決">4.6.3 JITコードのシンボル解決</h3>
+<h3 id="04-sampling-profiler--jitコードのシンボル解決">4.7.3 JITコードのシンボル解決</h3>
 
 <p>JITコンパイラを持つ言語処理系（JVM、V8、LuaJITなど）では、生成されたネイティブコードのアドレスとシンボル名のマッピングを動的に提供する必要がある。</p>
 
@@ -3092,13 +3339,13 @@ graph LR
 <p><code>perf</code>が参照する<code>/tmp/perf-&lt;pid&gt;.map</code>ファイルは、多くのJITランタイムが自動的に生成する機能を持っている。JVMでは<code>-XX:+PreserveFramePointer</code>と<code>perf-map-agent</code>、Node.jsでは<code>--perf-basic-prof</code>、Pythonでは<code>python-perf-jitdump</code>パッケージなどがある。</p>
 </div>
 
-<h2 id="04-sampling-profiler--wall-clock-プロファイリングとoff-cpu分析">4.7 Wall-Clock プロファイリングとOff-CPU分析</h2>
+<h2 id="04-sampling-profiler--wall-clock-プロファイリングとoff-cpu分析">4.8 Wall-Clock プロファイリングとOff-CPU分析</h2>
 
 <p>通常のCPUプロファイラはCPU時間（ユーザーモード実行時間）のみを計測する。しかし、I/O待ちやロック待ちでブロックされている時間は計測されない。</p>
 
-<h3 id="04-sampling-profiler--wall-clockサンプリング">4.7.1 Wall-Clockサンプリング</h3>
+<h3 id="04-sampling-profiler--wall-clockサンプリング">4.8.1 Wall-Clockサンプリング</h3>
 
-<p><span id="04-sampling-profiler--idx-5">Wall-clockプロファイリング</span>は、<code>CLOCK_REALTIME</code>ベースのタイマーを使用して、CPU実行中かどうかに関わらず一定間隔でサンプリングする。これにより、I/O待ちやスリープ中のスタックも捕捉できる。</p>
+<p><span id="04-sampling-profiler--idx-16">Wall-clockプロファイリング</span>は、<code>CLOCK_REALTIME</code>ベースのタイマーを使用して、CPU実行中かどうかに関わらず一定間隔でサンプリングする。これにより、I/O待ちやスリープ中のスタックも捕捉できる。</p>
 
 <pre><code class="language-c">// Wall-clockサンプリングの設定
 void setup_wallclock_timer() {
@@ -3118,9 +3365,9 @@ void setup_wallclock_timer() {
 }
 </code></pre>
 
-<h3 id="04-sampling-profiler--off-cpu分析">4.7.2 Off-CPU分析</h3>
+<h3 id="04-sampling-profiler--off-cpu分析">4.8.2 Off-CPU分析</h3>
 
-<p><span id="04-sampling-profiler--idx-6">Off-CPU分析</span>は、スレッドがCPUから外れた（スケジュールアウトされた）時間を計測する。eBPFの<code>sched_switch</code>トレースポイントを使って実装される。</p>
+<p><span id="04-sampling-profiler--idx-17">Off-CPU分析</span>は、スレッドがCPUから外れた（スケジュールアウトされた）時間を計測する。eBPFの<code>sched_switch</code>トレースポイントを使って実装される。</p>
 
 <pre><code class="language-c">// Off-CPUプロファイラのBPFプログラム（概念）
 SEC("tracepoint/sched/sched_switch")
@@ -3147,11 +3394,11 @@ int handle_switch(struct trace_event_raw_sched_switch *ctx) {
 }
 </code></pre>
 
-<h2 id="04-sampling-profiler--サンプルデータの集約とストレージ">4.8 サンプルデータの集約とストレージ</h2>
+<h2 id="04-sampling-profiler--サンプルデータの集約とストレージ">4.9 サンプルデータの集約とストレージ</h2>
 
-<h3 id="04-sampling-profiler--スタックトレースのトライ木表現">4.8.1 スタックトレースのトライ木表現</h3>
+<h3 id="04-sampling-profiler--スタックトレースのトライ木表現">4.9.1 スタックトレースのトライ木表現</h3>
 
-<p>大量のスタックトレースを効率的に保存するために、<span id="04-sampling-profiler--idx-7">トライ木</span>（prefix tree）を使用する。共通のプレフィックス（コールスタックの上位フレーム）を共有することで、メモリ使用量を大幅に削減できる。</p>
+<p>大量のスタックトレースを効率的に保存するために、<span id="04-sampling-profiler--idx-18">トライ木</span>（prefix tree）を使用する。共通のプレフィックス（コールスタックの上位フレーム）を共有することで、メモリ使用量を大幅に削減できる。</p>
 
 <pre><code>// スタックトレースのトライ木表現
 // main → A → B (count: 5)
@@ -3166,9 +3413,9 @@ main [10]
     └── E [2]  ← リーフ（サンプル数: 2）
 </code></pre>
 
-<h3 id="04-sampling-profiler--pprof形式">4.8.2 pprof形式</h3>
+<h3 id="04-sampling-profiler--pprof形式">4.9.2 pprof形式</h3>
 
-<p>Googleが定義した<span id="04-sampling-profiler--idx-8">pprof</span>形式は、プロファイルデータの標準フォーマットとして広く使われている。Protocol Buffersで定義されており、スタックトレースの文字列テーブル、ロケーション情報、サンプル値を効率的にエンコードする。</p>
+<p>Googleが定義した<span id="04-sampling-profiler--idx-19">pprof</span>形式は、プロファイルデータの標準フォーマットとして広く使われている。Protocol Buffersで定義されており、スタックトレースの文字列テーブル、ロケーション情報、サンプル値を効率的にエンコードする。</p>
 
 <pre><code class="language-protobuf">// pprof.proto の主要なメッセージ定義（簡略化）
 message Profile {
@@ -7678,9 +7925,10 @@ graph TD
         <dt>AsyncGetCallTrace</dt>
         <dd><a href="#08-jvm-profiling--idx-3" onclick="showChapterAndScroll('08-jvm-profiling', '08-jvm-profiling--idx-3'); return false;">8. JVMのプロファイリング実装</a></dd>
         <dt>async-profiler</dt>
+        <dd><a href="#04-sampling-profiler--idx-2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-2'); return false;">4. サンプリングプロファイラの実装</a></dd>
         <dd><a href="#08-jvm-profiling--idx-4" onclick="showChapterAndScroll('08-jvm-profiling', '08-jvm-profiling--idx-4'); return false;">8. JVMのプロファイリング実装</a></dd>
         <dt>async-signal-safe</dt>
-        <dd><a href="#04-sampling-profiler--idx-3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-3'); return false;">4. サンプリングプロファイラの実装</a></dd>
+        <dd><a href="#04-sampling-profiler--idx-14" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-14'); return false;">4. サンプリングプロファイラの実装</a></dd>
       </dl>
     </div>
     <div class="index-group">
@@ -7722,6 +7970,7 @@ graph TD
         <dd><a href="#05-instrumentation-profiler--idx-7" onclick="showChapterAndScroll('05-instrumentation-profiler', '05-instrumentation-profiler--idx-7'); return false;">5. 計装プロファイラの実装</a></dd>
         <dt>eBPF</dt>
         <dd><a href="#03-os-hardware--idx-8" onclick="showChapterAndScroll('03-os-hardware', '03-os-hardware--idx-8'); return false;">3. OS・ハードウェア支援機構</a></dd>
+        <dd><a href="#04-sampling-profiler--idx-10" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-10'); return false;">4. サンプリングプロファイラの実装</a></dd>
       </dl>
     </div>
     <div class="index-group">
@@ -7781,6 +8030,7 @@ graph TD
       <h2 class="index-letter">J</h2>
       <dl class="index-entries">
         <dt>JFR</dt>
+        <dd><a href="#04-sampling-profiler--idx-8" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-8'); return false;">4. サンプリングプロファイラの実装</a></dd>
         <dd><a href="#08-jvm-profiling--idx-5" onclick="showChapterAndScroll('08-jvm-profiling', '08-jvm-profiling--idx-5'); return false;">8. JVMのプロファイリング実装</a></dd>
         <dt>JVM</dt>
         <dd><a href="#08-jvm-profiling--idx-0" onclick="showChapterAndScroll('08-jvm-profiling', '08-jvm-profiling--idx-0'); return false;">8. JVMのプロファイリング実装</a></dd>
@@ -7816,7 +8066,7 @@ graph TD
         <dt>ORC</dt>
         <dd><a href="#03-os-hardware--idx-6" onclick="showChapterAndScroll('03-os-hardware', '03-os-hardware--idx-6'); return false;">3. OS・ハードウェア支援機構</a></dd>
         <dt>Off-CPU分析</dt>
-        <dd><a href="#04-sampling-profiler--idx-6" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-6'); return false;">4. サンプリングプロファイラの実装</a></dd>
+        <dd><a href="#04-sampling-profiler--idx-17" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-17'); return false;">4. サンプリングプロファイラの実装</a></dd>
         <dt>OpenTelemetry</dt>
         <dd><a href="#14-continuous-profiling--idx-4" onclick="showChapterAndScroll('14-continuous-profiling', '14-continuous-profiling--idx-4'); return false;">14. 継続的プロファイリング</a></dd>
         <dt>Orinoco</dt>
@@ -7832,13 +8082,19 @@ graph TD
         <dd><a href="#03-os-hardware--idx-0" onclick="showChapterAndScroll('03-os-hardware', '03-os-hardware--idx-0'); return false;">3. OS・ハードウェア支援機構</a></dd>
         <dd><a href="#03-os-hardware--idx-1" onclick="showChapterAndScroll('03-os-hardware', '03-os-hardware--idx-1'); return false;">3. OS・ハードウェア支援機構</a></dd>
         <dt>Parca</dt>
+        <dd><a href="#04-sampling-profiler--idx-11" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-11'); return false;">4. サンプリングプロファイラの実装</a></dd>
         <dd><a href="#14-continuous-profiling--idx-3" onclick="showChapterAndScroll('14-continuous-profiling', '14-continuous-profiling--idx-3'); return false;">14. 継続的プロファイリング</a></dd>
         <dt>Pyroscope</dt>
+        <dd><a href="#04-sampling-profiler--idx-12" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-12'); return false;">4. サンプリングプロファイラの実装</a></dd>
         <dd><a href="#14-continuous-profiling--idx-2" onclick="showChapterAndScroll('14-continuous-profiling', '14-continuous-profiling--idx-2'); return false;">14. 継続的プロファイリング</a></dd>
         <dt>perf_events</dt>
         <dd><a href="#03-os-hardware--idx-2" onclick="showChapterAndScroll('03-os-hardware', '03-os-hardware--idx-2'); return false;">3. OS・ハードウェア支援機構</a></dd>
         <dt>pprof形式</dt>
-        <dd><a href="#04-sampling-profiler--idx-8" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-8'); return false;">4. サンプリングプロファイラの実装</a></dd>
+        <dd><a href="#04-sampling-profiler--idx-19" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-19'); return false;">4. サンプリングプロファイラの実装</a></dd>
+        <dt>ptrace</dt>
+        <dd><a href="#04-sampling-profiler--idx-4" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-4'); return false;">4. サンプリングプロファイラの実装</a></dd>
+        <dt>py-spy</dt>
+        <dd><a href="#04-sampling-profiler--idx-5" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-5'); return false;">4. サンプリングプロファイラの実装</a></dd>
       </dl>
     </div>
     <div class="index-group">
@@ -7846,6 +8102,8 @@ graph TD
       <dl class="index-entries">
         <dt>Ractor</dt>
         <dd><a href="#11-ruby-profiling--idx-5" onclick="showChapterAndScroll('11-ruby-profiling', '11-ruby-profiling--idx-5'); return false;">11. CRubyのプロファイリング実装</a></dd>
+        <dt>rbspy</dt>
+        <dd><a href="#04-sampling-profiler--idx-6" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-6'); return false;">4. サンプリングプロファイラの実装</a></dd>
         <dt>runtime</dt>
         <dt class="index-sub">trace</dt>
         <dd class="index-sub"><a href="#12-go-profiling--idx-2" onclick="showChapterAndScroll('12-go-profiling', '12-go-profiling--idx-2'); return false;">12. Goランタイムのプロファイリング実装</a></dd>
@@ -7903,6 +8161,8 @@ graph TD
         <dd><a href="#10-v8-profiling--idx-3" onclick="showChapterAndScroll('10-v8-profiling', '10-v8-profiling--idx-3'); return false;">10. V8エンジンのプロファイリング実装</a></dd>
         <dt>Valgrind</dt>
         <dd><a href="#05-instrumentation-profiler--idx-3" onclick="showChapterAndScroll('05-instrumentation-profiler', '05-instrumentation-profiler--idx-3'); return false;">5. 計装プロファイラの実装</a></dd>
+        <dt>Vernier</dt>
+        <dd><a href="#04-sampling-profiler--idx-3" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-3'); return false;">4. サンプリングプロファイラの実装</a></dd>
         <dt>vernier</dt>
         <dd><a href="#11-ruby-profiling--idx-3" onclick="showChapterAndScroll('11-ruby-profiling', '11-ruby-profiling--idx-3'); return false;">11. CRubyのプロファイリング実装</a></dd>
       </dl>
@@ -7911,7 +8171,7 @@ graph TD
       <h2 class="index-letter">W</h2>
       <dl class="index-entries">
         <dt>Wall-clockプロファイリング</dt>
-        <dd><a href="#04-sampling-profiler--idx-5" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-5'); return false;">4. サンプリングプロファイラの実装</a></dd>
+        <dd><a href="#04-sampling-profiler--idx-16" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-16'); return false;">4. サンプリングプロファイラの実装</a></dd>
       </dl>
     </div>
     <div class="index-group">
@@ -7962,7 +8222,7 @@ graph TD
         <dt>シャドウメモリ</dt>
         <dd><a href="#07-memory-profiling--idx-6" onclick="showChapterAndScroll('07-memory-profiling', '07-memory-profiling--idx-6'); return false;">7. メモリプロファイリング技術</a></dd>
         <dt>シンボル解決</dt>
-        <dd><a href="#04-sampling-profiler--idx-4" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-4'); return false;">4. サンプリングプロファイラの実装</a></dd>
+        <dd><a href="#04-sampling-profiler--idx-15" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-15'); return false;">4. サンプリングプロファイラの実装</a></dd>
       </dl>
     </div>
     <div class="index-group">
@@ -7978,14 +8238,17 @@ graph TD
       <h2 class="index-letter">セ</h2>
       <dl class="index-entries">
         <dt>セーフポイント</dt>
+        <dd><a href="#04-sampling-profiler--idx-7" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-7'); return false;">4. サンプリングプロファイラの実装</a></dd>
         <dd><a href="#08-jvm-profiling--idx-2" onclick="showChapterAndScroll('08-jvm-profiling', '08-jvm-profiling--idx-2'); return false;">8. JVMのプロファイリング実装</a></dd>
+        <dt>セーフポイントバイアス</dt>
+        <dd><a href="#04-sampling-profiler--idx-9" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-9'); return false;">4. サンプリングプロファイラの実装</a></dd>
       </dl>
     </div>
     <div class="index-group">
       <h2 class="index-letter">ト</h2>
       <dl class="index-entries">
         <dt>トライ木</dt>
-        <dd><a href="#04-sampling-profiler--idx-7" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-7'); return false;">4. サンプリングプロファイラの実装</a></dd>
+        <dd><a href="#04-sampling-profiler--idx-18" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-18'); return false;">4. サンプリングプロファイラの実装</a></dd>
       </dl>
     </div>
     <div class="index-group">
@@ -8035,7 +8298,7 @@ graph TD
       <h2 class="index-letter">ロ</h2>
       <dl class="index-entries">
         <dt>ロックステップ問題</dt>
-        <dd><a href="#04-sampling-profiler--idx-2" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-2'); return false;">4. サンプリングプロファイラの実装</a></dd>
+        <dd><a href="#04-sampling-profiler--idx-13" onclick="showChapterAndScroll('04-sampling-profiler', '04-sampling-profiler--idx-13'); return false;">4. サンプリングプロファイラの実装</a></dd>
       </dl>
     </div>
     <div class="index-group">
