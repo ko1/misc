@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>rperf Logo – Gauge Variations × 50</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=EB+Garamond:wght@700;800&family=Libre+Baskerville:wght@700&family=Lora:wght@700&family=Merriweather:wght@700;900&family=DM+Serif+Display&family=Noto+Serif:wght@700;900&family=Source+Serif+4:wght@700;900&family=IBM+Plex+Serif:wght@700&family=Bitter:wght@700;900&family=Roboto+Slab:wght@700;900&family=Cinzel:wght@700;900&family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@700&family=Fira+Code:wght@700&family=Space+Mono:wght@700&family=Crimson+Text:wght@700&family=Spectral:wght@700;800&family=Vollkorn:wght@700;900&display=swap');
+  body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; padding: 2rem; }
+  h1 { text-align: center; margin-bottom: 0.3rem; }
+  p.subtitle { text-align: center; color: #888; margin-bottom: 2rem; font-size: 0.9rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.5rem; }
+  .card { background: #16213e; border-radius: 10px; padding: 1.2rem; text-align: center; }
+  .card h3 { margin: 0.6rem 0 0.15rem; color: #c8a96e; font-size: 0.85rem; }
+  .card p { color: #777; font-size: 0.72rem; margin: 0; }
+  svg { max-width: 290px; height: auto; }
+  .wh { background: #fff; }
+  .wh h3 { color: #8a7038; }
+  .wh p { color: #aaa; }
+  .section { grid-column: 1 / -1; margin-top: 1rem; padding: 0; }
+  .section h2 { color: #c8a96e; font-size: 1.1rem; border-bottom: 1px solid #333; padding-bottom: 0.3rem; }
+</style>
+</head>
+<body>
+<h1>rperf Logo – Gauge Variations</h1>
+<p class="subtitle">#17 Gauge をベースに 50 バリエーション</p>
+
+<div class="grid">
+
+<!-- ===== A. Arc thickness / style ===== -->
+<div class="section"><h2>A. Arc variations (太さ・スタイル・角度)</h2></div>
+
+<!-- 1. Original #17 for reference -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="40"/><line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#1 Original (reference)</h3><p>元の #17</p>
+</div>
+
+<!-- 2. Thick arc -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="8" stroke-linecap="round"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="84" y2="78"/><line x1="100" y1="46" x2="106" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="174" y2="54"/>
+    <line x1="204" y1="72" x2="196" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="58" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#2 Thick Arc</h3><p>太めアーク + round cap</p>
+</div>
+
+<!-- 3. Thin elegant arc -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M65,105 A75,75 0 0,1 215,105" fill="none" stroke="#cc342d" stroke-width="1.2"/>
+  <g stroke="#c8a96e" stroke-width="0.8">
+    <line x1="71" y1="70" x2="78" y2="76"/><line x1="97" y1="42" x2="102" y2="50"/>
+    <line x1="140" y1="30" x2="140" y2="40"/><line x1="183" y1="42" x2="178" y2="50"/>
+    <line x1="209" y1="70" x2="202" y2="76"/>
+  </g>
+  <line x1="140" y1="105" x2="190" y2="55" stroke="#cc342d" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="2.5" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="28" font-weight="700" fill="#c8a96e" letter-spacing="6">rperf</text>
+</svg>
+<h3>#3 Thin Elegant</h3><p>細い線 + Cormorant Garamond</p>
+</div>
+
+<!-- 4. Dashed arc -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3" stroke-dasharray="8 4"/>
+  <line x1="140" y1="105" x2="186" y2="57" stroke="#cc342d" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="3.5" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#4 Dashed Arc</h3><p>破線アーク</p>
+</div>
+
+<!-- 5. Wide 270-degree arc -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <path d="M85,130 A60,60 0 1,1 195,130" fill="none" stroke="#cc342d" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#cc342d" stroke-width="1.2">
+    <line x1="82" y1="82" x2="89" y2="86"/><line x1="96" y1="56" x2="102" y2="62"/>
+    <line x1="122" y1="42" x2="125" y2="50"/><line x1="155" y1="42" x2="152" y2="50"/>
+    <line x1="178" y1="56" x2="172" y2="62"/><line x1="192" y1="82" x2="185" y2="86"/>
+  </g>
+  <line x1="140" y1="100" x2="176" y2="60" stroke="#c8a96e" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="3.5" fill="#c8a96e"/>
+  <text x="140" y="160" text-anchor="middle" font-family="'Bitter', serif" font-size="24" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#5 Wide 270° Arc</h3><p>ほぼ全周ゲージ</p>
+</div>
+
+<!-- 6. Double arc -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M68,105 A72,72 0 0,1 212,105" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <path d="M78,105 A62,62 0 0,1 202,105" fill="none" stroke="#cc342d" stroke-width="1" opacity="0.4"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="74" y1="70" x2="81" y2="76"/><line x1="100" y1="44" x2="105" y2="52"/>
+    <line x1="140" y1="34" x2="140" y2="44"/><line x1="180" y1="44" x2="175" y2="52"/>
+    <line x1="206" y1="70" x2="199" y2="76"/>
+  </g>
+  <line x1="140" y1="105" x2="187" y2="57" stroke="#8a7038" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="3.5" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Playfair Display', serif" font-size="26" font-weight="900" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#6 Double Arc</h3><p>二重アーク</p>
+</div>
+
+<!-- 7. Gradient-like segmented arc -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M72,105 A68,68 0 0,1 100,45" fill="none" stroke="#cc342d" stroke-width="5" stroke-linecap="round" opacity="0.2"/>
+  <path d="M100,45 A68,68 0 0,1 140,35" fill="none" stroke="#cc342d" stroke-width="5" stroke-linecap="round" opacity="0.4"/>
+  <path d="M140,35 A68,68 0 0,1 180,45" fill="none" stroke="#cc342d" stroke-width="5" stroke-linecap="round" opacity="0.6"/>
+  <path d="M180,45 A68,68 0 0,1 208,105" fill="none" stroke="#cc342d" stroke-width="5" stroke-linecap="round" opacity="1.0"/>
+  <line x1="140" y1="105" x2="190" y2="55" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#c8a96e"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="26" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#7 Gradient Segments</h3><p>段階的に濃くなるアーク</p>
+</div>
+
+<!-- ===== B. Needle / indicator style ===== -->
+<div class="section"><h2>B. Needle variations (針のスタイル)</h2></div>
+
+<!-- 8. Triangle needle -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <polygon points="187,57 138,98 142,102" fill="#c8a96e"/>
+  <circle cx="140" cy="105" r="5" fill="#c8a96e"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#8 Triangle Needle</h3><p>三角形の針</p>
+</div>
+
+<!-- 9. Arrow needle -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <g stroke="#cc342d" stroke-width="1.2">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="185" y2="58" stroke="#cc342d" stroke-width="2" stroke-linecap="round"/>
+  <!-- arrowhead -->
+  <polygon points="185,58 177,55 180,64" fill="#cc342d"/>
+  <circle cx="140" cy="105" r="3" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'EB Garamond', serif" font-size="28" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#9 Arrow Needle</h3><p>矢印付き針</p>
+</div>
+
+<!-- 10. Needle pointing left (low) -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="92" y2="58" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#10 Needle Left</h3><p>針が左（低速）を指す</p>
+</div>
+
+<!-- 11. Needle straight up (center) -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="140" y2="40" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Noto Serif', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#11 Needle Center</h3><p>12時方向 = バランス</p>
+</div>
+
+<!-- 12. Dot indicator instead of needle -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="192" cy="55" r="6" fill="#c8a96e"/>
+  <circle cx="140" cy="105" r="2" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Libre Baskerville', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#12 Dot Indicator</h3><p>針の代わりにドット</p>
+</div>
+
+<!-- ===== C. Color / mood ===== -->
+<div class="section"><h2>C. Color & mood variations</h2></div>
+
+<!-- 13. Gold on dark -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#c8a96e" stroke-width="3"/>
+  <g stroke="#c8a96e" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#c8a96e"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#13 All Gold</h3><p>金一色 on dark</p>
+</div>
+
+<!-- 14. Ruby red monochrome on white -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#cc342d" letter-spacing="5">rperf</text>
+</svg>
+<h3>#14 Ruby Red Mono</h3><p>赤一色</p>
+</div>
+
+<!-- 15. Dark/charcoal -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#2d2d2d" stroke-width="3"/>
+  <g stroke="#2d2d2d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#2d2d2d" letter-spacing="5">rperf</text>
+</svg>
+<h3>#15 Charcoal + Red Needle</h3><p>ダークグレー、針だけ赤</p>
+</div>
+
+<!-- 16. Green zone gauge -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M72,105 A68,68 0 0,1 120,40" fill="none" stroke="#cc342d" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M120,40 A68,68 0 0,1 170,38" fill="none" stroke="#c8a96e" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M170,38 A68,68 0 0,1 208,105" fill="none" stroke="#4a9" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+  <line x1="140" y1="105" x2="190" y2="55" stroke="#4a9" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#eee"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#16 Traffic Light Arc</h3><p>赤→黄→緑のゾーン</p>
+</div>
+
+<!-- 17. Warm gradient arc -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M72,105 A68,68 0 0,1 115,42" fill="none" stroke="#e8c060" stroke-width="5" stroke-linecap="round"/>
+  <path d="M115,42 A68,68 0 0,1 165,38" fill="none" stroke="#d87040" stroke-width="5" stroke-linecap="round"/>
+  <path d="M165,38 A68,68 0 0,1 208,105" fill="none" stroke="#cc342d" stroke-width="5" stroke-linecap="round"/>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Bitter', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#17 Warm Gradient</h3><p>黄→橙→赤の暖色グラデ</p>
+</div>
+
+<!-- 18. Filled arc background -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105 L140,105 Z" fill="#cc342d" opacity="0.1"/>
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#c8a96e"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#18 Filled Background</h3><p>半円を薄く塗りつぶし</p>
+</div>
+
+<!-- ===== D. Tick marks ===== -->
+<div class="section"><h2>D. Tick mark variations (目盛り)</h2></div>
+
+<!-- 19. Many fine ticks -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="2"/>
+  <g stroke="#cc342d" stroke-width="0.8" opacity="0.5">
+    <line x1="72" y1="78" x2="77" y2="82"/><line x1="76" y1="72" x2="82" y2="77"/>
+    <line x1="82" y1="64" x2="88" y2="69"/><line x1="90" y1="54" x2="95" y2="60"/>
+    <line x1="100" y1="46" x2="105" y2="52"/><line x1="110" y1="40" x2="114" y2="47"/>
+    <line x1="122" y1="36" x2="125" y2="44"/><line x1="134" y1="34" x2="136" y2="42"/>
+    <line x1="146" y1="34" x2="144" y2="42"/><line x1="158" y1="36" x2="155" y2="44"/>
+    <line x1="170" y1="40" x2="166" y2="47"/><line x1="180" y1="46" x2="175" y2="52"/>
+    <line x1="190" y1="54" x2="185" y2="60"/><line x1="198" y1="64" x2="192" y2="69"/>
+    <line x1="204" y1="72" x2="198" y2="77"/><line x1="208" y1="78" x2="203" y2="82"/>
+  </g>
+  <!-- major ticks -->
+  <g stroke="#cc342d" stroke-width="1.8">
+    <line x1="76" y1="72" x2="84" y2="79"/><line x1="140" y1="34" x2="140" y2="45"/>
+    <line x1="204" y1="72" x2="196" y2="79"/>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#cc342d" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="3.5" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#19 Fine Ticks</h3><p>細かい目盛り + 主要目盛り</p>
+</div>
+
+<!-- 20. No ticks, clean -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3" stroke-linecap="round"/>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#c8a96e"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Lora', serif" font-size="28" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#20 No Ticks</h3><p>目盛りなし、ミニマル</p>
+</div>
+
+<!-- 21. Tick dots instead of lines -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <circle cx="79" cy="74" r="2.5" fill="#cc342d"/>
+  <circle cx="102" cy="48" r="2.5" fill="#cc342d"/>
+  <circle cx="140" cy="38" r="2.5" fill="#cc342d"/>
+  <circle cx="178" cy="48" r="2.5" fill="#cc342d"/>
+  <circle cx="201" cy="74" r="2.5" fill="#cc342d"/>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#8a7038" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="3.5" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Spectral', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#21 Dot Ticks</h3><p>線の代わりにドット目盛り</p>
+</div>
+
+<!-- 22. Numbers on ticks -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <g stroke="#cc342d" stroke-width="1.2">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="44"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <g font-family="'JetBrains Mono', monospace" font-size="8" fill="#c8a96e" text-anchor="middle">
+    <text x="72" y="66">0</text><text x="95" y="40">25</text>
+    <text x="140" y="30">50</text><text x="185" y="40">75</text>
+    <text x="210" y="66">100</text>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#c8a96e" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="3.5" fill="#c8a96e"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="700" fill="#c8a96e" letter-spacing="4">rperf</text>
+</svg>
+<h3>#22 Numbered Ticks</h3><p>数値付き目盛り</p>
+</div>
+
+<!-- ===== E. Text layout / typography ===== -->
+<div class="section"><h2>E. Text layout & typography</h2></div>
+
+<!-- 23. Text inside gauge -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M60,115 A80,80 0 0,1 220,115" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="67" y1="78" x2="74" y2="84"/><line x1="88" y1="50" x2="94" y2="58"/>
+    <line x1="140" y1="35" x2="140" y2="45"/><line x1="192" y1="50" x2="186" y2="58"/>
+    <line x1="213" y1="78" x2="206" y2="84"/>
+  </g>
+  <line x1="140" y1="115" x2="196" y2="60" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="115" r="4" fill="#c8a96e"/>
+  <text x="140" y="108" text-anchor="middle" font-family="'Playfair Display', serif" font-size="30" font-weight="900" fill="#c8a96e">rperf</text>
+</svg>
+<h3>#23 Text Inside</h3><p>ゲージ内にテキスト</p>
+</div>
+
+<!-- 24. R inside gauge, perf below -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <text x="140" y="95" text-anchor="middle" font-family="'Playfair Display', serif" font-size="55" font-weight="900" fill="#cc342d">R</text>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#8a7038" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="3.5" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Playfair Display', serif" font-size="24" font-weight="700" fill="#8a7038" letter-spacing="8">perf</text>
+</svg>
+<h3>#24 R in Gauge</h3><p>ゲージ内に大きな R</p>
+</div>
+
+<!-- 25. Monospace font -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="105" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="42"/><line x1="180" y1="42" x2="175" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <line x1="140" y1="100" x2="188" y2="53" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#c8a96e"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Fira Code', monospace" font-size="28" font-weight="700" fill="#c8a96e" letter-spacing="3">rperf</text>
+</svg>
+<h3>#25 Fira Code</h3><p>モノスペース体</p>
+</div>
+
+<!-- 26. Cinzel uppercase -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="105" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="42"/><line x1="180" y1="42" x2="175" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <line x1="140" y1="100" x2="188" y2="53" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Cinzel', serif" font-size="24" font-weight="900" fill="#8a7038" letter-spacing="8">RPERF</text>
+</svg>
+<h3>#26 Cinzel Caps</h3><p>大文字ステンシル</p>
+</div>
+
+<!-- 27. Two-tone r|perf -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="105" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="42"/><line x1="180" y1="42" x2="175" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <line x1="140" y1="100" x2="188" y2="53" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#cc342d"/>
+  <text x="115" y="148" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="28" fill="#cc342d">r</text>
+  <text x="165" y="148" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="28" fill="#c8a96e" letter-spacing="4">perf</text>
+</svg>
+<h3>#27 Two-tone</h3><p>r=赤, perf=金</p>
+</div>
+
+<!-- 28. Vollkorn bold -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="105" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="42"/><line x1="180" y1="42" x2="175" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <line x1="140" y1="100" x2="188" y2="53" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Vollkorn', serif" font-size="28" font-weight="900" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#28 Vollkorn</h3><p>肉厚セリフ</p>
+</div>
+
+<!-- 29. Source Serif with subtitle -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="105" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="42"/><line x1="180" y1="42" x2="175" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <line x1="140" y1="100" x2="188" y2="53" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#c8a96e"/>
+  <text x="140" y="142" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="26" font-weight="900" fill="#c8a96e" letter-spacing="5">rperf</text>
+  <text x="140" y="162" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="10" fill="#666" letter-spacing="2">Ruby profiler</text>
+</svg>
+<h3>#29 With Subtitle</h3><p>サブタイトル付き</p>
+</div>
+
+<!-- 30. Merriweather condensed -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="105" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="42"/><line x1="180" y1="42" x2="175" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <line x1="140" y1="100" x2="188" y2="53" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Merriweather', serif" font-size="26" font-weight="900" fill="#8a7038" letter-spacing="4">rperf</text>
+</svg>
+<h3>#30 Merriweather</h3><p>読みやすいセリフ</p>
+</div>
+
+<!-- ===== F. Composition / layout ===== -->
+<div class="section"><h2>F. Composition & layout</h2></div>
+
+<!-- 31. Gauge left, text right -->
+<div class="card">
+<svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30,80 A50,50 0 0,1 130,80" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <g stroke="#cc342d" stroke-width="1.2">
+    <line x1="35" y1="57" x2="40" y2="62"/><line x1="55" y1="38" x2="59" y2="44"/>
+    <line x1="80" y1="30" x2="80" y2="38"/><line x1="105" y1="38" x2="101" y2="44"/>
+    <line x1="125" y1="57" x2="120" y2="62"/>
+  </g>
+  <line x1="80" y1="80" x2="115" y2="42" stroke="#c8a96e" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="80" cy="80" r="3" fill="#c8a96e"/>
+  <text x="215" y="68" text-anchor="middle" font-family="'Playfair Display', serif" font-size="40" font-weight="900" fill="#c8a96e">rperf</text>
+  <line x1="155" y1="80" x2="275" y2="80" stroke="#c8a96e" stroke-width="0.5" opacity="0.3"/>
+</svg>
+<h3>#31 Horizontal Layout</h3><p>左にゲージ、右にテキスト</p>
+</div>
+
+<!-- 32. Small gauge as icon -->
+<div class="card wh">
+<svg viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10,55 A30,30 0 0,1 70,55" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <line x1="40" y1="55" x2="58" y2="30" stroke="#cc342d" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="40" cy="55" r="3" fill="#cc342d"/>
+  <text x="185" y="52" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="38" font-weight="700" fill="#8a7038" letter-spacing="4">rperf</text>
+</svg>
+<h3>#32 Icon + Wordmark</h3><p>小さいゲージアイコン</p>
+</div>
+
+<!-- 33. Gauge above, text centered below -->
+<div class="card">
+<svg viewBox="0 0 280 140" xmlns="http://www.w3.org/2000/svg">
+  <path d="M95,75 A45,45 0 0,1 185,75" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.2">
+    <line x1="99" y1="56" x2="104" y2="60"/><line x1="118" y1="38" x2="121" y2="44"/>
+    <line x1="140" y1="30" x2="140" y2="38"/><line x1="162" y1="38" x2="159" y2="44"/>
+    <line x1="181" y1="56" x2="176" y2="60"/>
+  </g>
+  <line x1="140" y1="75" x2="170" y2="40" stroke="#c8a96e" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="140" cy="75" r="3" fill="#c8a96e"/>
+  <text x="140" y="120" text-anchor="middle" font-family="'EB Garamond', serif" font-size="34" font-weight="700" fill="#c8a96e" letter-spacing="6">rperf</text>
+</svg>
+<h3>#33 Compact Stacked</h3><p>コンパクトな上下配置</p>
+</div>
+
+<!-- 34. Very small gauge as logo mark -->
+<div class="card wh">
+<svg viewBox="0 0 280 70" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15,48 A22,22 0 0,1 59,48" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <line x1="37" y1="48" x2="50" y2="30" stroke="#cc342d" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="37" cy="48" r="2.5" fill="#cc342d"/>
+  <text x="170" y="48" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="36" font-weight="900" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#34 Inline Mark</h3><p>インラインで使えるマーク</p>
+</div>
+
+<!-- 35. Gauge replaces the r -->
+<div class="card">
+<svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- gauge as "r" -->
+  <path d="M35,72 A28,28 0 0,1 91,72" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <line x1="63" y1="72" x2="80" y2="48" stroke="#cc342d" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="63" cy="72" r="2.5" fill="#cc342d"/>
+  <text x="190" y="74" text-anchor="middle" font-family="'Playfair Display', serif" font-size="48" font-weight="900" fill="#c8a96e" letter-spacing="5">perf</text>
+</svg>
+<h3>#35 Gauge as R</h3><p>ゲージが r の代わり</p>
+</div>
+
+<!-- 36. Text wrapping around gauge -->
+<div class="card wh">
+<svg viewBox="0 0 280 150" xmlns="http://www.w3.org/2000/svg">
+  <path d="M90,100 A50,50 0 0,1 190,100" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <g stroke="#cc342d" stroke-width="1.2">
+    <line x1="94" y1="76" x2="99" y2="80"/><line x1="115" y1="58" x2="119" y2="64"/>
+    <line x1="140" y1="50" x2="140" y2="58"/><line x1="165" y1="58" x2="161" y2="64"/>
+    <line x1="186" y1="76" x2="181" y2="80"/>
+  </g>
+  <line x1="140" y1="100" x2="175" y2="60" stroke="#8a7038" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="3" fill="#8a7038"/>
+  <text x="68" y="105" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="42" fill="#cc342d">r</text>
+  <text x="140" y="140" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="20" fill="#8a7038" letter-spacing="4">perf</text>
+</svg>
+<h3>#36 R Left of Gauge</h3><p>r がゲージの横</p>
+</div>
+
+<!-- ===== G. Embellishments ===== -->
+<div class="section"><h2>G. Embellishments (装飾)</h2></div>
+
+<!-- 37. Diamond divider line below gauge -->
+<div class="card">
+<svg viewBox="0 0 280 165" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,95 A70,70 0 0,1 210,95" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="63" x2="82" y2="69"/><line x1="100" y1="37" x2="105" y2="45"/>
+    <line x1="140" y1="27" x2="140" y2="37"/><line x1="180" y1="37" x2="175" y2="45"/>
+    <line x1="204" y1="63" x2="198" y2="69"/>
+  </g>
+  <line x1="140" y1="95" x2="188" y2="48" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="95" r="4" fill="#c8a96e"/>
+  <!-- diamond divider from original sperf -->
+  <line x1="45" y1="115" x2="110" y2="115" stroke="#cc342d" stroke-width="0.8"/>
+  <polygon points="140,111 144,115 140,119 136,115" fill="#cc342d" opacity="0.7"/>
+  <line x1="170" y1="115" x2="235" y2="115" stroke="#cc342d" stroke-width="0.8"/>
+  <text x="140" y="150" text-anchor="middle" font-family="'EB Garamond', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="8">rperf</text>
+</svg>
+<h3>#37 Diamond Divider</h3><p>元ロゴのダイヤ装飾を継承</p>
+</div>
+
+<!-- 38. Gauge with gem shape integrated -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ruby gem outline around gauge -->
+  <polygon points="140,15 195,45 195,95 140,125 85,95 85,45" fill="none" stroke="#cc342d" stroke-width="1.5" opacity="0.3"/>
+  <path d="M90,95 A50,50 0 0,1 190,95" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="94" y1="72" x2="100" y2="77"/><line x1="115" y1="53" x2="119" y2="59"/>
+    <line x1="140" y1="45" x2="140" y2="53"/><line x1="165" y1="53" x2="161" y2="59"/>
+    <line x1="186" y1="72" x2="180" y2="77"/>
+  </g>
+  <line x1="140" y1="95" x2="178" y2="57" stroke="#8a7038" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="140" cy="95" r="3.5" fill="#8a7038"/>
+  <text x="140" y="152" text-anchor="middle" font-family="'Noto Serif', serif" font-size="24" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#38 Gem Frame</h3><p>Ruby gem 六角形がフレーム</p>
+</div>
+
+<!-- 39. Gauge with small ruby gem at pivot -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- small gem at pivot -->
+  <polygon points="140,98 146,105 140,112 134,105" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#39 Gem Pivot</h3><p>中心にダイヤモンド</p>
+</div>
+
+<!-- 40. Stars/sparkles decoration -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#8a7038"/>
+  <!-- sparkles at needle tip -->
+  <g fill="#c8a96e" opacity="0.6">
+    <circle cx="192" cy="52" r="1.5"/><circle cx="198" cy="48" r="1"/>
+    <circle cx="195" cy="58" r="1"/><circle cx="200" cy="55" r="0.8"/>
+  </g>
+  <text x="140" y="148" text-anchor="middle" font-family="'Crimson Text', serif" font-size="28" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#40 Sparkles</h3><p>針先にきらめき</p>
+</div>
+
+<!-- 41. Underline accent on r -->
+<div class="card">
+<svg viewBox="0 0 280 165" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="105" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="42"/><line x1="180" y1="42" x2="175" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <line x1="140" y1="100" x2="188" y2="53" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#c8a96e"/>
+  <text x="140" y="145" text-anchor="middle" font-family="'Source Serif 4', serif" font-size="28" font-weight="900" fill="#c8a96e" letter-spacing="5">rperf</text>
+  <line x1="103" y1="150" x2="120" y2="150" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
+<h3>#41 R Underline</h3><p>r の下だけアクセント線</p>
+</div>
+
+<!-- ===== H. Size / proportion ===== -->
+<div class="section"><h2>H. Size & proportion</h2></div>
+
+<!-- 42. Tiny gauge, big text -->
+<div class="card">
+<svg viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M25,60 A20,20 0 0,1 65,60" fill="none" stroke="#cc342d" stroke-width="2"/>
+  <line x1="45" y1="60" x2="57" y2="44" stroke="#cc342d" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="45" cy="60" r="2" fill="#cc342d"/>
+  <text x="175" y="68" text-anchor="middle" font-family="'Playfair Display', serif" font-size="52" font-weight="900" fill="#c8a96e">rperf</text>
+</svg>
+<h3>#42 Tiny Gauge</h3><p>小さいゲージ + 大きいテキスト</p>
+</div>
+
+<!-- 43. Big gauge, small text -->
+<div class="card wh">
+<svg viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+  <path d="M40,130 A100,100 0 0,1 240,130" fill="none" stroke="#cc342d" stroke-width="3.5"/>
+  <g stroke="#cc342d" stroke-width="1.8">
+    <line x1="48" y1="86" x2="56" y2="92"/><line x1="78" y1="50" x2="85" y2="58"/>
+    <line x1="140" y1="30" x2="140" y2="42"/><line x1="202" y1="50" x2="195" y2="58"/>
+    <line x1="232" y1="86" x2="224" y2="92"/>
+  </g>
+  <line x1="140" y1="130" x2="210" y2="58" stroke="#8a7038" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="140" cy="130" r="5" fill="#8a7038"/>
+  <text x="140" y="170" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="22" font-weight="700" fill="#8a7038" letter-spacing="6">rperf</text>
+</svg>
+<h3>#43 Large Gauge</h3><p>大きなゲージ</p>
+</div>
+
+<!-- 44. Square format -->
+<div class="card">
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M35,100 A55,55 0 0,1 125,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.3">
+    <line x1="40" y1="72" x2="46" y2="77"/><line x1="57" y1="52" x2="62" y2="58"/>
+    <line x1="80" y1="45" x2="80" y2="53"/><line x1="103" y1="52" x2="98" y2="58"/>
+    <line x1="120" y1="72" x2="114" y2="77"/>
+  </g>
+  <line x1="80" y1="100" x2="112" y2="58" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="80" cy="100" r="3.5" fill="#c8a96e"/>
+  <text x="80" y="140" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="4">rperf</text>
+</svg>
+<h3>#44 Square</h3><p>正方形フォーマット（favicon 向き）</p>
+</div>
+
+<!-- 45. Wide banner -->
+<div class="card wh">
+<svg viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15,55 A30,30 0 0,1 75,55" fill="none" stroke="#cc342d" stroke-width="2.5"/>
+  <g stroke="#cc342d" stroke-width="1.2">
+    <line x1="19" y1="38" x2="24" y2="42"/><line x1="35" y1="28" x2="38" y2="34"/>
+    <line x1="53" y1="28" x2="50" y2="34"/><line x1="69" y1="38" x2="64" y2="42"/>
+  </g>
+  <line x1="45" y1="55" x2="63" y2="32" stroke="#8a7038" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="45" cy="55" r="3" fill="#8a7038"/>
+  <text x="240" y="55" text-anchor="middle" font-family="'Playfair Display', serif" font-size="42" font-weight="900" fill="#8a7038" letter-spacing="8">rperf</text>
+</svg>
+<h3>#45 Wide Banner</h3><p>横長バナー形式</p>
+</div>
+
+<!-- ===== I. Special concepts ===== -->
+<div class="section"><h2>I. Special concepts</h2></div>
+
+<!-- 46. Gauge with flame graph bars in background -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- faint flame bars -->
+  <rect x="60" y="30" width="160" height="8" rx="2" fill="#cc342d" opacity="0.08"/>
+  <rect x="75" y="42" width="110" height="8" rx="2" fill="#cc342d" opacity="0.12"/>
+  <rect x="90" y="54" width="80" height="8" rx="2" fill="#cc342d" opacity="0.15"/>
+  <!-- gauge on top -->
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#c8a96e"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#46 Gauge + Flame BG</h3><p>背景にフレームグラフ</p>
+</div>
+
+<!-- 47. Gauge with sampling dots along arc -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="2"/>
+  <!-- sampling dots along arc -->
+  <circle cx="78" cy="74" r="2.5" fill="#cc342d" opacity="0.3"/>
+  <circle cx="88" cy="60" r="2.5" fill="#cc342d" opacity="0.4"/>
+  <circle cx="102" cy="48" r="2.5" fill="#cc342d" opacity="0.5"/>
+  <circle cx="120" cy="40" r="2.5" fill="#cc342d" opacity="0.6"/>
+  <circle cx="140" cy="36" r="2.5" fill="#cc342d" opacity="0.7"/>
+  <circle cx="160" cy="40" r="2.5" fill="#cc342d" opacity="0.8"/>
+  <circle cx="178" cy="48" r="2.5" fill="#cc342d" opacity="0.85"/>
+  <circle cx="192" cy="60" r="2.5" fill="#cc342d" opacity="0.9"/>
+  <circle cx="202" cy="74" r="2.5" fill="#cc342d" opacity="1.0"/>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#47 Sampling Dots</h3><p>アーク上にサンプリング点</p>
+</div>
+
+<!-- 48. Gauge with pulse line overlaid -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,105 A70,70 0 0,1 210,105" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="72" x2="82" y2="78"/><line x1="100" y1="46" x2="105" y2="54"/>
+    <line x1="140" y1="36" x2="140" y2="46"/><line x1="180" y1="46" x2="175" y2="54"/>
+    <line x1="204" y1="72" x2="198" y2="78"/>
+  </g>
+  <line x1="140" y1="105" x2="188" y2="57" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#c8a96e"/>
+  <!-- heartbeat/pulse line -->
+  <polyline points="60,105 90,105 100,85 110,115 120,95 130,105 220,105" fill="none" stroke="#c8a96e" stroke-width="1.2" opacity="0.4" stroke-linejoin="round"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Lora', serif" font-size="28" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#48 Pulse Overlay</h3><p>パルス波形を重ねる</p>
+</div>
+
+<!-- 49. Gauge enclosed in circle -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="140" cy="80" r="70" fill="none" stroke="#cc342d" stroke-width="1" opacity="0.3"/>
+  <path d="M80,105 A60,60 0 0,1 200,105" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="85" y1="77" x2="91" y2="82"/><line x1="105" y1="55" x2="110" y2="62"/>
+    <line x1="140" y1="46" x2="140" y2="55"/><line x1="175" y1="55" x2="170" y2="62"/>
+    <line x1="195" y1="77" x2="189" y2="82"/>
+  </g>
+  <line x1="140" y1="105" x2="182" y2="62" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="105" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Libre Baskerville', serif" font-size="22" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#49 Encircled</h3><p>外周を薄い円で囲む</p>
+</div>
+
+<!-- 50. Asymmetric: left heavy gauge, text right-aligned -->
+<div class="card">
+<svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20,95 A65,65 0 0,1 150,95" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="25" y1="64" x2="31" y2="70"/><line x1="48" y1="40" x2="53" y2="48"/>
+    <line x1="85" y1="30" x2="85" y2="40"/><line x1="122" y1="40" x2="117" y2="48"/>
+    <line x1="145" y1="64" x2="139" y2="70"/>
+  </g>
+  <line x1="85" y1="95" x2="135" y2="43" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="85" cy="95" r="4" fill="#c8a96e"/>
+  <text x="230" y="62" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="38" fill="#c8a96e">rperf</text>
+  <text x="230" y="82" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="11" fill="#666" letter-spacing="3">Ruby profiler</text>
+</svg>
+<h3>#50 Asymmetric</h3><p>左にゲージ寄せ、右にテキスト</p>
+</div>
+
+</div><!-- grid -->
+</body>
+</html>
