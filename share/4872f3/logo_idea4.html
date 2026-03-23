@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>rperf Logo – Faceted Ruby above Gauge</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap');
+  body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; padding: 2rem; }
+  h1 { text-align: center; margin-bottom: 0.3rem; }
+  p.subtitle { text-align: center; color: #888; margin-bottom: 2rem; font-size: 0.9rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .card { background: #16213e; border-radius: 10px; padding: 1.2rem; text-align: center; }
+  .card h3 { margin: 0.6rem 0 0.15rem; color: #c8a96e; font-size: 0.85rem; }
+  .card p { color: #777; font-size: 0.72rem; margin: 0; }
+  svg { max-width: 300px; height: auto; }
+  .wh { background: #fff; }
+  .wh h3 { color: #8a7038; }
+  .wh p { color: #aaa; }
+  .section { grid-column: 1 / -1; margin-top: 1rem; padding: 0; }
+  .section h2 { color: #c8a96e; font-size: 1.1rem; border-bottom: 1px solid #333; padding-bottom: 0.3rem; }
+</style>
+</head>
+<body>
+<h1>rperf Logo – Faceted Ruby above Gauge</h1>
+<p class="subtitle">#13 ベース: Ruby gem をゲージの少し上に配置</p>
+
+<div class="grid">
+
+<!-- ===== A. Size variations ===== -->
+<div class="section"><h2>A. gem のサイズ</h2></div>
+
+<!-- 1. Small gem -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <!-- faceted gem, small -->
+  <g transform="translate(140,22)">
+    <polygon points="-7,-8 7,-8 11,-2 0,10 -11,-2" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-7" y1="-8" x2="0" y2="-2" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="7" y1="-8" x2="0" y2="-2" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-11" y1="-2" x2="11" y2="-2" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#1 Small</h3><p>小さめ gem</p>
+</div>
+
+<!-- 2. Medium gem -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#2 Medium</h3><p>中くらい gem</p>
+</div>
+
+<!-- 3. Larger gem -->
+<div class="card">
+<svg viewBox="0 0 280 175" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,27)">
+    <polygon points="-14,-15 14,-15 20,-4 0,18 -20,-4" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-14" y1="-15" x2="0" y2="-4" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="14" y1="-15" x2="0" y2="-4" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-20" y1="-4" x2="20" y2="-4" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,115 A70,70 0 0,1 210,115" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="83" x2="82" y2="89"/><line x1="100" y1="57" x2="104" y2="65"/>
+    <line x1="140" y1="47" x2="140" y2="55"/><line x1="180" y1="57" x2="176" y2="65"/>
+    <line x1="204" y1="83" x2="198" y2="89"/>
+  </g>
+  <line x1="140" y1="115" x2="185" y2="70" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="115" r="4" fill="#cc342d"/>
+  <text x="140" y="163" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#3 Large</h3><p>大きめ gem</p>
+</div>
+
+<!-- ===== B. Distance from arc ===== -->
+<div class="section"><h2>B. ゲージとの距離</h2></div>
+
+<!-- 4. Close to arc -->
+<div class="card">
+<svg viewBox="0 0 280 165" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,28)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,108 A70,70 0 0,1 210,108" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="76" x2="82" y2="82"/><line x1="100" y1="50" x2="104" y2="58"/>
+    <line x1="140" y1="40" x2="140" y2="48"/><line x1="180" y1="50" x2="176" y2="58"/>
+    <line x1="204" y1="76" x2="198" y2="82"/>
+  </g>
+  <line x1="140" y1="108" x2="185" y2="63" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="108" r="4" fill="#cc342d"/>
+  <text x="140" y="155" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#4 Close</h3><p>アークに近い</p>
+</div>
+
+<!-- 5. Medium distance -->
+<div class="card">
+<svg viewBox="0 0 280 175" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,22)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,115 A70,70 0 0,1 210,115" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="83" x2="82" y2="89"/><line x1="100" y1="57" x2="104" y2="65"/>
+    <line x1="140" y1="47" x2="140" y2="55"/><line x1="180" y1="57" x2="176" y2="65"/>
+    <line x1="204" y1="83" x2="198" y2="89"/>
+  </g>
+  <line x1="140" y1="115" x2="185" y2="70" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="115" r="4" fill="#cc342d"/>
+  <text x="140" y="163" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#5 Distant</h3><p>少し離す</p>
+</div>
+
+<!-- 6. Far away -->
+<div class="card">
+<svg viewBox="0 0 280 185" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,18)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,125 A70,70 0 0,1 210,125" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="93" x2="82" y2="99"/><line x1="100" y1="67" x2="104" y2="75"/>
+    <line x1="140" y1="57" x2="140" y2="65"/><line x1="180" y1="67" x2="176" y2="75"/>
+    <line x1="204" y1="93" x2="198" y2="99"/>
+  </g>
+  <line x1="140" y1="125" x2="185" y2="80" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="125" r="4" fill="#cc342d"/>
+  <text x="140" y="173" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#6 Far</h3><p>だいぶ離す</p>
+</div>
+
+<!-- ===== C. Gem style ===== -->
+<div class="section"><h2>C. gem のスタイル</h2></div>
+
+<!-- 7. Filled gem -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="#cc342d"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#7 Filled</h3><p>塗りつぶし gem</p>
+</div>
+
+<!-- 8. Filled gem, white bg -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="#cc342d"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#8 Filled (light)</h3><p>塗りつぶし 白背景</p>
+</div>
+
+<!-- 9. Semi-transparent filled -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="#cc342d" opacity="0.4"/>
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#9 Semi-transparent</h3><p>半透明 + アウトライン</p>
+</div>
+
+<!-- 10. Outline only, thicker -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="2"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="1"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="1"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="1"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#10 Thick Outline</h3><p>太めアウトライン + カット線</p>
+</div>
+
+<!-- 11. Faceted with inner lines, thin -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.2"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.6"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.6"/>
+    <line x1="0" y1="-3" x2="0" y2="13" stroke="#cc342d" stroke-width="0.6"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.6"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#11 Center Line</h3><p>中心線追加でカット感 up</p>
+</div>
+
+<!-- 12. No internal facet lines, outline only -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#12 Plain Outline</h3><p>カット線なし、形だけ</p>
+</div>
+
+<!-- ===== D. Opacity / subtlety ===== -->
+<div class="section"><h2>D. 控えめ度</h2></div>
+
+<!-- 13. Very subtle (low opacity outline) -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3" opacity="0.35"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8" opacity="0.25"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8" opacity="0.25"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8" opacity="0.25"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#13 Subtle (35%)</h3><p>かなり控えめ</p>
+</div>
+
+<!-- 14. Medium opacity -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3" opacity="0.6"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8" opacity="0.4"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8" opacity="0.4"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8" opacity="0.4"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#14 Medium (60%)</h3><p>ほどよい存在感</p>
+</div>
+
+<!-- 15. Full opacity -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#15 Full (100%)</h3><p>フル opacity</p>
+</div>
+
+<!-- ===== E. White background versions ===== -->
+<div class="section"><h2>E. 白背景バリエーション</h2></div>
+
+<!-- 16. Outline, white bg -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#16 Outline (light)</h3><p>アウトライン + カット線</p>
+</div>
+
+<!-- 17. Subtle on white -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3" opacity="0.5"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8" opacity="0.35"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8" opacity="0.35"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8" opacity="0.35"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#17 Subtle (light)</h3><p>控えめ白背景版</p>
+</div>
+
+<!-- 18. Filled on white, needle=gold -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="#cc342d" opacity="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#18 Filled (light)</h3><p>塗りつぶし + 金針</p>
+</div>
+
+<!-- ===== F. Needle color combos ===== -->
+<div class="section"><h2>F. 針の色との組み合わせ</h2></div>
+
+<!-- 19. All red (gem + gauge + needle + text) -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#cc342d" letter-spacing="5">rperf</text>
+</svg>
+<h3>#19 All Red</h3><p>全部 Ruby Red</p>
+</div>
+
+<!-- 20. Red gem + gold gauge/needle/text -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#c8a96e" stroke-width="3"/>
+  <g stroke="#c8a96e" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#c8a96e" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#c8a96e"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#20 Red Gem + Gold</h3><p>gem だけ赤、他は金</p>
+</div>
+
+<!-- 21. Darker red gem (#aa2820) -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#aa2820" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#aa2820" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#aa2820" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#aa2820" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#21 Darker Gem</h3><p>gem を元ロゴ色(#aa2820)に</p>
+</div>
+
+<!-- ===== G. Extras ===== -->
+<div class="section"><h2>G. 追加バリエーション</h2></div>
+
+<!-- 22. Gem + no 12 o'clock tick (gem replaces it visually) -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <!-- no 12 o'clock tick — gem serves as visual anchor -->
+    <line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#22 Replaces Top Tick</h3><p>12時目盛りを gem が代替</p>
+</div>
+
+<!-- 23. Same, white -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#23 Replaces Tick (light)</h3><p>#22 白背景版</p>
+</div>
+
+<!-- 24. Small gem, 12 o'clock tick kept -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,20)">
+    <polygon points="-8,-9 8,-9 12,-2 0,11 -12,-2" fill="none" stroke="#cc342d" stroke-width="1.2"/>
+    <line x1="-8" y1="-9" x2="0" y2="-2" stroke="#cc342d" stroke-width="0.7"/>
+    <line x1="8" y1="-9" x2="0" y2="-2" stroke="#cc342d" stroke-width="0.7"/>
+    <line x1="-12" y1="-2" x2="12" y2="-2" stroke="#cc342d" stroke-width="0.7"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#24 Small + Tick Kept</h3><p>小gem、目盛りも残す</p>
+</div>
+
+<!-- 25. Small + tick kept, white -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,20)">
+    <polygon points="-8,-9 8,-9 12,-2 0,11 -12,-2" fill="none" stroke="#cc342d" stroke-width="1.2"/>
+    <line x1="-8" y1="-9" x2="0" y2="-2" stroke="#cc342d" stroke-width="0.7"/>
+    <line x1="8" y1="-9" x2="0" y2="-2" stroke="#cc342d" stroke-width="0.7"/>
+    <line x1="-12" y1="-2" x2="12" y2="-2" stroke="#cc342d" stroke-width="0.7"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#25 Small + Tick (light)</h3><p>#24 白背景版</p>
+</div>
+
+<!-- 26. Gem touching arc top -->
+<div class="card">
+<svg viewBox="0 0 280 165" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,108 A70,70 0 0,1 210,108" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="76" x2="82" y2="82"/><line x1="100" y1="50" x2="104" y2="58"/>
+    <line x1="180" y1="50" x2="176" y2="58"/>
+    <line x1="204" y1="76" x2="198" y2="82"/>
+  </g>
+  <!-- gem bottom touches arc top -->
+  <g transform="translate(140,26)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#cc342d" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <line x1="140" y1="108" x2="185" y2="63" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="108" r="4" fill="#cc342d"/>
+  <text x="140" y="155" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#26 Touching Arc</h3><p>gem 底辺がアーク頂点に接する</p>
+</div>
+
+<!-- 27. Gem with slight gap, dark red (#aa2820) like original sperf -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#aa2820" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#aa2820" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#aa2820" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#aa2820" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#aa2820" stroke-width="3"/>
+  <g stroke="#aa2820" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#aa2820" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#aa2820"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#27 Original Color</h3><p>元ロゴと同じ #aa2820</p>
+</div>
+
+<!-- 28. Original color, white bg -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="none" stroke="#aa2820" stroke-width="1.3"/>
+    <line x1="-10" y1="-11" x2="0" y2="-3" stroke="#aa2820" stroke-width="0.8"/>
+    <line x1="10" y1="-11" x2="0" y2="-3" stroke="#aa2820" stroke-width="0.8"/>
+    <line x1="-15" y1="-3" x2="15" y2="-3" stroke="#aa2820" stroke-width="0.8"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#aa2820" stroke-width="3"/>
+  <g stroke="#aa2820" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#aa2820" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#aa2820"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#28 Original Color (light)</h3><p>#27 白背景版</p>
+</div>
+
+<!-- 29. Filled gem + diamond pivot combo -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="#cc342d" opacity="0.7"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="140,104 145,110 140,116 135,110" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#29 Gem + Pivot</h3><p>上に塗り gem + 軸もダイヤ</p>
+</div>
+
+<!-- 30. The "best of" combo -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,24)">
+    <polygon points="-10,-11 10,-11 15,-3 0,13 -15,-3" fill="#cc342d" opacity="0.7"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="140,104 145,110 140,116 135,110" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#30 Gem + Pivot (light)</h3><p>#29 白背景版</p>
+</div>
+
+</div><!-- grid -->
+</body>
+</html>

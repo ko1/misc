@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>rperf Logo – #12 Tiny Ruby Refinement</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap');
+  body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; padding: 2rem; }
+  h1 { text-align: center; margin-bottom: 0.3rem; }
+  p.subtitle { text-align: center; color: #888; margin-bottom: 2rem; font-size: 0.9rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .card { background: #16213e; border-radius: 10px; padding: 1.2rem; text-align: center; }
+  .card h3 { margin: 0.6rem 0 0.15rem; color: #c8a96e; font-size: 0.85rem; }
+  .card p { color: #777; font-size: 0.72rem; margin: 0; }
+  svg { max-width: 300px; height: auto; }
+  .wh { background: #fff; }
+  .wh h3 { color: #8a7038; }
+  .wh p { color: #aaa; }
+  .section { grid-column: 1 / -1; margin-top: 1rem; padding: 0; }
+  .section h2 { color: #c8a96e; font-size: 1.1rem; border-bottom: 1px solid #333; padding-bottom: 0.3rem; }
+</style>
+</head>
+<body>
+<h1>rperf Logo – Tiny Ruby Refinement</h1>
+<p class="subtitle">#12 Plain Outline ベース: gem をもっと小さく・上 or 12時目盛りの下</p>
+
+<div class="grid">
+
+<!-- ===== A. もっと上に (アークから離す) ===== -->
+<div class="section"><h2>A. もっと上に — アークから離して小さく</h2></div>
+
+<!-- 1 -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,14)">
+    <polygon points="-6,-7 6,-7 9,-2 0,8 -9,-2" fill="none" stroke="#cc342d" stroke-width="1"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#1 Tiny, high</h3><p>小さく、かなり上</p>
+</div>
+
+<!-- 2 -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,14)">
+    <polygon points="-6,-7 6,-7 9,-2 0,8 -9,-2" fill="none" stroke="#cc342d" stroke-width="1"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#2 Tiny, high (light)</h3><p>#1 白背景</p>
+</div>
+
+<!-- 3: even smaller -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,12)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#3 Extra tiny, high</h3><p>極小、高い位置</p>
+</div>
+
+<!-- 4: even smaller, white -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,12)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#4 Extra tiny, high (light)</h3><p>#3 白背景</p>
+</div>
+
+<!-- 5: slightly reduced opacity -->
+<div class="card">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,13)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9" opacity="0.6"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#cc342d"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#5 Tiny, faded</h3><p>極小 + 60% opacity</p>
+</div>
+
+<!-- 6: faded, white -->
+<div class="card wh">
+<svg viewBox="0 0 280 170" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(140,13)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9" opacity="0.6"/>
+  </g>
+  <path d="M70,110 A70,70 0 0,1 210,110" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="78" x2="82" y2="84"/><line x1="100" y1="52" x2="104" y2="60"/>
+    <line x1="140" y1="42" x2="140" y2="50"/><line x1="180" y1="52" x2="176" y2="60"/>
+    <line x1="204" y1="78" x2="198" y2="84"/>
+  </g>
+  <line x1="140" y1="110" x2="185" y2="65" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="110" r="4" fill="#8a7038"/>
+  <text x="140" y="158" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#6 Tiny, faded (light)</h3><p>#5 白背景</p>
+</div>
+
+<!-- ===== B. 12時目盛りのすぐ下 (時計のロゴ位置) ===== -->
+<div class="section"><h2>B. 12時目盛りのすぐ下 — 時計のブランドロゴ位置</h2></div>
+
+<!-- 7 -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="40"/><line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <!-- gem just below 12 o'clock tick -->
+  <g transform="translate(140,52)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#7 Below tick, tiny</h3><p>12時目盛りの直下、極小</p>
+</div>
+
+<!-- 8: white -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="40"/><line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <g transform="translate(140,52)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#8 Below tick (light)</h3><p>#7 白背景</p>
+</div>
+
+<!-- 9: slightly bigger -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="40"/><line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <g transform="translate(140,54)">
+    <polygon points="-6.5,-7 6.5,-7 10,-2 0,9 -10,-2" fill="none" stroke="#cc342d" stroke-width="1"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#9 Below tick, small</h3><p>少し大きめ</p>
+</div>
+
+<!-- 10: slightly bigger, white -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="40"/><line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <g transform="translate(140,54)">
+    <polygon points="-6.5,-7 6.5,-7 10,-2 0,9 -10,-2" fill="none" stroke="#cc342d" stroke-width="1"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#10 Below tick, small (light)</h3><p>#9 白背景</p>
+</div>
+
+<!-- 11: lower, more centered in dial -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="40"/><line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <!-- a bit lower, like watch brand position -->
+  <g transform="translate(140,62)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#11 Watch position</h3><p>文字盤中央寄り（時計ブランド位置）</p>
+</div>
+
+<!-- 12: watch position, white -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="40"/><line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <g transform="translate(140,62)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#12 Watch position (light)</h3><p>#11 白背景</p>
+</div>
+
+<!-- 13: faded, watch position -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="40"/><line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <g transform="translate(140,60)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9" opacity="0.5"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#13 Watch, faded</h3><p>時計位置 + 50% opacity</p>
+</div>
+
+<!-- 14: faded, watch, white -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="140" y1="32" x2="140" y2="40"/><line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <g transform="translate(140,60)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9" opacity="0.5"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#14 Watch, faded (light)</h3><p>#13 白背景</p>
+</div>
+
+<!-- ===== C. 12時目盛りと gem を一体化 ===== -->
+<div class="section"><h2>C. 12時目盛りと gem を一体化 — 目盛りの延長として</h2></div>
+
+<!-- 15: gem replaces tick, same position -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <!-- tick line + tiny gem at its end -->
+  <line x1="140" y1="32" x2="140" y2="40" stroke="#cc342d" stroke-width="1.5"/>
+  <g transform="translate(140,27)">
+    <polygon points="-4,-4.5 4,-4.5 6,-1.5 0,5 -6,-1.5" fill="none" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#15 Tick + gem cap</h3><p>目盛り線の先に極小 gem</p>
+</div>
+
+<!-- 16: same, white -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <line x1="140" y1="32" x2="140" y2="40" stroke="#cc342d" stroke-width="1.5"/>
+  <g transform="translate(140,27)">
+    <polygon points="-4,-4.5 4,-4.5 6,-1.5 0,5 -6,-1.5" fill="none" stroke="#cc342d" stroke-width="0.8"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#16 Tick + gem cap (light)</h3><p>#15 白背景</p>
+</div>
+
+<!-- 17: gem replaces tick entirely -->
+<div class="card">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <!-- gem replaces tick, slightly larger -->
+  <g transform="translate(140,36)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#cc342d" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#cc342d"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#c8a96e" letter-spacing="5">rperf</text>
+</svg>
+<h3>#17 Gem as tick</h3><p>目盛りの代わりに gem</p>
+</div>
+
+<!-- 18: gem as tick, white -->
+<div class="card wh">
+<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70,100 A70,70 0 0,1 210,100" fill="none" stroke="#cc342d" stroke-width="3"/>
+  <g stroke="#cc342d" stroke-width="1.5">
+    <line x1="76" y1="68" x2="82" y2="74"/><line x1="100" y1="42" x2="104" y2="50"/>
+    <line x1="180" y1="42" x2="176" y2="50"/>
+    <line x1="204" y1="68" x2="198" y2="74"/>
+  </g>
+  <g transform="translate(140,36)">
+    <polygon points="-5,-5.5 5,-5.5 7.5,-1.5 0,6.5 -7.5,-1.5" fill="none" stroke="#cc342d" stroke-width="0.9"/>
+  </g>
+  <line x1="140" y1="100" x2="185" y2="55" stroke="#8a7038" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="140" cy="100" r="4" fill="#8a7038"/>
+  <text x="140" y="148" text-anchor="middle" font-family="'Roboto Slab', serif" font-size="26" font-weight="700" fill="#8a7038" letter-spacing="5">rperf</text>
+</svg>
+<h3>#18 Gem as tick (light)</h3><p>#17 白背景</p>
+</div>
+
+</div><!-- grid -->
+</body>
+</html>
