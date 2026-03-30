@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>adlog Logo Concepts - 100 Variations</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0a; color: #e0e0e0; font-family: system-ui, sans-serif; padding: 40px 20px; }
+  h1 { text-align: center; font-size: 2rem; margin-bottom: 10px; color: #fff; }
+  .subtitle { text-align: center; color: #888; margin-bottom: 40px; font-size: 0.95rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; max-width: 1600px; margin: 0 auto; }
+  .card { background: #161616; border-radius: 16px; padding: 16px; text-align: center; transition: transform 0.2s; border: 1px solid #222; }
+  .card:hover { transform: scale(1.04); border-color: #444; }
+  .card svg { width: 160px; height: 160px; margin-bottom: 10px; }
+  .card .num { font-size: 0.7rem; color: #555; margin-bottom: 4px; }
+  .card .name { font-size: 0.85rem; color: #aaa; margin-bottom: 2px; }
+  .card .tags { font-size: 0.7rem; color: #666; }
+  .filter-bar { text-align: center; margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .filter-bar button { background: #222; color: #aaa; border: 1px solid #333; border-radius: 20px; padding: 6px 16px; cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
+  .filter-bar button:hover, .filter-bar button.active { background: #38bdf8; color: #000; border-color: #38bdf8; }
+</style>
+</head>
+<body>
+<h1>adlog Logo Concepts</h1>
+<p class="subtitle">270 variations - click tags to filter</p>
+<div class="filter-bar" id="filters">
+  <button class="active" onclick="filterAll()">All</button>
+  <button onclick="filterTag('cool')">Cool</button>
+  <button onclick="filterTag('cute')">Cute</button>
+  <button onclick="filterTag('simple')">Simple</button>
+  <button onclick="filterTag('bold')">Bold</button>
+  <button onclick="filterTag('retro')">Retro</button>
+  <button onclick="filterTag('neon')">Neon</button>
+  <button onclick="filterTag('minimal')">Minimal</button>
+  <button onclick="filterTag('geometric')">Geometric</button>
+  <button onclick="filterTag('playful')">Playful</button>
+  <button onclick="filterTag('dark')">Dark</button>
+  <button onclick="filterTag('terminal')">Terminal</button>
+  <button onclick="filterTag('organic')">Organic</button>
+  <button onclick="filterTag('@.log')">@.log</button>
+  <button onclick="filterTag('@.log+adlog')">@.log+adlog</button>
+  <button onclick="filterTag('textsearch')">TextSearch</button>
+  <button onclick="filterTag('ts-adlog')">TS:adlog</button>
+</div>
+<div class="grid" id="grid"></div>
+
+<script>
+const logos = [
+// ---- 1-10: Terminal / CLI ----
+{
+  name: "Terminal Prompt",
+  tags: ["cool","terminal","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <rect x="30" y="30" width="140" height="140" rx="12" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <circle cx="52" cy="48" r="4" fill="#ef4444"/><circle cx="66" cy="48" r="4" fill="#eab308"/><circle cx="80" cy="48" r="4" fill="#22c55e"/>
+    <text x="42" y="95" font-family="monospace" font-size="22" fill="#38bdf8">&gt; adlog</text>
+    <rect x="120" y="82" width="2" height="18" fill="#38bdf8" opacity="0.8"/><text x="42" y="120" font-family="monospace" font-size="14" fill="#475569">searching...</text></svg>`
+},
+{
+  name: "Green Terminal",
+  tags: ["retro","terminal","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#001100"/>
+    <text x="20" y="60" font-family="monospace" font-size="16" fill="#00ff41" opacity="0.4">01101001</text>
+    <text x="20" y="80" font-family="monospace" font-size="16" fill="#00ff41" opacity="0.3">11010010</text>
+    <text x="30" y="120" font-family="monospace" font-size="36" font-weight="bold" fill="#00ff41">adlog</text>
+    <text x="20" y="150" font-family="monospace" font-size="16" fill="#00ff41" opacity="0.3">00110101</text>
+    <text x="20" y="170" font-family="monospace" font-size="16" fill="#00ff41" opacity="0.2">10101100</text></svg>`
+},
+{
+  name: "Cursor Blink",
+  tags: ["minimal","terminal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <text x="30" y="115" font-family="monospace" font-size="38" font-weight="bold" fill="#fafafa">ad</text>
+    <text x="88" y="115" font-family="monospace" font-size="38" font-weight="bold" fill="#a78bfa">log</text>
+    <rect x="160" y="88" width="4" height="30" rx="1" fill="#a78bfa"><animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/></rect></svg>`
+},
+{
+  name: "Shell Pipeline",
+  tags: ["cool","terminal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <text x="20" y="85" font-family="monospace" font-size="14" fill="#78716c">$ cat life |</text>
+    <text x="30" y="115" font-family="monospace" font-size="30" font-weight="bold" fill="#fb923c">adlog</text>
+    <text x="20" y="140" font-family="monospace" font-size="14" fill="#78716c">| grep wisdom</text></svg>`
+},
+{
+  name: "Prompt Chevron",
+  tags: ["simple","terminal","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <polyline points="40,70 70,100 40,130" fill="none" stroke="#38bdf8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="80" y="113" font-family="monospace" font-size="36" font-weight="bold" fill="#e2e8f0">ad</text>
+    <text x="128" y="113" font-family="monospace" font-size="36" font-weight="bold" fill="#38bdf8">log</text></svg>`
+},
+{
+  name: "Bash History",
+  tags: ["retro","terminal","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1a1a2e"/>
+    <text x="20" y="55" font-family="monospace" font-size="11" fill="#4a4a6a">  1  git push</text>
+    <text x="20" y="72" font-family="monospace" font-size="11" fill="#4a4a6a">  2  rake test</text>
+    <text x="20" y="89" font-family="monospace" font-size="11" fill="#4a4a6a">  3  vim app.rb</text>
+    <rect x="15" y="95" width="170" height="35" rx="4" fill="#e0f2fe" opacity="0.1"/>
+    <text x="20" y="118" font-family="monospace" font-size="15" font-weight="bold" fill="#38bdf8">  4  adlog</text>
+    <text x="20" y="140" font-family="monospace" font-size="11" fill="#4a4a6a">  5  deploy</text>
+    <text x="20" y="157" font-family="monospace" font-size="11" fill="#4a4a6a">  6  ssh prod</text>
+    <text x="20" y="174" font-family="monospace" font-size="11" fill="#4a4a6a">  7  curl api</text></svg>`
+},
+{
+  name: "Matrix Rain",
+  tags: ["cool","dark","neon"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#000"/>
+    <g font-family="monospace" font-size="14" fill="#0f0" opacity="0.15"><text x="20" y="30">a</text><text x="50" y="50">d</text><text x="80" y="20">l</text><text x="110" y="60">o</text><text x="140" y="35">g</text><text x="30" y="160">l</text><text x="60" y="180">o</text><text x="100" y="170">g</text><text x="150" y="155">a</text><text x="170" y="175">d</text></g>
+    <text x="28" y="112" font-family="monospace" font-size="42" font-weight="bold" fill="#00ff41">adlog</text>
+    <text x="28" y="112" font-family="monospace" font-size="42" font-weight="bold" fill="#00ff41" opacity="0.3" filter="url(#blur)">adlog</text></svg>`
+},
+{
+  name: "SSH Banner",
+  tags: ["retro","terminal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1e1e1e"/>
+    <text x="22" y="70" font-family="monospace" font-size="11" fill="#6a9955">################</text>
+    <text x="22" y="85" font-family="monospace" font-size="11" fill="#6a9955">#              #</text>
+    <text x="22" y="100" font-family="monospace" font-size="11" fill="#6a9955">#</text><text x="46" y="100" font-family="monospace" font-size="11" font-weight="bold" fill="#dcdcaa"> adlog v2.0 </text><text x="156" y="100" font-family="monospace" font-size="11" fill="#6a9955">#</text>
+    <text x="22" y="115" font-family="monospace" font-size="11" fill="#6a9955">#              #</text>
+    <text x="22" y="130" font-family="monospace" font-size="11" fill="#6a9955">################</text>
+    <text x="22" y="155" font-family="monospace" font-size="10" fill="#569cd6">log.atdot.net</text></svg>`
+},
+{
+  name: "Tail -f",
+  tags: ["cool","terminal","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0c0c0c"/>
+    <text x="15" y="50" font-family="monospace" font-size="9" fill="#555">2026-03-30 08:01:22 INFO</text>
+    <text x="15" y="65" font-family="monospace" font-size="9" fill="#555">2026-03-30 08:01:23 DEBUG</text>
+    <text x="15" y="80" font-family="monospace" font-size="9" fill="#555">2026-03-30 08:01:24 INFO</text>
+    <text x="15" y="95" font-family="monospace" font-size="9" fill="#c084fc">2026-03-30 08:01:25 WARN</text>
+    <text x="25" y="128" font-family="monospace" font-size="40" font-weight="900" fill="#fff">adlog</text>
+    <text x="15" y="155" font-family="monospace" font-size="9" fill="#555">2026-03-30 08:01:26 INFO</text>
+    <text x="15" y="170" font-family="monospace" font-size="9" fill="#555">2026-03-30 08:01:27 DEBUG</text></svg>`
+},
+{
+  name: "Vim Statusline",
+  tags: ["retro","terminal","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1e1e2e"/>
+    <text x="30" y="90" font-family="monospace" font-size="13" fill="#585b70">~</text>
+    <text x="30" y="108" font-family="monospace" font-size="13" fill="#585b70">~</text>
+    <rect x="20" y="120" width="160" height="22" fill="#313244"/>
+    <text x="26" y="136" font-family="monospace" font-size="11" fill="#89b4fa"> NORMAL </text>
+    <text x="90" y="136" font-family="monospace" font-size="11" fill="#cdd6f4">adlog.rb</text>
+    <text x="30" y="160" font-family="monospace" font-size="11" fill="#a6adc8">:wq</text></svg>`
+},
+
+// ---- 11-20: Search / Magnifying Glass ----
+{
+  name: "Search Circle",
+  tags: ["cool","geometric","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <circle cx="90" cy="85" r="45" fill="none" stroke="#38bdf8" stroke-width="8"/>
+    <line x1="122" y1="117" x2="155" y2="150" stroke="#38bdf8" stroke-width="8" stroke-linecap="round"/>
+    <text x="40" y="178" font-family="monospace" font-size="32" font-weight="bold" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "Lens Flare",
+  tags: ["cool","neon"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0a0a1a"/>
+    <circle cx="100" cy="90" r="40" fill="none" stroke="url(#g12)" stroke-width="6"/>
+    <line x1="128" y1="118" x2="160" y2="150" stroke="#818cf8" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="85" cy="75" r="12" fill="#38bdf8" opacity="0.15"/>
+    <defs><linearGradient id="g12" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#c084fc"/></linearGradient></defs>
+    <text x="35" y="180" font-family="monospace" font-size="30" font-weight="700" fill="#c4b5fd">adlog</text></svg>`
+},
+{
+  name: "Text Search",
+  tags: ["simple","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(60,40)">
+      <rect width="90" height="12" rx="3" y="0" fill="#d4d4d8"/><rect width="70" height="12" rx="3" y="18" fill="#d4d4d8"/>
+      <rect width="80" height="12" rx="3" y="36" fill="#fbbf24" opacity="0.4"/><rect width="60" height="12" rx="3" y="54" fill="#d4d4d8"/>
+      <rect width="75" height="12" rx="3" y="72" fill="#d4d4d8"/>
+    </g>
+    <circle cx="70" cy="76" r="22" fill="none" stroke="#f59e0b" stroke-width="4"/><line x1="86" y1="92" x2="100" y2="106" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+    <text x="40" y="160" font-family="system-ui,sans-serif" font-size="32" font-weight="700" fill="#1c1917">adlog</text></svg>`
+},
+{
+  name: "Database Search",
+  tags: ["cool","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#172554"/>
+    <ellipse cx="100" cy="65" rx="50" ry="15" fill="none" stroke="#60a5fa" stroke-width="3"/>
+    <path d="M50,65 v30 a50,15 0 0,0 100,0 v-30" fill="none" stroke="#60a5fa" stroke-width="3"/>
+    <path d="M50,95 v30 a50,15 0 0,0 100,0 v-30" fill="none" stroke="#60a5fa" stroke-width="3"/>
+    <circle cx="135" cy="120" r="20" fill="#172554" stroke="#fbbf24" stroke-width="3"/><line x1="149" y1="134" x2="165" y2="150" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <text x="35" y="185" font-family="monospace" font-size="28" font-weight="bold" fill="#bfdbfe">adlog</text></svg>`
+},
+{
+  name: "Magnify A",
+  tags: ["bold","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <circle cx="95" cy="90" r="50" fill="none" stroke="#f472b6" stroke-width="7"/>
+    <line x1="130" y1="126" x2="165" y2="161" stroke="#f472b6" stroke-width="7" stroke-linecap="round"/>
+    <text x="72" y="105" font-family="serif" font-size="55" font-weight="bold" fill="#fce7f3">a</text></svg>`
+},
+{
+  name: "Spotlight",
+  tags: ["cool","dark","neon"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#000"/>
+    <circle cx="100" cy="95" r="55" fill="#111"/>
+    <circle cx="100" cy="95" r="55" fill="none" stroke="#22d3ee" stroke-width="2"/>
+    <text x="42" y="108" font-family="monospace" font-size="32" font-weight="bold" fill="#22d3ee">adlog</text>
+    <circle cx="100" cy="95" r="58" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.3"/>
+    <circle cx="100" cy="95" r="62" fill="none" stroke="#22d3ee" stroke-width="0.5" opacity="0.15"/></svg>`
+},
+{
+  name: "Index Cards",
+  tags: ["retro","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fef3c7"/>
+    <rect x="40" y="35" width="120" height="80" rx="6" fill="#fff" stroke="#d4a574" stroke-width="1.5" transform="rotate(-3,100,75)"/>
+    <rect x="40" y="35" width="120" height="80" rx="6" fill="#fff" stroke="#d4a574" stroke-width="1.5" transform="rotate(2,100,75)"/>
+    <rect x="40" y="35" width="120" height="80" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
+    <line x1="50" y1="55" x2="150" y2="55" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="50" y1="70" x2="140" y2="70" stroke="#e5e7eb" stroke-width="1"/>
+    <line x1="50" y1="85" x2="130" y2="85" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="55" y="53" font-family="serif" font-size="12" fill="#92400e">adlog</text>
+    <text x="40" y="155" font-family="serif" font-size="28" font-weight="bold" fill="#78350f">adlog</text></svg>`
+},
+{
+  name: "FTS5 Badge",
+  tags: ["bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <rect x="25" y="55" width="150" height="50" rx="8" fill="#1e3a5f"/>
+    <text x="40" y="87" font-family="monospace" font-size="28" font-weight="900" fill="#38bdf8">adlog</text>
+    <rect x="55" y="115" width="90" height="28" rx="6" fill="#164e63"/>
+    <text x="66" y="135" font-family="monospace" font-size="14" fill="#67e8f9">FTS5</text><text x="106" y="135" font-family="monospace" font-size="10" fill="#475569">search</text></svg>`
+},
+{
+  name: "Binoculars",
+  tags: ["playful","cute"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#faf5ff"/>
+    <circle cx="72" cy="80" r="30" fill="none" stroke="#7c3aed" stroke-width="6"/><circle cx="128" cy="80" r="30" fill="none" stroke="#7c3aed" stroke-width="6"/>
+    <rect x="95" y="68" width="10" height="24" rx="3" fill="#7c3aed"/>
+    <circle cx="72" cy="80" r="10" fill="#c4b5fd"/><circle cx="128" cy="80" r="10" fill="#c4b5fd"/>
+    <text x="42" y="158" font-family="system-ui" font-size="30" font-weight="700" fill="#5b21b6">adlog</text></svg>`
+},
+{
+  name: "Radar Scan",
+  tags: ["cool","geometric","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#022c22"/>
+    <circle cx="100" cy="90" r="55" fill="none" stroke="#166534" stroke-width="1"/>
+    <circle cx="100" cy="90" r="37" fill="none" stroke="#166534" stroke-width="1"/>
+    <circle cx="100" cy="90" r="19" fill="none" stroke="#166534" stroke-width="1"/>
+    <line x1="100" y1="35" x2="100" y2="145" stroke="#166534" stroke-width="0.5"/>
+    <line x1="45" y1="90" x2="155" y2="90" stroke="#166534" stroke-width="0.5"/>
+    <path d="M100,90 L100,35 A55,55 0 0,1 148,65 Z" fill="#22c55e" opacity="0.15"><animateTransform attributeName="transform" type="rotate" from="0 100 90" to="360 100 90" dur="3s" repeatCount="indefinite"/></path>
+    <circle cx="120" cy="75" r="3" fill="#4ade80"/>
+    <text x="35" y="178" font-family="monospace" font-size="28" font-weight="bold" fill="#4ade80">adlog</text></svg>`
+},
+
+// ---- 21-30: Cute / Kawaii ----
+{
+  name: "Happy Log",
+  tags: ["cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fdf2f8"/>
+    <rect x="50" y="40" width="100" height="90" rx="16" fill="#fbcfe8"/>
+    <circle cx="78" cy="75" r="6" fill="#831843"/><circle cx="122" cy="75" r="6" fill="#831843"/>
+    <path d="M82,92 Q100,108 118,92" fill="none" stroke="#831843" stroke-width="3" stroke-linecap="round"/>
+    <rect x="60" y="50" width="80" height="5" rx="2" fill="#f9a8d4" opacity="0.5"/>
+    <rect x="65" y="60" width="60" height="3" rx="2" fill="#f9a8d4" opacity="0.3"/>
+    <text x="42" y="165" font-family="system-ui" font-size="28" font-weight="800" fill="#be185d">adlog</text></svg>`
+},
+{
+  name: "Cat Logger",
+  tags: ["cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#eff6ff"/>
+    <circle cx="100" cy="85" r="40" fill="#bfdbfe"/>
+    <polygon points="68,52 60,25 82,45" fill="#bfdbfe"/><polygon points="132,52 140,25 118,45" fill="#bfdbfe"/>
+    <circle cx="86" cy="80" r="5" fill="#1e3a5f"/><circle cx="114" cy="80" r="5" fill="#1e3a5f"/>
+    <ellipse cx="100" cy="93" rx="4" ry="3" fill="#f472b6"/>
+    <path d="M96,93 Q100,100 104,93" fill="none" stroke="#1e3a5f" stroke-width="1.5"/>
+    <line x1="60" y1="85" x2="75" y2="82" stroke="#93c5fd" stroke-width="1.5"/><line x1="60" y1="92" x2="75" y2="90" stroke="#93c5fd" stroke-width="1.5"/>
+    <line x1="140" y1="85" x2="125" y2="82" stroke="#93c5fd" stroke-width="1.5"/><line x1="140" y1="92" x2="125" y2="90" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="42" y="163" font-family="system-ui" font-size="26" font-weight="700" fill="#1d4ed8">adlog</text>
+    <text x="126" y="163" font-family="system-ui" font-size="14" fill="#93c5fd">nyan</text></svg>`
+},
+{
+  name: "Bubble Tea",
+  tags: ["cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fef9c3"/>
+    <rect x="65" y="45" width="70" height="100" rx="20" fill="#fff" stroke="#a16207" stroke-width="3"/>
+    <rect x="60" y="50" width="80" height="15" rx="4" fill="#fde68a" stroke="#a16207" stroke-width="2"/>
+    <line x1="100" y1="35" x2="100" y2="52" stroke="#a16207" stroke-width="3"/>
+    <circle cx="82" cy="100" r="6" fill="#7c2d12" opacity="0.7"/><circle cx="100" cy="118" r="6" fill="#7c2d12" opacity="0.7"/>
+    <circle cx="115" cy="105" r="6" fill="#7c2d12" opacity="0.7"/><circle cx="90" cy="125" r="5" fill="#7c2d12" opacity="0.5"/>
+    <circle cx="88" cy="80" r="3" fill="#1c1917"/><circle cx="112" cy="80" r="3" fill="#1c1917"/>
+    <path d="M94,90 Q100,96 106,90" fill="none" stroke="#1c1917" stroke-width="2" stroke-linecap="round"/>
+    <text x="42" y="178" font-family="system-ui" font-size="26" font-weight="700" fill="#854d0e">adlog</text></svg>`
+},
+{
+  name: "Pixel Heart Log",
+  tags: ["cute","retro","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1a1a2e"/>
+    <g transform="translate(55,35) scale(3)"><rect x="2" y="0" width="4" height="2" fill="#f472b6"/><rect x="12" y="0" width="4" height="2" fill="#f472b6"/>
+    <rect x="0" y="2" width="8" height="2" fill="#f472b6"/><rect x="10" y="2" width="8" height="2" fill="#f472b6"/>
+    <rect x="0" y="4" width="18" height="2" fill="#f472b6"/><rect x="0" y="6" width="18" height="2" fill="#fb7185"/>
+    <rect x="2" y="8" width="14" height="2" fill="#fb7185"/><rect x="4" y="10" width="10" height="2" fill="#fda4af"/>
+    <rect x="6" y="12" width="6" height="2" fill="#fda4af"/><rect x="8" y="14" width="2" height="2" fill="#fecdd3"/></g>
+    <text x="35" y="165" font-family="monospace" font-size="30" font-weight="bold" fill="#f472b6">adlog</text></svg>`
+},
+{
+  name: "Cloud Buddy",
+  tags: ["cute","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#e0f2fe"/>
+    <ellipse cx="100" cy="80" rx="55" ry="35" fill="#fff"/><circle cx="65" cy="70" r="25" fill="#fff"/><circle cx="130" cy="72" r="22" fill="#fff"/>
+    <circle cx="84" cy="80" r="4" fill="#0369a1"/><circle cx="116" cy="80" r="4" fill="#0369a1"/>
+    <path d="M94,92 Q100,98 106,92" fill="none" stroke="#0369a1" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="74" cy="86" rx="8" ry="4" fill="#fbcfe8" opacity="0.5"/><ellipse cx="126" cy="86" rx="8" ry="4" fill="#fbcfe8" opacity="0.5"/>
+    <text x="44" y="152" font-family="system-ui" font-size="28" font-weight="700" fill="#0284c7">adlog</text></svg>`
+},
+{
+  name: "Pencil Pal",
+  tags: ["cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fefce8"/>
+    <g transform="translate(70,30) rotate(10,30,60)"><rect x="15" y="0" width="30" height="100" rx="3" fill="#fbbf24"/>
+    <polygon points="15,100 30,125 45,100" fill="#fde68a"/><polygon points="25,115 30,130 35,115" fill="#1c1917"/>
+    <rect x="15" y="0" width="30" height="15" fill="#f472b6"/><rect x="15" y="12" width="30" height="8" fill="#d4d4d8"/>
+    <circle cx="24" cy="55" r="3" fill="#1c1917"/><circle cx="36" cy="55" r="3" fill="#1c1917"/>
+    <path d="M26,65 Q30,70 34,65" fill="none" stroke="#1c1917" stroke-width="1.5" stroke-linecap="round"/></g>
+    <text x="35" y="175" font-family="system-ui" font-size="28" font-weight="700" fill="#b45309">adlog</text></svg>`
+},
+{
+  name: "Dango Stack",
+  tags: ["cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff1f2"/>
+    <line x1="100" y1="30" x2="100" y2="130" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="100" cy="45" r="18" fill="#fda4af"/><circle cx="100" cy="80" r="18" fill="#fff"/><circle cx="100" cy="115" r="18" fill="#86efac"/>
+    <text x="82" y="83" font-family="monospace" font-size="10" font-weight="bold" fill="#1c1917">ad</text>
+    <text x="40" y="170" font-family="system-ui" font-size="28" font-weight="700" fill="#be123c">adlog</text></svg>`
+},
+{
+  name: "Robot Logger",
+  tags: ["cute","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f0fdf4"/>
+    <rect x="60" y="50" width="80" height="65" rx="12" fill="#d1d5db"/>
+    <rect x="70" y="60" width="24" height="18" rx="4" fill="#22d3ee"/><rect x="106" y="60" width="24" height="18" rx="4" fill="#22d3ee"/>
+    <circle cx="82" cy="69" r="4" fill="#0f172a"/><circle cx="118" cy="69" r="4" fill="#0f172a"/>
+    <rect x="82" y="88" width="36" height="6" rx="3" fill="#6b7280"/>
+    <rect x="92" y="38" width="4" height="16" fill="#9ca3af"/><circle cx="94" cy="35" r="6" fill="#fbbf24"/>
+    <rect x="75" y="120" width="50" height="30" rx="6" fill="#d1d5db"/>
+    <text x="82" y="140" font-family="monospace" font-size="10" fill="#374151">LOG</text>
+    <text x="42" y="178" font-family="system-ui" font-size="26" font-weight="700" fill="#166534">adlog</text></svg>`
+},
+{
+  name: "Onigiri",
+  tags: ["cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <path d="M100,30 L155,110 Q155,140 100,140 Q45,140 45,110 Z" fill="#f5f5f4" stroke="#a8a29e" stroke-width="2"/>
+    <rect x="65" y="100" width="70" height="40" rx="4" fill="#1c1917"/>
+    <circle cx="84" cy="80" r="4" fill="#1c1917"/><circle cx="116" cy="80" r="4" fill="#1c1917"/>
+    <path d="M94,92 Q100,97 106,92" fill="none" stroke="#1c1917" stroke-width="2" stroke-linecap="round"/>
+    <text x="42" y="175" font-family="system-ui" font-size="28" font-weight="700" fill="#44403c">adlog</text></svg>`
+},
+{
+  name: "Star Wink",
+  tags: ["cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fdf4ff"/>
+    <polygon points="100,25 115,70 165,70 125,98 140,145 100,115 60,145 75,98 35,70 85,70" fill="#f0abfc"/>
+    <circle cx="86" cy="82" r="4" fill="#581c87"/><line x1="108" y1="78" x2="118" y2="84" stroke="#581c87" stroke-width="3" stroke-linecap="round"/>
+    <path d="M90,96 Q100,104 110,96" fill="none" stroke="#581c87" stroke-width="2" stroke-linecap="round"/>
+    <text x="42" y="178" font-family="system-ui" font-size="28" font-weight="800" fill="#a21caf">adlog</text></svg>`
+},
+
+// ---- 31-40: Bold / Typographic ----
+{
+  name: "Black Slab",
+  tags: ["bold","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#000"/>
+    <text x="100" y="112" font-family="Georgia,serif" font-size="52" font-weight="900" fill="#fff" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Split Tone",
+  tags: ["bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#000"/>
+    <rect y="0" width="200" height="100" rx="32" fill="#fff"/>
+    <rect y="100" width="200" height="100" rx="32" fill="#000"/>
+    <rect y="88" width="200" height="24" fill="#000"/>
+    <text x="100" y="115" font-family="system-ui" font-size="56" font-weight="900" fill="#fff" text-anchor="middle">adlog</text>
+    <text x="100" y="115" font-family="system-ui" font-size="56" font-weight="900" text-anchor="middle" fill="#000"><tspan clip-path="url(#top)">adlog</tspan></text>
+    <clipPath id="top"><rect width="200" height="100"/></clipPath></svg>`
+},
+{
+  name: "Stencil",
+  tags: ["bold","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#292524"/>
+    <text x="100" y="100" font-family="Impact,sans-serif" font-size="60" fill="none" stroke="#fafaf9" stroke-width="2" text-anchor="middle">AD</text>
+    <text x="100" y="148" font-family="Impact,sans-serif" font-size="60" fill="none" stroke="#fafaf9" stroke-width="2" text-anchor="middle">LOG</text></svg>`
+},
+{
+  name: "Gradient Mega",
+  tags: ["bold","neon","cool"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="g34" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f43f5e"/><stop offset="50%" stop-color="#a855f7"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#09090b"/>
+    <text x="100" y="115" font-family="system-ui" font-size="56" font-weight="900" fill="url(#g34)" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Stamp Red",
+  tags: ["bold","retro"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fef2f2"/>
+    <rect x="25" y="60" width="150" height="80" rx="8" fill="none" stroke="#dc2626" stroke-width="5" transform="rotate(-5,100,100)"/>
+    <text x="100" y="112" font-family="monospace" font-size="38" font-weight="900" fill="#dc2626" text-anchor="middle" transform="rotate(-5,100,100)">ADLOG</text></svg>`
+},
+{
+  name: "3D Stack",
+  tags: ["bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <text x="100" y="118" font-family="system-ui" font-size="52" font-weight="900" fill="#3f3f46" text-anchor="middle">adlog</text>
+    <text x="98" y="116" font-family="system-ui" font-size="52" font-weight="900" fill="#52525b" text-anchor="middle">adlog</text>
+    <text x="96" y="114" font-family="system-ui" font-size="52" font-weight="900" fill="#f4f4f5" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Yellow Block",
+  tags: ["bold","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fbbf24"/>
+    <text x="100" y="118" font-family="system-ui" font-size="58" font-weight="900" fill="#000" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Underline Accent",
+  tags: ["bold","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafafa"/>
+    <text x="100" y="105" font-family="system-ui" font-size="50" font-weight="800" fill="#171717" text-anchor="middle">adlog</text>
+    <rect x="35" y="115" width="130" height="6" rx="3" fill="#2563eb"/></svg>`
+},
+{
+  name: "Italic Slash",
+  tags: ["bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f0f0f"/>
+    <text x="20" y="118" font-family="system-ui" font-size="50" font-weight="900" font-style="italic" fill="#fff">ad</text>
+    <text x="88" y="118" font-family="system-ui" font-size="50" font-weight="200" font-style="italic" fill="#6366f1">/</text>
+    <text x="105" y="118" font-family="system-ui" font-size="50" font-weight="900" font-style="italic" fill="#6366f1">log</text></svg>`
+},
+{
+  name: "Monogram Circle",
+  tags: ["bold","simple","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1e1b4b"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#818cf8" stroke-width="4"/>
+    <text x="100" y="92" font-family="serif" font-size="60" font-weight="bold" fill="#e0e7ff" text-anchor="middle">A</text>
+    <text x="100" y="140" font-family="monospace" font-size="20" fill="#818cf8" text-anchor="middle">adlog</text></svg>`
+},
+
+// ---- 41-50: Geometric / Abstract ----
+{
+  name: "Hexagon",
+  tags: ["geometric","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0c4a6e"/>
+    <polygon points="100,25 165,62 165,138 100,175 35,138 35,62" fill="none" stroke="#38bdf8" stroke-width="4"/>
+    <text x="100" y="110" font-family="monospace" font-size="30" font-weight="bold" fill="#e0f2fe" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Diamond Grid",
+  tags: ["geometric","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(100,80) rotate(45)" stroke="#a8a29e" stroke-width="1.5" fill="none">
+      <rect x="-30" y="-30" width="60" height="60"/><rect x="-20" y="-20" width="40" height="40"/><rect x="-10" y="-10" width="20" height="20"/>
+    </g>
+    <text x="100" y="155" font-family="monospace" font-size="28" fill="#57534e" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Triangle A",
+  tags: ["geometric","simple","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <polygon points="100,30 160,140 40,140" fill="none" stroke="#f97316" stroke-width="5"/>
+    <text x="100" y="118" font-family="monospace" font-size="24" font-weight="bold" fill="#f97316" text-anchor="middle">ad</text>
+    <text x="100" y="170" font-family="monospace" font-size="22" fill="#fdba74" text-anchor="middle">log</text></svg>`
+},
+{
+  name: "Concentric",
+  tags: ["geometric","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafafa"/>
+    <circle cx="100" cy="90" r="60" fill="none" stroke="#e5e7eb" stroke-width="2"/>
+    <circle cx="100" cy="90" r="45" fill="none" stroke="#d1d5db" stroke-width="2"/>
+    <circle cx="100" cy="90" r="30" fill="none" stroke="#9ca3af" stroke-width="2"/>
+    <circle cx="100" cy="90" r="15" fill="#6366f1"/>
+    <text x="100" y="172" font-family="system-ui" font-size="24" font-weight="600" fill="#18181b" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Block Mosaic",
+  tags: ["geometric","bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <rect x="30" y="30" width="35" height="35" rx="4" fill="#ef4444"/><rect x="72" y="30" width="35" height="35" rx="4" fill="#f97316"/>
+    <rect x="114" y="30" width="35" height="35" rx="4" fill="#eab308"/><rect x="30" y="72" width="35" height="35" rx="4" fill="#22c55e"/>
+    <rect x="72" y="72" width="35" height="35" rx="4" fill="#3b82f6"/><rect x="114" y="72" width="35" height="35" rx="4" fill="#8b5cf6"/>
+    <rect x="30" y="114" width="119" height="35" rx="4" fill="#27272a"/>
+    <text x="89" y="138" font-family="monospace" font-size="20" font-weight="bold" fill="#fafafa" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Infinity Loop",
+  tags: ["geometric","cool","organic"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <path d="M60,90 C60,60 90,60 100,90 C110,120 140,120 140,90 C140,60 110,60 100,90 C90,120 60,120 60,90" fill="none" stroke="#38bdf8" stroke-width="5"/>
+    <text x="100" y="155" font-family="monospace" font-size="26" font-weight="bold" fill="#e2e8f0" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Bars Chart",
+  tags: ["geometric","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <rect x="40" y="90" width="20" height="50" rx="4" fill="#84cc16"/><rect x="68" y="60" width="20" height="80" rx="4" fill="#a3e635"/>
+    <rect x="96" y="75" width="20" height="65" rx="4" fill="#bef264"/><rect x="124" y="45" width="20" height="95" rx="4" fill="#d9f99d"/>
+    <text x="100" y="172" font-family="monospace" font-size="26" font-weight="bold" fill="#ecfccb" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Wave",
+  tags: ["geometric","organic","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0c4a6e"/>
+    <path d="M0,120 Q50,80 100,120 Q150,160 200,120" fill="none" stroke="#7dd3fc" stroke-width="3" opacity="0.3"/>
+    <path d="M0,105 Q50,65 100,105 Q150,145 200,105" fill="none" stroke="#38bdf8" stroke-width="4"/>
+    <path d="M0,90 Q50,50 100,90 Q150,130 200,90" fill="none" stroke="#7dd3fc" stroke-width="3" opacity="0.3"/>
+    <text x="100" y="75" font-family="monospace" font-size="36" font-weight="bold" fill="#f0f9ff" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Dotted Circle",
+  tags: ["geometric","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <circle cx="100" cy="88" r="50" fill="none" stroke="#a1a1aa" stroke-width="3" stroke-dasharray="6,8"/>
+    <text x="100" y="96" font-family="system-ui" font-size="26" font-weight="700" fill="#3f3f46" text-anchor="middle">adlog</text>
+    <text x="100" y="165" font-family="system-ui" font-size="12" fill="#a1a1aa" text-anchor="middle">private text store</text></svg>`
+},
+{
+  name: "Origami A",
+  tags: ["geometric","cool","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <polygon points="100,30 150,130 100,110" fill="#3b82f6"/><polygon points="100,30 50,130 100,110" fill="#60a5fa"/>
+    <rect x="70" y="115" width="60" height="5" rx="2" fill="#93c5fd"/>
+    <text x="100" y="170" font-family="system-ui" font-size="26" font-weight="700" fill="#1e40af" text-anchor="middle">adlog</text></svg>`
+},
+
+// ---- 51-60: Neon / Cyber ----
+{
+  name: "Neon Sign",
+  tags: ["neon","cool","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0a0a0a"/>
+    <text x="100" y="110" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" fill="#ff00ff" opacity="0.6">adlog</text>
+    <text x="100" y="110" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" fill="#ff44ff">adlog</text>
+    <text x="100" y="112" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" fill="#ff00ff" opacity="0.15">adlog</text></svg>`
+},
+{
+  name: "Cyberpunk",
+  tags: ["neon","cool","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="0" fill="#0d0221"/>
+    <rect x="0" y="85" width="200" height="40" fill="#ff2a6d" opacity="0.1"/>
+    <text x="100" y="115" font-family="monospace" font-size="48" font-weight="900" text-anchor="middle" fill="#05d9e8">ADLOG</text>
+    <line x1="20" y1="125" x2="180" y2="125" stroke="#ff2a6d" stroke-width="2"/>
+    <line x1="20" y1="130" x2="140" y2="130" stroke="#ff2a6d" stroke-width="1" opacity="0.5"/></svg>`
+},
+{
+  name: "Glitch",
+  tags: ["neon","cool","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#000"/>
+    <text x="100" y="110" font-family="monospace" font-size="44" font-weight="bold" text-anchor="middle" fill="#0ff" opacity="0.7" transform="translate(-3,0)">adlog</text>
+    <text x="100" y="110" font-family="monospace" font-size="44" font-weight="bold" text-anchor="middle" fill="#f0f" opacity="0.7" transform="translate(3,0)">adlog</text>
+    <text x="100" y="110" font-family="monospace" font-size="44" font-weight="bold" text-anchor="middle" fill="#fff">adlog</text></svg>`
+},
+{
+  name: "Vapor Grid",
+  tags: ["neon","retro","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1a0533"/>
+    <g stroke="#ff71ce" stroke-width="0.5" opacity="0.3"><line x1="0" y1="130" x2="200" y2="130"/><line x1="0" y1="145" x2="200" y2="145"/><line x1="0" y1="160" x2="200" y2="160"/><line x1="0" y1="175" x2="200" y2="175"/>
+    <line x1="30" y1="130" x2="0" y2="200"/><line x1="70" y1="130" x2="50" y2="200"/><line x1="110" y1="130" x2="100" y2="200"/><line x1="150" y1="130" x2="150" y2="200"/><line x1="190" y1="130" x2="200" y2="200"/></g>
+    <circle cx="100" cy="55" r="30" fill="#ff6b9d" opacity="0.4"/>
+    <text x="100" y="105" font-family="serif" font-size="36" font-weight="bold" text-anchor="middle" fill="#01cdfe">adlog</text></svg>`
+},
+{
+  name: "Hologram",
+  tags: ["neon","cool"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="holo" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#38bdf8"/><stop offset="25%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#fb7185"/><stop offset="75%" stop-color="#34d399"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#111"/>
+    <text x="100" y="110" font-family="system-ui" font-size="48" font-weight="900" text-anchor="middle" fill="url(#holo)">adlog</text></svg>`
+},
+{
+  name: "LED Display",
+  tags: ["neon","retro"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0a0a0a"/>
+    <rect x="20" y="60" width="160" height="80" rx="8" fill="#111" stroke="#222" stroke-width="2"/>
+    <text x="100" y="112" font-family="monospace" font-size="36" font-weight="bold" text-anchor="middle" fill="#ff3333">adlog</text>
+    <text x="100" y="112" font-family="monospace" font-size="36" font-weight="bold" text-anchor="middle" fill="#ff0000" opacity="0.4">adlog</text>
+    <circle cx="36" cy="74" r="3" fill="#ff0000" opacity="0.5"/></svg>`
+},
+{
+  name: "Wireframe",
+  tags: ["neon","geometric","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#000"/>
+    <rect x="30" y="40" width="140" height="90" rx="0" fill="none" stroke="#0f0" stroke-width="1"/>
+    <rect x="40" y="50" width="120" height="70" rx="0" fill="none" stroke="#0f0" stroke-width="0.5" opacity="0.5"/>
+    <line x1="30" y1="40" x2="40" y2="50" stroke="#0f0" stroke-width="0.5" opacity="0.5"/>
+    <line x1="170" y1="40" x2="160" y2="50" stroke="#0f0" stroke-width="0.5" opacity="0.5"/>
+    <line x1="170" y1="130" x2="160" y2="120" stroke="#0f0" stroke-width="0.5" opacity="0.5"/>
+    <line x1="30" y1="130" x2="40" y2="120" stroke="#0f0" stroke-width="0.5" opacity="0.5"/>
+    <text x="100" y="100" font-family="monospace" font-size="26" text-anchor="middle" fill="#0f0">adlog</text>
+    <text x="100" y="165" font-family="monospace" font-size="10" fill="#0a0" text-anchor="middle">WIREFRAME v1.0</text></svg>`
+},
+{
+  name: "Electric Arc",
+  tags: ["neon","cool","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <text x="25" y="112" font-family="monospace" font-size="40" font-weight="bold" fill="#e2e8f0">ad</text>
+    <path d="M95,70 L105,95 L95,95 L108,130" fill="none" stroke="#facc15" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="115" y="112" font-family="monospace" font-size="40" font-weight="bold" fill="#facc15">og</text></svg>`
+},
+{
+  name: "Scan Lines",
+  tags: ["neon","retro","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0a0a0a"/>
+    <text x="100" y="110" font-family="monospace" font-size="46" font-weight="bold" text-anchor="middle" fill="#22d3ee">adlog</text>
+    <g opacity="0.15"><line x1="0" y1="0" x2="200" y2="0" stroke="#fff" stroke-width="1"/><line x1="0" y1="4" x2="200" y2="4" stroke="#fff" stroke-width="1"/><line x1="0" y1="8" x2="200" y2="8" stroke="#fff" stroke-width="1"/><line x1="0" y1="12" x2="200" y2="12" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="16" x2="200" y2="16" stroke="#fff" stroke-width="1"/>
+    </g>
+    <rect x="0" y="0" width="200" height="200" rx="32" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.2"/></svg>`
+},
+{
+  name: "Tron Disc",
+  tags: ["neon","cool","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#030712"/>
+    <circle cx="100" cy="95" r="60" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="100" cy="95" r="45" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.5"/>
+    <circle cx="100" cy="95" r="5" fill="#38bdf8"/>
+    <line x1="100" y1="50" x2="100" y2="35" stroke="#38bdf8" stroke-width="2"/><line x1="100" y1="140" x2="100" y2="155" stroke="#38bdf8" stroke-width="2"/>
+    <line x1="55" y1="95" x2="40" y2="95" stroke="#38bdf8" stroke-width="2"/><line x1="145" y1="95" x2="160" y2="95" stroke="#38bdf8" stroke-width="2"/>
+    <text x="100" y="180" font-family="monospace" font-size="22" fill="#38bdf8" text-anchor="middle">ADLOG</text></svg>`
+},
+
+// ---- 61-70: Minimal / Clean ----
+{
+  name: "Thin Sans",
+  tags: ["minimal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <text x="100" y="108" font-family="system-ui" font-size="44" font-weight="200" fill="#18181b" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Dot Separator",
+  tags: ["minimal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafafa"/>
+    <text x="100" y="105" font-family="system-ui" font-size="36" font-weight="600" fill="#27272a" text-anchor="middle">ad<tspan fill="#3b82f6">.</tspan>log</text></svg>`
+},
+{
+  name: "One Letter",
+  tags: ["minimal","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <text x="100" y="130" font-family="serif" font-size="120" font-weight="bold" fill="#fafafa" text-anchor="middle">a</text></svg>`
+},
+{
+  name: "Hairline Box",
+  tags: ["minimal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <rect x="30" y="65" width="140" height="60" rx="4" fill="none" stroke="#d4d4d8" stroke-width="1"/>
+    <text x="100" y="104" font-family="monospace" font-size="30" fill="#3f3f46" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Tiny Logo",
+  tags: ["minimal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <rect x="80" y="80" width="40" height="40" rx="8" fill="#18181b"/>
+    <text x="100" y="108" font-family="monospace" font-size="18" font-weight="bold" fill="#fff" text-anchor="middle">al</text></svg>`
+},
+{
+  name: "Invisible Border",
+  tags: ["minimal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f5f5f5"/>
+    <text x="100" y="95" font-family="system-ui" font-size="28" font-weight="600" fill="#a3a3a3" text-anchor="middle">adlog</text>
+    <line x1="60" y1="105" x2="140" y2="105" stroke="#e5e5e5" stroke-width="1"/></svg>`
+},
+{
+  name: "Corner Mark",
+  tags: ["minimal","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <path d="M30,30 L30,60 M30,30 L60,30" fill="none" stroke="#18181b" stroke-width="3"/>
+    <path d="M170,170 L170,140 M170,170 L140,170" fill="none" stroke="#18181b" stroke-width="3"/>
+    <text x="100" y="108" font-family="system-ui" font-size="32" font-weight="600" fill="#18181b" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Two Tone Mono",
+  tags: ["minimal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f1f5f9"/>
+    <text x="100" y="108" font-family="monospace" font-size="36" text-anchor="middle"><tspan font-weight="700" fill="#0f172a">ad</tspan><tspan font-weight="300" fill="#64748b">log</tspan></text></svg>`
+},
+{
+  name: "Period End",
+  tags: ["minimal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <text x="100" y="108" font-family="Georgia,serif" font-size="40" fill="#1c1917" text-anchor="middle">adlog</text>
+    <circle cx="155" cy="104" r="5" fill="#ef4444"/></svg>`
+},
+{
+  name: "Bracket Wrap",
+  tags: ["minimal","terminal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafafa"/>
+    <text x="100" y="108" font-family="monospace" font-size="30" text-anchor="middle" fill="#71717a">[</text>
+    <text x="100" y="108" font-family="monospace" font-size="30" text-anchor="middle" fill="#18181b"> adlog </text>
+    <text x="25" y="108" font-family="monospace" font-size="30" fill="#71717a">[</text>
+    <text x="155" y="108" font-family="monospace" font-size="30" fill="#71717a">]</text></svg>`
+},
+
+// ---- 71-80: Nature / Organic ----
+{
+  name: "Tree Ring",
+  tags: ["organic","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fefce8"/>
+    <circle cx="100" cy="85" r="50" fill="none" stroke="#a16207" stroke-width="1.5"/>
+    <circle cx="100" cy="85" r="38" fill="none" stroke="#a16207" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="100" cy="85" r="26" fill="none" stroke="#a16207" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="100" cy="85" r="14" fill="none" stroke="#a16207" stroke-width="1.5" opacity="0.3"/>
+    <circle cx="100" cy="85" r="4" fill="#a16207"/>
+    <text x="100" y="165" font-family="serif" font-size="28" fill="#78350f" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Leaf Sprout",
+  tags: ["organic","cute","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f0fdf4"/>
+    <line x1="100" y1="130" x2="100" y2="70" stroke="#16a34a" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="115" cy="60" rx="20" ry="12" fill="#4ade80" transform="rotate(-30,115,60)"/>
+    <ellipse cx="85" cy="75" rx="16" ry="10" fill="#86efac" transform="rotate(25,85,75)"/>
+    <text x="100" y="165" font-family="system-ui" font-size="28" font-weight="700" fill="#166534" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Water Drop",
+  tags: ["organic","simple","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#eff6ff"/>
+    <path d="M100,35 Q130,90 130,110 A30,30 0 1,1 70,110 Q70,90 100,35Z" fill="#3b82f6"/>
+    <ellipse cx="90" cy="105" rx="8" ry="10" fill="#93c5fd" opacity="0.5"/>
+    <text x="100" y="175" font-family="system-ui" font-size="28" font-weight="700" fill="#1d4ed8" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Mountain Peak",
+  tags: ["organic","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1e293b"/>
+    <polygon points="100,35 155,120 45,120" fill="#334155"/><polygon points="75,55 45,120 105,120" fill="#475569"/>
+    <polygon points="130,70 100,120 160,120" fill="#334155"/>
+    <line x1="20" y1="120" x2="180" y2="120" stroke="#64748b" stroke-width="1"/>
+    <text x="100" y="158" font-family="system-ui" font-size="26" font-weight="700" fill="#e2e8f0" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Sunrise",
+  tags: ["organic","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fef3c7"/>
+    <circle cx="100" cy="110" r="40" fill="#f59e0b"/>
+    <rect x="0" y="110" width="200" height="90" rx="0" fill="#fef3c7"/>
+    <line x1="30" y1="110" x2="170" y2="110" stroke="#d97706" stroke-width="2"/>
+    <text x="100" y="158" font-family="system-ui" font-size="30" font-weight="700" fill="#92400e" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Mushroom",
+  tags: ["organic","cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fce7f3"/>
+    <path d="M55,100 Q55,40 100,40 Q145,40 145,100 Z" fill="#f43f5e"/>
+    <circle cx="80" cy="65" r="8" fill="#fff" opacity="0.7"/><circle cx="115" cy="75" r="6" fill="#fff" opacity="0.7"/><circle cx="95" cy="85" r="5" fill="#fff" opacity="0.5"/>
+    <rect x="88" y="100" width="24" height="35" rx="6" fill="#fde68a"/>
+    <text x="100" y="170" font-family="system-ui" font-size="24" font-weight="700" fill="#9f1239" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Feather Quill",
+  tags: ["organic","retro"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#faf5ff"/>
+    <path d="M120,30 Q80,70 90,110 Q92,80 110,55 Q100,90 105,110" fill="none" stroke="#7c3aed" stroke-width="2"/>
+    <path d="M120,30 Q140,50 130,80 Q125,60 120,30" fill="#c4b5fd"/>
+    <path d="M120,30 Q95,55 100,80 Q110,55 120,30" fill="#ddd6fe"/>
+    <line x1="95" y1="110" x2="80" y2="145" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+    <text x="100" y="175" font-family="Georgia,serif" font-size="26" font-style="italic" fill="#5b21b6" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Coral Reef",
+  tags: ["organic","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0c4a6e"/>
+    <circle cx="60" cy="110" r="18" fill="#f472b6" opacity="0.6"/><circle cx="90" cy="95" r="22" fill="#fb923c" opacity="0.5"/>
+    <circle cx="125" cy="105" r="20" fill="#a78bfa" opacity="0.5"/><circle cx="150" cy="115" r="15" fill="#2dd4bf" opacity="0.5"/>
+    <circle cx="75" cy="120" r="12" fill="#38bdf8" opacity="0.4"/>
+    <text x="100" y="165" font-family="system-ui" font-size="26" font-weight="700" fill="#e0f2fe" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "DNA Helix",
+  tags: ["organic","cool","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <g stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M70,30 Q130,65 70,100 Q130,135 70,170" stroke="#38bdf8"/>
+    <path d="M130,30 Q70,65 130,100 Q70,135 130,170" stroke="#818cf8"/>
+    </g>
+    <line x1="82" y1="48" x2="118" y2="48" stroke="#334155" stroke-width="2"/>
+    <line x1="75" y1="82" x2="125" y2="82" stroke="#334155" stroke-width="2"/>
+    <line x1="82" y1="118" x2="118" y2="118" stroke="#334155" stroke-width="2"/>
+    <line x1="75" y1="152" x2="125" y2="152" stroke="#334155" stroke-width="2"/>
+    <text x="100" y="195" font-family="monospace" font-size="20" fill="#94a3b8" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Galaxy Swirl",
+  tags: ["organic","cool","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#030712"/>
+    <circle cx="100" cy="90" r="3" fill="#fff"/>
+    <ellipse cx="100" cy="90" rx="55" ry="20" fill="none" stroke="#818cf8" stroke-width="1.5" transform="rotate(-20,100,90)" opacity="0.4"/>
+    <ellipse cx="100" cy="90" rx="55" ry="20" fill="none" stroke="#c084fc" stroke-width="1.5" transform="rotate(25,100,90)" opacity="0.4"/>
+    <ellipse cx="100" cy="90" rx="55" ry="20" fill="none" stroke="#38bdf8" stroke-width="1.5" transform="rotate(70,100,90)" opacity="0.4"/>
+    <circle cx="70" cy="70" r="1.5" fill="#fff" opacity="0.5"/><circle cx="140" cy="80" r="1" fill="#fff" opacity="0.4"/>
+    <circle cx="85" cy="110" r="1" fill="#fff" opacity="0.3"/><circle cx="120" cy="65" r="1.5" fill="#fff" opacity="0.5"/>
+    <text x="100" y="165" font-family="system-ui" font-size="26" font-weight="300" fill="#c4b5fd" text-anchor="middle">adlog</text></svg>`
+},
+
+// ---- 81-90: Retro / Vintage ----
+{
+  name: "Typewriter",
+  tags: ["retro","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#faf5ee"/>
+    <text x="100" y="90" font-family="'Courier New',monospace" font-size="40" fill="#1c1917" text-anchor="middle">adlog</text>
+    <line x1="38" y1="100" x2="162" y2="100" stroke="#1c1917" stroke-width="1.5"/>
+    <text x="100" y="125" font-family="'Courier New',monospace" font-size="10" fill="#78716c" text-anchor="middle">PRIVATE TEXT STORE</text></svg>`
+},
+{
+  name: "Badge Seal",
+  tags: ["retro","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <circle cx="100" cy="100" r="65" fill="none" stroke="#d4a574" stroke-width="2"/>
+    <circle cx="100" cy="100" r="58" fill="none" stroke="#d4a574" stroke-width="1"/>
+    <text x="100" y="95" font-family="serif" font-size="32" font-weight="bold" fill="#fde68a" text-anchor="middle">ADLOG</text>
+    <text x="100" y="115" font-family="serif" font-size="10" fill="#d4a574" text-anchor="middle">EST. 2024</text></svg>`
+},
+{
+  name: "Cassette",
+  tags: ["retro","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#292524"/>
+    <rect x="30" y="45" width="140" height="95" rx="8" fill="#44403c" stroke="#57534e" stroke-width="2"/>
+    <rect x="50" y="55" width="100" height="40" rx="4" fill="#1c1917"/>
+    <text x="100" y="80" font-family="monospace" font-size="16" font-weight="bold" fill="#fde68a" text-anchor="middle">adlog</text>
+    <circle cx="65" cy="115" r="12" fill="#1c1917" stroke="#57534e" stroke-width="2"/>
+    <circle cx="135" cy="115" r="12" fill="#1c1917" stroke="#57534e" stroke-width="2"/>
+    <line x1="77" y1="122" x2="123" y2="122" stroke="#57534e" stroke-width="1"/>
+    <text x="100" y="168" font-family="monospace" font-size="12" fill="#78716c" text-anchor="middle">SIDE A</text></svg>`
+},
+{
+  name: "Newspaper",
+  tags: ["retro","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fefce8"/>
+    <line x1="30" y1="50" x2="170" y2="50" stroke="#1c1917" stroke-width="2"/>
+    <text x="100" y="82" font-family="Georgia,serif" font-size="42" font-weight="bold" fill="#1c1917" text-anchor="middle">ADLOG</text>
+    <line x1="30" y1="90" x2="170" y2="90" stroke="#1c1917" stroke-width="3"/>
+    <line x1="30" y1="95" x2="170" y2="95" stroke="#1c1917" stroke-width="1"/>
+    <rect x="30" y="105" width="60" height="5" rx="1" fill="#a8a29e"/><rect x="30" y="115" width="55" height="5" rx="1" fill="#a8a29e"/>
+    <rect x="30" y="125" width="60" height="5" rx="1" fill="#a8a29e"/>
+    <rect x="110" y="105" width="60" height="5" rx="1" fill="#a8a29e"/><rect x="110" y="115" width="50" height="5" rx="1" fill="#a8a29e"/>
+    <rect x="110" y="125" width="55" height="5" rx="1" fill="#a8a29e"/></svg>`
+},
+{
+  name: "Floppy Disk",
+  tags: ["retro","playful","cute"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#dbeafe"/>
+    <rect x="40" y="30" width="120" height="135" rx="6" fill="#3b82f6"/>
+    <rect x="60" y="30" width="70" height="45" rx="2" fill="#bfdbfe"/><rect x="105" y="35" width="15" height="35" rx="1" fill="#93c5fd"/>
+    <rect x="55" y="100" width="90" height="65" rx="4" fill="#eff6ff"/>
+    <text x="100" y="138" font-family="monospace" font-size="16" font-weight="bold" fill="#1e40af" text-anchor="middle">adlog</text>
+    <text x="100" y="155" font-family="monospace" font-size="8" fill="#60a5fa" text-anchor="middle">1.44 MB</text></svg>`
+},
+{
+  name: "Vinyl Record",
+  tags: ["retro","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <circle cx="100" cy="95" r="60" fill="#0a0a0a"/>
+    <circle cx="100" cy="95" r="55" fill="none" stroke="#292524" stroke-width="1"/>
+    <circle cx="100" cy="95" r="45" fill="none" stroke="#292524" stroke-width="1"/>
+    <circle cx="100" cy="95" r="35" fill="none" stroke="#292524" stroke-width="1"/>
+    <circle cx="100" cy="95" r="20" fill="#dc2626"/>
+    <circle cx="100" cy="95" r="4" fill="#0a0a0a"/>
+    <text x="100" y="100" font-family="serif" font-size="9" font-weight="bold" fill="#fef2f2" text-anchor="middle">ADLOG</text>
+    <text x="100" y="175" font-family="monospace" font-size="14" fill="#57534e" text-anchor="middle">adlog records</text></svg>`
+},
+{
+  name: "Postage Stamp",
+  tags: ["retro","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fefce8"/>
+    <rect x="35" y="30" width="130" height="140" fill="#fff" stroke="#d97706" stroke-width="2" stroke-dasharray="0 6" stroke-linecap="round"/>
+    <rect x="45" y="40" width="110" height="120" fill="none" stroke="#d97706" stroke-width="1"/>
+    <text x="100" y="90" font-family="serif" font-size="30" font-weight="bold" fill="#92400e" text-anchor="middle">ADLOG</text>
+    <line x1="55" y1="100" x2="145" y2="100" stroke="#d97706" stroke-width="0.5"/>
+    <text x="100" y="120" font-family="serif" font-size="10" fill="#b45309" text-anchor="middle">log.atdot.net</text>
+    <text x="130" y="150" font-family="serif" font-size="18" font-weight="bold" fill="#dc2626">1</text></svg>`
+},
+{
+  name: "Pixel Art",
+  tags: ["retro","cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1a1a2e"/>
+    <g transform="translate(35,40) scale(2.6)">
+      <rect x="0" y="0" width="5" height="25" fill="#38bdf8"/><rect x="0" y="0" width="15" height="5" fill="#38bdf8"/><rect x="0" y="10" width="15" height="5" fill="#38bdf8"/><rect x="10" y="0" width="5" height="25" fill="#38bdf8"/>
+      <rect x="20" y="5" width="5" height="20" fill="#38bdf8"/><rect x="20" y="0" width="15" height="5" fill="#38bdf8"/><rect x="30" y="0" width="5" height="25" fill="#38bdf8"/><rect x="20" y="20" width="15" height="5" fill="#38bdf8"/>
+    </g>
+    <text x="100" y="142" font-family="monospace" font-size="12" fill="#475569" text-anchor="middle">- LOG -</text>
+    <text x="100" y="170" font-family="monospace" font-size="22" font-weight="bold" fill="#38bdf8" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Art Deco",
+  tags: ["retro","bold","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <line x1="100" y1="20" x2="100" y2="50" stroke="#d4a574" stroke-width="1.5"/>
+    <polygon points="80,50 100,35 120,50" fill="none" stroke="#d4a574" stroke-width="1.5"/>
+    <line x1="30" y1="60" x2="170" y2="60" stroke="#d4a574" stroke-width="1"/>
+    <line x1="40" y1="65" x2="160" y2="65" stroke="#d4a574" stroke-width="0.5"/>
+    <text x="100" y="105" font-family="serif" font-size="40" font-weight="bold" fill="#fde68a" text-anchor="middle" letter-spacing="8">ADLOG</text>
+    <line x1="40" y1="118" x2="160" y2="118" stroke="#d4a574" stroke-width="0.5"/>
+    <line x1="30" y1="123" x2="170" y2="123" stroke="#d4a574" stroke-width="1"/>
+    <polygon points="80,133 100,148 120,133" fill="none" stroke="#d4a574" stroke-width="1.5"/>
+    <line x1="100" y1="148" x2="100" y2="175" stroke="#d4a574" stroke-width="1.5"/></svg>`
+},
+{
+  name: "Woodcut",
+  tags: ["retro","bold","organic"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#451a03"/>
+    <rect x="30" y="40" width="140" height="110" rx="4" fill="#78350f"/>
+    <text x="100" y="105" font-family="Georgia,serif" font-size="44" font-weight="900" fill="#fef3c7" text-anchor="middle">adlog</text>
+    <line x1="45" y1="115" x2="155" y2="115" stroke="#fef3c7" stroke-width="1.5"/>
+    <text x="100" y="132" font-family="serif" font-size="9" fill="#fde68a" text-anchor="middle" letter-spacing="4">TEXT STORE</text></svg>`
+},
+
+// ---- 91-100: Special / Unique ----
+{
+  name: "Japanese Seal",
+  tags: ["bold","retro"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fef2f2"/>
+    <rect x="55" y="40" width="90" height="90" rx="6" fill="none" stroke="#dc2626" stroke-width="4"/>
+    <text x="100" y="80" font-family="serif" font-size="28" font-weight="900" fill="#dc2626" text-anchor="middle">ad</text>
+    <text x="100" y="115" font-family="serif" font-size="28" font-weight="900" fill="#dc2626" text-anchor="middle">log</text>
+    <text x="100" y="165" font-family="system-ui" font-size="16" fill="#991b1b" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Blueprint",
+  tags: ["retro","cool","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1e3a5f"/>
+    <g stroke="#fff" stroke-width="0.3" opacity="0.15"><line x1="0" y1="40" x2="200" y2="40"/><line x1="0" y1="80" x2="200" y2="80"/><line x1="0" y1="120" x2="200" y2="120"/><line x1="0" y1="160" x2="200" y2="160"/>
+    <line x1="40" y1="0" x2="40" y2="200"/><line x1="80" y1="0" x2="80" y2="200"/><line x1="120" y1="0" x2="120" y2="200"/><line x1="160" y1="0" x2="160" y2="200"/></g>
+    <rect x="35" y="55" width="130" height="55" rx="4" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <text x="100" y="92" font-family="monospace" font-size="30" fill="#fff" text-anchor="middle">adlog</text>
+    <text x="100" y="135" font-family="monospace" font-size="8" fill="#7dd3fc" text-anchor="middle">DRAWING NO. 001 &mdash; REV A</text>
+    <line x1="35" y1="145" x2="165" y2="145" stroke="#fff" stroke-width="0.5" opacity="0.3"/></svg>`
+},
+{
+  name: "Emoji Stack",
+  tags: ["playful","cute"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafafa"/>
+    <text x="100" y="80" font-size="50" text-anchor="middle">📝</text>
+    <text x="100" y="130" font-family="system-ui" font-size="34" font-weight="800" fill="#18181b" text-anchor="middle">adlog</text>
+    <text x="100" y="155" font-family="system-ui" font-size="12" fill="#a1a1aa" text-anchor="middle">your private log</text></svg>`
+},
+{
+  name: "Gradient Blob",
+  tags: ["organic","cool"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="blob94" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#ec4899"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#0f0520"/>
+    <ellipse cx="90" cy="85" rx="55" ry="45" fill="url(#blob94)" opacity="0.6" transform="rotate(-10,90,85)"/>
+    <ellipse cx="115" cy="95" rx="50" ry="40" fill="url(#blob94)" opacity="0.4" transform="rotate(15,115,95)"/>
+    <text x="100" y="100" font-family="system-ui" font-size="32" font-weight="800" fill="#fff" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Book Spine",
+  tags: ["retro","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f5f5f4"/>
+    <rect x="70" y="20" width="60" height="160" rx="4" fill="#1e40af"/>
+    <rect x="70" y="20" width="8" height="160" fill="#1e3a5f"/>
+    <text x="100" y="110" font-family="serif" font-size="16" font-weight="bold" fill="#dbeafe" text-anchor="middle" writing-mode="tb">adlog</text></svg>`
+},
+{
+  name: "Sticker Pack",
+  tags: ["playful","cute","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#faf5ff"/>
+    <ellipse cx="100" cy="95" rx="70" ry="55" fill="#e9d5ff" stroke="#a855f7" stroke-width="3"/>
+    <text x="100" y="85" font-family="system-ui" font-size="12" fill="#7c3aed" text-anchor="middle">HELLO my name is</text>
+    <rect x="40" y="92" width="120" height="38" fill="#fff"/>
+    <text x="100" y="120" font-family="system-ui" font-size="26" font-weight="800" fill="#6d28d9" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Barcode",
+  tags: ["minimal","geometric","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g fill="#000"><rect x="35" y="45" width="4" height="80"/><rect x="42" y="45" width="2" height="80"/><rect x="48" y="45" width="6" height="80"/>
+    <rect x="58" y="45" width="2" height="80"/><rect x="64" y="45" width="4" height="80"/><rect x="72" y="45" width="2" height="80"/>
+    <rect x="78" y="45" width="6" height="80"/><rect x="88" y="45" width="2" height="80"/><rect x="94" y="45" width="4" height="80"/>
+    <rect x="102" y="45" width="2" height="80"/><rect x="108" y="45" width="6" height="80"/><rect x="118" y="45" width="2" height="80"/>
+    <rect x="124" y="45" width="4" height="80"/><rect x="132" y="45" width="6" height="80"/><rect x="142" y="45" width="2" height="80"/>
+    <rect x="148" y="45" width="4" height="80"/><rect x="156" y="45" width="2" height="80"/><rect x="162" y="45" width="4" height="80"/></g>
+    <text x="100" y="148" font-family="monospace" font-size="22" fill="#000" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "QR Code",
+  tags: ["geometric","cool","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g fill="#000" transform="translate(40,35) scale(3)">
+      <rect x="0" y="0" width="7" height="7"/><rect x="1" y="1" width="5" height="5" fill="#fff"/><rect x="2" y="2" width="3" height="3"/>
+      <rect x="33" y="0" width="7" height="7"/><rect x="34" y="1" width="5" height="5" fill="#fff"/><rect x="35" y="2" width="3" height="3"/>
+      <rect x="0" y="33" width="7" height="7"/><rect x="1" y="34" width="5" height="5" fill="#fff"/><rect x="2" y="35" width="3" height="3"/>
+      <rect x="10" y="3" width="2" height="2"/><rect x="14" y="5" width="2" height="2"/><rect x="18" y="2" width="2" height="2"/>
+      <rect x="22" y="4" width="2" height="2"/><rect x="16" y="16" width="6" height="6"/><rect x="17" y="17" width="4" height="4" fill="#fff"/><rect x="18" y="18" width="2" height="2"/>
+    </g>
+    <text x="100" y="168" font-family="monospace" font-size="18" fill="#18181b" text-anchor="middle">adlog</text></svg>`
+},
+{
+  name: "Wax Seal",
+  tags: ["retro","bold","organic"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fef2f2"/>
+    <circle cx="100" cy="95" r="52" fill="#991b1b"/>
+    <circle cx="100" cy="95" r="48" fill="#b91c1c"/>
+    <circle cx="100" cy="95" r="38" fill="none" stroke="#fca5a5" stroke-width="1" opacity="0.4"/>
+    <text x="100" y="90" font-family="serif" font-size="22" font-weight="bold" fill="#fef2f2" text-anchor="middle">AD</text>
+    <text x="100" y="112" font-family="serif" font-size="16" fill="#fecaca" text-anchor="middle">LOG</text>
+    <text x="100" y="170" font-family="serif" font-size="14" fill="#991b1b" text-anchor="middle">Sealed</text></svg>`
+},
+{
+  name: "Cosmic Eye",
+  tags: ["cool","dark","organic"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <ellipse cx="100" cy="90" rx="65" ry="35" fill="none" stroke="#6366f1" stroke-width="2"/>
+    <circle cx="100" cy="90" r="20" fill="#4f46e5"/>
+    <circle cx="100" cy="90" r="8" fill="#020617"/>
+    <circle cx="104" cy="86" r="3" fill="#c7d2fe"/>
+    <ellipse cx="100" cy="90" rx="65" ry="35" fill="none" stroke="#818cf8" stroke-width="1" opacity="0.3" transform="rotate(10,100,90)"/>
+    <text x="100" y="155" font-family="system-ui" font-size="26" font-weight="700" fill="#a5b4fc" text-anchor="middle">adlog</text></svg>`
+},
+
+// ---- 101-120: @.log モチーフ (atdot = @.) ----
+{
+  name: "@.log Clean",
+  tags: ["@.log","simple","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafafa"/>
+    <text x="100" y="110" font-family="monospace" font-size="40" font-weight="700" text-anchor="middle" fill="#18181b">@.log</text></svg>`
+},
+{
+  name: "@.log Neon",
+  tags: ["@.log","neon","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0a0a0a"/>
+    <text x="100" y="112" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" fill="#22d3ee">@.log</text>
+    <text x="100" y="114" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" fill="#22d3ee" opacity="0.2">@.log</text></svg>`
+},
+{
+  name: "@.log Gradient",
+  tags: ["@.log","cool","bold"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="atg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#ec4899"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#09090b"/>
+    <text x="100" y="115" font-family="monospace" font-size="46" font-weight="900" text-anchor="middle" fill="url(#atg1)">@.log</text></svg>`
+},
+{
+  name: "Big @ Symbol",
+  tags: ["@.log","bold","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <text x="100" y="120" font-family="monospace" font-size="110" font-weight="900" text-anchor="middle" fill="#1e3a5f">@</text>
+    <text x="100" y="120" font-family="monospace" font-size="110" font-weight="900" text-anchor="middle" fill="none" stroke="#38bdf8" stroke-width="2">@</text>
+    <text x="100" y="172" font-family="monospace" font-size="22" font-weight="bold" fill="#38bdf8" text-anchor="middle">.log</text></svg>`
+},
+{
+  name: "@ Circle Dot",
+  tags: ["@.log","geometric","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <circle cx="100" cy="85" r="50" fill="none" stroke="#818cf8" stroke-width="4"/>
+    <text x="100" y="100" font-family="monospace" font-size="48" font-weight="bold" text-anchor="middle" fill="#c4b5fd">@</text>
+    <circle cx="100" cy="145" r="5" fill="#818cf8"/>
+    <text x="100" y="180" font-family="monospace" font-size="22" font-weight="bold" fill="#e0e7ff" text-anchor="middle">log</text></svg>`
+},
+{
+  name: "@ Spiral",
+  tags: ["@.log","organic","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <path d="M130,85 A30,30 0 1,0 100,55 A50,50 0 1,1 50,85 A50,50 0 0,0 150,85 A50,50 0 0,0 130,85" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="130" cy="85" r="4" fill="#38bdf8"/>
+    <circle cx="100" cy="148" r="4" fill="#38bdf8"/>
+    <text x="100" y="180" font-family="monospace" font-size="22" font-weight="bold" fill="#e2e8f0" text-anchor="middle">log</text></svg>`
+},
+{
+  name: "@. Typewriter",
+  tags: ["@.log","retro","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#faf5ee"/>
+    <text x="100" y="85" font-family="'Courier New',monospace" font-size="56" font-weight="bold" text-anchor="middle" fill="#1c1917">@.</text>
+    <line x1="35" y1="95" x2="165" y2="95" stroke="#1c1917" stroke-width="2"/>
+    <text x="100" y="130" font-family="'Courier New',monospace" font-size="40" fill="#78716c" text-anchor="middle">log</text></svg>`
+},
+{
+  name: "@ Highlight",
+  tags: ["@.log","bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <rect x="18" y="78" width="56" height="48" rx="6" fill="#f59e0b"/>
+    <text x="46" y="115" font-family="monospace" font-size="42" font-weight="900" text-anchor="middle" fill="#18181b">@</text>
+    <text x="80" y="115" font-family="monospace" font-size="42" font-weight="900" fill="#71717a">.</text>
+    <text x="130" y="115" font-family="monospace" font-size="42" font-weight="900" fill="#fafafa">log</text></svg>`
+},
+{
+  name: "@.log Terminal",
+  tags: ["@.log","terminal","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0c0c0c"/>
+    <rect x="20" y="25" width="160" height="150" rx="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+    <circle cx="38" cy="42" r="4" fill="#ef4444"/><circle cx="52" cy="42" r="4" fill="#eab308"/><circle cx="66" cy="42" r="4" fill="#22c55e"/>
+    <text x="30" y="80" font-family="monospace" font-size="13" fill="#6b7280">$ ssh log.atdot.net</text>
+    <text x="30" y="105" font-family="monospace" font-size="13" fill="#4ade80">Welcome to</text>
+    <text x="30" y="130" font-family="monospace" font-size="26" font-weight="bold" fill="#38bdf8">@.log</text>
+    <rect x="112" y="114" width="2" height="18" fill="#38bdf8"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+    <text x="30" y="155" font-family="monospace" font-size="11" fill="#555">log.atdot.net</text></svg>`
+},
+{
+  name: "@.log Stamp",
+  tags: ["@.log","retro","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fef2f2"/>
+    <circle cx="100" cy="95" r="62" fill="none" stroke="#dc2626" stroke-width="4"/>
+    <circle cx="100" cy="95" r="55" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="100" y="108" font-family="monospace" font-size="38" font-weight="900" text-anchor="middle" fill="#dc2626" transform="rotate(-8,100,95)">@.log</text></svg>`
+},
+{
+  name: "@ Cute Face",
+  tags: ["@.log","cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fdf2f8"/>
+    <text x="100" y="105" font-family="monospace" font-size="90" font-weight="bold" text-anchor="middle" fill="#fbcfe8">@</text>
+    <circle cx="82" cy="78" r="5" fill="#831843"/><circle cx="118" cy="78" r="5" fill="#831843"/>
+    <path d="M88,95 Q100,108 112,95" fill="none" stroke="#831843" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="72" cy="88" rx="7" ry="4" fill="#f9a8d4" opacity="0.6"/><ellipse cx="128" cy="88" rx="7" ry="4" fill="#f9a8d4" opacity="0.6"/>
+    <text x="100" y="165" font-family="system-ui" font-size="22" font-weight="700" fill="#be185d" text-anchor="middle">.log</text></svg>`
+},
+{
+  name: "@.log Pixel",
+  tags: ["@.log","retro","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1a1a2e"/>
+    <g transform="translate(42,30) scale(4)">
+      <rect x="4" y="0" width="12" height="3" fill="#38bdf8"/>
+      <rect x="1" y="3" width="3" height="3" fill="#38bdf8"/><rect x="16" y="3" width="3" height="3" fill="#38bdf8"/>
+      <rect x="1" y="6" width="3" height="3" fill="#38bdf8"/><rect x="7" y="6" width="9" height="3" fill="#38bdf8"/><rect x="16" y="6" width="3" height="3" fill="#38bdf8"/>
+      <rect x="1" y="9" width="3" height="3" fill="#38bdf8"/><rect x="7" y="9" width="3" height="3" fill="#38bdf8"/><rect x="13" y="9" width="6" height="3" fill="#38bdf8"/>
+      <rect x="1" y="12" width="3" height="3" fill="#38bdf8"/><rect x="7" y="12" width="12" height="3" fill="#38bdf8"/>
+      <rect x="4" y="15" width="12" height="3" fill="#38bdf8"/>
+    </g>
+    <text x="100" y="115" font-family="monospace" font-size="10" fill="#475569" text-anchor="middle">- . -</text>
+    <text x="100" y="145" font-family="monospace" font-size="26" font-weight="bold" fill="#38bdf8" text-anchor="middle">@.log</text></svg>`
+},
+{
+  name: "@.log Glitch",
+  tags: ["@.log","neon","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#000"/>
+    <text x="100" y="110" font-family="monospace" font-size="44" font-weight="bold" text-anchor="middle" fill="#0ff" opacity="0.7" transform="translate(-3,0)">@.log</text>
+    <text x="100" y="110" font-family="monospace" font-size="44" font-weight="bold" text-anchor="middle" fill="#f0f" opacity="0.7" transform="translate(3,0)">@.log</text>
+    <text x="100" y="110" font-family="monospace" font-size="44" font-weight="bold" text-anchor="middle" fill="#fff">@.log</text></svg>`
+},
+{
+  name: "@ = at, . = dot",
+  tags: ["@.log","minimal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <text x="100" y="75" font-family="monospace" font-size="48" font-weight="800" text-anchor="middle" fill="#0f172a">@.</text>
+    <text x="100" y="125" font-family="monospace" font-size="48" font-weight="800" text-anchor="middle" fill="#3b82f6">log</text>
+    <text x="100" y="155" font-family="system-ui" font-size="11" fill="#94a3b8" text-anchor="middle">at . dot . log</text></svg>`
+},
+{
+  name: "@.log Seal",
+  tags: ["@.log","retro","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <circle cx="100" cy="95" r="58" fill="#991b1b"/>
+    <circle cx="100" cy="95" r="52" fill="#b91c1c"/>
+    <circle cx="100" cy="95" r="42" fill="none" stroke="#fca5a5" stroke-width="1" opacity="0.3"/>
+    <text x="100" y="90" font-family="monospace" font-size="30" font-weight="bold" text-anchor="middle" fill="#fef2f2">@.</text>
+    <text x="100" y="116" font-family="monospace" font-size="26" font-weight="bold" text-anchor="middle" fill="#fecaca">log</text></svg>`
+},
+{
+  name: "Email Address",
+  tags: ["@.log","playful","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#eff6ff"/>
+    <rect x="30" y="55" width="140" height="85" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="2.5"/>
+    <polyline points="30,55 100,105 170,55" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
+    <text x="100" y="170" font-family="monospace" font-size="28" font-weight="700" text-anchor="middle" fill="#1d4ed8">@.log</text></svg>`
+},
+{
+  name: "@.log 3D",
+  tags: ["@.log","bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <text x="104" y="118" font-family="monospace" font-size="50" font-weight="900" text-anchor="middle" fill="#27272a">@.log</text>
+    <text x="102" y="116" font-family="monospace" font-size="50" font-weight="900" text-anchor="middle" fill="#3f3f46">@.log</text>
+    <text x="100" y="114" font-family="monospace" font-size="50" font-weight="900" text-anchor="middle" fill="#fafafa">@.log</text></svg>`
+},
+{
+  name: "@ Planet",
+  tags: ["@.log","organic","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <circle cx="100" cy="88" r="40" fill="#1e3a5f"/>
+    <ellipse cx="100" cy="88" rx="65" ry="18" fill="none" stroke="#38bdf8" stroke-width="2.5" transform="rotate(-20,100,88)"/>
+    <circle cx="100" cy="88" r="40" fill="none" stroke="#0f172a" stroke-width="0"/>
+    <text x="100" y="98" font-family="monospace" font-size="32" font-weight="bold" text-anchor="middle" fill="#e0f2fe">@</text>
+    <circle cx="142" cy="72" r="4" fill="#38bdf8"/>
+    <text x="100" y="165" font-family="monospace" font-size="22" font-weight="bold" fill="#38bdf8" text-anchor="middle">.log</text></svg>`
+},
+{
+  name: "@.log Cyber",
+  tags: ["@.log","neon","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="0" fill="#0d0221"/>
+    <rect x="0" y="82" width="200" height="45" fill="#ff2a6d" opacity="0.08"/>
+    <text x="100" y="115" font-family="monospace" font-size="48" font-weight="900" text-anchor="middle" fill="#05d9e8">@.log</text>
+    <line x1="15" y1="125" x2="185" y2="125" stroke="#ff2a6d" stroke-width="2"/>
+    <line x1="15" y1="130" x2="120" y2="130" stroke="#ff2a6d" stroke-width="1" opacity="0.5"/>
+    <text x="100" y="160" font-family="monospace" font-size="10" fill="#ff2a6d" opacity="0.6" text-anchor="middle">log.atdot.net</text></svg>`
+},
+{
+  name: "@.log Japanese",
+  tags: ["@.log","retro","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fef2f2"/>
+    <rect x="50" y="35" width="100" height="100" rx="6" fill="none" stroke="#dc2626" stroke-width="4.5"/>
+    <text x="100" y="80" font-family="monospace" font-size="32" font-weight="900" text-anchor="middle" fill="#dc2626">@.</text>
+    <text x="100" y="118" font-family="monospace" font-size="32" font-weight="900" text-anchor="middle" fill="#dc2626">log</text>
+    <text x="100" y="165" font-family="system-ui" font-size="14" fill="#991b1b" text-anchor="middle">log.atdot.net</text></svg>`
+},
+
+// ---- 121-170: @.log + adlog 組み合わせ ----
+// @. を背景・装飾にして adlog をメイン表示するパターンを中心に
+{
+  name: "Ghost @. Behind",
+  tags: ["@.log+adlog","cool","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <text x="100" y="125" font-family="monospace" font-size="100" font-weight="900" text-anchor="middle" fill="#1e293b">@.</text>
+    <text x="100" y="115" font-family="monospace" font-size="44" font-weight="bold" text-anchor="middle" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "Watermark @.",
+  tags: ["@.log+adlog","minimal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafafa"/>
+    <text x="100" y="130" font-family="monospace" font-size="120" font-weight="900" text-anchor="middle" fill="#f0f0f0">@.</text>
+    <text x="100" y="112" font-family="monospace" font-size="40" font-weight="700" text-anchor="middle" fill="#18181b">adlog</text></svg>`
+},
+{
+  name: "@. Shadow Layer",
+  tags: ["@.log+adlog","bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <text x="105" y="120" font-family="monospace" font-size="90" font-weight="900" text-anchor="middle" fill="#27272a">@.</text>
+    <text x="100" y="112" font-family="monospace" font-size="42" font-weight="800" text-anchor="middle" fill="#fafafa">adlog</text></svg>`
+},
+{
+  name: "@. Glow BG",
+  tags: ["@.log+adlog","neon","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <text x="100" y="130" font-family="monospace" font-size="110" font-weight="900" text-anchor="middle" fill="#0ea5e9" opacity="0.08">@.</text>
+    <text x="100" y="130" font-family="monospace" font-size="110" font-weight="900" text-anchor="middle" fill="#0ea5e9" opacity="0.04">@.</text>
+    <text x="100" y="112" font-family="monospace" font-size="40" font-weight="bold" text-anchor="middle" fill="#38bdf8">adlog</text></svg>`
+},
+{
+  name: "@ Outline + adlog",
+  tags: ["@.log+adlog","geometric","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <text x="100" y="128" font-family="monospace" font-size="110" font-weight="900" text-anchor="middle" fill="none" stroke="#1e3a5f" stroke-width="2">@</text>
+    <text x="100" y="110" font-family="monospace" font-size="36" font-weight="bold" text-anchor="middle" fill="#e2e8f0">adlog</text>
+    <circle cx="155" cy="125" r="5" fill="#38bdf8"/></svg>`
+},
+{
+  name: "@.adlog",
+  tags: ["@.log+adlog","simple","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#000"/>
+    <text x="100" y="115" font-family="monospace" font-size="38" font-weight="700" text-anchor="middle" fill="#fff">@.<tspan fill="#38bdf8">adlog</tspan></text></svg>`
+},
+{
+  name: "Prefix Notation",
+  tags: ["@.log+adlog","terminal","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <text x="100" y="100" font-family="monospace" font-size="18" text-anchor="middle" fill="#a1a1aa">@.</text>
+    <text x="100" y="130" font-family="monospace" font-size="42" font-weight="800" text-anchor="middle" fill="#18181b">adlog</text></svg>`
+},
+{
+  name: "@ Emboss adlog",
+  tags: ["@.log+adlog","bold","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <text x="100" y="125" font-family="serif" font-size="130" font-weight="900" text-anchor="middle" fill="#292524">@</text>
+    <text x="100" y="108" font-family="system-ui" font-size="44" font-weight="900" text-anchor="middle" fill="#fde68a">adlog</text></svg>`
+},
+{
+  name: "Split: @. / adlog",
+  tags: ["@.log+adlog","bold","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <rect x="0" y="0" width="200" height="100" rx="32" fill="#0f172a"/>
+    <text x="100" y="75" font-family="monospace" font-size="50" font-weight="200" text-anchor="middle" fill="#334155">@.</text>
+    <rect x="20" y="98" width="160" height="2" fill="#1e3a5f"/>
+    <text x="100" y="148" font-family="monospace" font-size="44" font-weight="800" text-anchor="middle" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "@. Top Corner",
+  tags: ["@.log+adlog","minimal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <text x="42" y="52" font-family="monospace" font-size="22" fill="#d4d4d8">@.</text>
+    <text x="100" y="118" font-family="system-ui" font-size="48" font-weight="800" text-anchor="middle" fill="#18181b">adlog</text></svg>`
+},
+{
+  name: "Stacked Duo",
+  tags: ["@.log+adlog","bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="duo1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#020617"/>
+    <text x="100" y="80" font-family="monospace" font-size="28" font-weight="300" text-anchor="middle" fill="#475569">@.</text>
+    <text x="100" y="130" font-family="monospace" font-size="52" font-weight="900" text-anchor="middle" fill="url(#duo1)">adlog</text></svg>`
+},
+{
+  name: "@ Ring + adlog",
+  tags: ["@.log+adlog","geometric","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <circle cx="100" cy="90" r="55" fill="none" stroke="#1e3a5f" stroke-width="20"/>
+    <text x="100" y="100" font-family="monospace" font-size="30" font-weight="bold" text-anchor="middle" fill="#e2e8f0">adlog</text>
+    <text x="100" y="170" font-family="monospace" font-size="16" fill="#475569" text-anchor="middle">@.log</text></svg>`
+},
+{
+  name: "Tiled @. Pattern",
+  tags: ["@.log+adlog","geometric","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <g font-family="monospace" font-size="14" fill="#1e293b"><text x="10" y="30">@.</text><text x="55" y="30">@.</text><text x="100" y="30">@.</text><text x="145" y="30">@.</text>
+    <text x="32" y="55">@.</text><text x="77" y="55">@.</text><text x="122" y="55">@.</text><text x="167" y="55">@.</text>
+    <text x="10" y="80">@.</text><text x="55" y="80">@.</text><text x="100" y="80">@.</text><text x="145" y="80">@.</text>
+    <text x="32" y="130">@.</text><text x="77" y="130">@.</text><text x="122" y="130">@.</text><text x="167" y="130">@.</text>
+    <text x="10" y="155">@.</text><text x="55" y="155">@.</text><text x="100" y="155">@.</text><text x="145" y="155">@.</text>
+    <text x="32" y="180">@.</text><text x="77" y="180">@.</text><text x="122" y="180">@.</text><text x="167" y="180">@.</text></g>
+    <rect x="25" y="88" width="150" height="40" rx="6" fill="#0f172a"/>
+    <text x="100" y="116" font-family="monospace" font-size="36" font-weight="bold" text-anchor="middle" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "@ Halo",
+  tags: ["@.log+adlog","neon","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <circle cx="100" cy="95" r="60" fill="#0ea5e9" opacity="0.04"/>
+    <circle cx="100" cy="95" r="45" fill="#0ea5e9" opacity="0.06"/>
+    <circle cx="100" cy="95" r="30" fill="#0ea5e9" opacity="0.08"/>
+    <text x="100" y="88" font-family="monospace" font-size="18" text-anchor="middle" fill="#475569">@.</text>
+    <text x="100" y="115" font-family="monospace" font-size="38" font-weight="bold" text-anchor="middle" fill="#38bdf8">adlog</text></svg>`
+},
+{
+  name: "@ Blur BG",
+  tags: ["@.log+adlog","organic","cool"],
+  svg: `<svg viewBox="0 0 200 200"><defs><filter id="blr"><feGaussianBlur stdDeviation="8"/></filter></defs>
+    <rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <text x="100" y="125" font-family="monospace" font-size="120" font-weight="900" text-anchor="middle" fill="#38bdf8" opacity="0.12" filter="url(#blr)">@.</text>
+    <text x="100" y="112" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" fill="#f0f9ff">adlog</text></svg>`
+},
+{
+  name: "@. Bracket",
+  tags: ["@.log+adlog","terminal","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <text x="100" y="108" font-family="monospace" font-size="30" text-anchor="middle" fill="#71717a">@.</text>
+    <text x="100" y="108" font-family="monospace" font-size="30" text-anchor="middle" fill="#fafafa">  adlog</text>
+    <text x="22" y="112" font-family="monospace" font-size="36" fill="#3f3f46">{</text>
+    <text x="170" y="112" font-family="monospace" font-size="36" fill="#3f3f46">}</text></svg>`
+},
+{
+  name: "Rotated @. BG",
+  tags: ["@.log+adlog","geometric","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0c0c0c"/>
+    <text x="100" y="135" font-family="monospace" font-size="140" font-weight="900" text-anchor="middle" fill="#1a1a1a" transform="rotate(-15,100,100)">@.</text>
+    <text x="100" y="112" font-family="monospace" font-size="40" font-weight="bold" text-anchor="middle" fill="#fff">adlog</text></svg>`
+},
+{
+  name: "@ = a, . = d",
+  tags: ["@.log+adlog","playful","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <text x="34" y="115" font-family="monospace" font-size="48" font-weight="800" fill="#f97316">@</text>
+    <text x="72" y="115" font-family="monospace" font-size="48" font-weight="800" fill="#f97316">.</text>
+    <text x="94" y="115" font-family="monospace" font-size="48" font-weight="800" fill="#1c1917">log</text>
+    <text x="47" y="148" font-family="monospace" font-size="10" fill="#a1a1aa">at</text>
+    <text x="80" y="148" font-family="monospace" font-size="10" fill="#a1a1aa">dot</text>
+    <text x="108" y="148" font-family="monospace" font-size="10" fill="#a1a1aa">log</text></svg>`
+},
+{
+  name: "@ Window",
+  tags: ["@.log+adlog","cool","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <rect x="30" y="30" width="140" height="140" rx="16" fill="none" stroke="#1e3a5f" stroke-width="3"/>
+    <text x="100" y="60" font-family="monospace" font-size="16" text-anchor="middle" fill="#334155">@.</text>
+    <text x="100" y="115" font-family="monospace" font-size="46" font-weight="900" text-anchor="middle" fill="#e2e8f0">adlog</text>
+    <text x="100" y="155" font-family="monospace" font-size="12" text-anchor="middle" fill="#334155">log.atdot.net</text></svg>`
+},
+{
+  name: "@.{ adlog }",
+  tags: ["@.log+adlog","terminal","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1e1e2e"/>
+    <text x="100" y="75" font-family="monospace" font-size="20" text-anchor="middle" fill="#585b70">@.{</text>
+    <text x="100" y="118" font-family="monospace" font-size="48" font-weight="bold" text-anchor="middle" fill="#cdd6f4">adlog</text>
+    <text x="100" y="152" font-family="monospace" font-size="20" text-anchor="middle" fill="#585b70">}</text></svg>`
+},
+{
+  name: "@ Fade Out",
+  tags: ["@.log+adlog","minimal","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <text x="25" y="115" font-family="monospace" font-size="44" font-weight="300" fill="#e5e7eb">@.</text>
+    <text x="90" y="115" font-family="monospace" font-size="44" font-weight="800" fill="#111827">adlog</text></svg>`
+},
+{
+  name: "@ Badge + adlog",
+  tags: ["@.log+adlog","bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <circle cx="55" cy="90" r="28" fill="#1e40af"/>
+    <text x="55" y="98" font-family="monospace" font-size="28" font-weight="bold" text-anchor="middle" fill="#bfdbfe">@.</text>
+    <text x="135" y="100" font-family="monospace" font-size="34" font-weight="800" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "@ BG Circles",
+  tags: ["@.log+adlog","organic","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <circle cx="60" cy="60" r="40" fill="#0ea5e9" opacity="0.04"/>
+    <circle cx="150" cy="70" r="50" fill="#8b5cf6" opacity="0.04"/>
+    <circle cx="90" cy="150" r="45" fill="#0ea5e9" opacity="0.03"/>
+    <text x="100" y="80" font-family="monospace" font-size="20" text-anchor="middle" fill="#334155">@.</text>
+    <text x="100" y="120" font-family="monospace" font-size="46" font-weight="900" text-anchor="middle" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "@.log → adlog",
+  tags: ["@.log+adlog","playful","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <text x="100" y="70" font-family="monospace" font-size="24" text-anchor="middle" fill="#94a3b8">@.log</text>
+    <text x="100" y="95" font-family="monospace" font-size="18" text-anchor="middle" fill="#cbd5e1">↓</text>
+    <text x="100" y="135" font-family="monospace" font-size="48" font-weight="900" text-anchor="middle" fill="#0f172a">adlog</text></svg>`
+},
+{
+  name: "Half & Half",
+  tags: ["@.log+adlog","bold","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <rect width="100" height="200" rx="32" fill="#1e293b"/>
+    <text x="50" y="115" font-family="monospace" font-size="36" font-weight="300" text-anchor="middle" fill="#475569">@.</text>
+    <text x="150" y="115" font-family="monospace" font-size="30" font-weight="800" text-anchor="middle" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "@ Stamp BG",
+  tags: ["@.log+adlog","retro","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <text x="100" y="120" font-family="serif" font-size="140" font-weight="900" text-anchor="middle" fill="#292524" transform="rotate(-10,100,100)">@</text>
+    <text x="100" y="115" font-family="monospace" font-size="44" font-weight="bold" text-anchor="middle" fill="#fde68a">adlog</text>
+    <circle cx="152" cy="115" r="4" fill="#a16207"/></svg>`
+},
+{
+  name: "@. Gradient BG",
+  tags: ["@.log+adlog","neon","cool"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="atbg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1" stop-opacity="0.15"/><stop offset="100%" stop-color="#ec4899" stop-opacity="0.15"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#09090b"/>
+    <text x="100" y="130" font-family="monospace" font-size="130" font-weight="900" text-anchor="middle" fill="url(#atbg1)">@</text>
+    <text x="100" y="115" font-family="monospace" font-size="44" font-weight="900" text-anchor="middle" fill="#fff">adlog</text></svg>`
+},
+{
+  name: "@. Matrix Rain",
+  tags: ["@.log+adlog","dark","neon"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#000"/>
+    <g font-family="monospace" font-size="12" fill="#0f0" opacity="0.12">
+    <text x="15" y="25">@.</text><text x="55" y="40">@.</text><text x="95" y="20">@.</text><text x="135" y="50">@.</text><text x="165" y="30">@.</text>
+    <text x="25" y="65">@.</text><text x="75" y="75">@.</text><text x="115" y="60">@.</text><text x="155" y="80">@.</text>
+    <text x="15" y="145">@.</text><text x="55" y="160">@.</text><text x="95" y="150">@.</text><text x="135" y="170">@.</text><text x="165" y="155">@.</text>
+    <text x="25" y="185">@.</text><text x="75" y="195">@.</text><text x="115" y="180">@.</text></g>
+    <text x="100" y="115" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" fill="#4ade80">adlog</text></svg>`
+},
+{
+  name: "@. Constellation",
+  tags: ["@.log+adlog","organic","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <g fill="#475569"><circle cx="40" cy="40" r="2"/><circle cx="160" cy="35" r="1.5"/><circle cx="30" cy="120" r="1.5"/><circle cx="170" cy="100" r="2"/>
+    <circle cx="50" cy="170" r="1.5"/><circle cx="155" cy="160" r="2"/><circle cx="100" cy="45" r="1.5"/></g>
+    <g stroke="#1e293b" stroke-width="0.5"><line x1="40" y1="40" x2="100" y2="45"/><line x1="100" y1="45" x2="160" y2="35"/>
+    <line x1="30" y1="120" x2="40" y2="40"/><line x1="170" y1="100" x2="160" y2="35"/><line x1="155" y1="160" x2="170" y2="100"/></g>
+    <text x="100" y="80" font-family="monospace" font-size="16" text-anchor="middle" fill="#334155">@.</text>
+    <text x="100" y="125" font-family="monospace" font-size="44" font-weight="800" text-anchor="middle" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "@ Donut adlog",
+  tags: ["@.log+adlog","geometric","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <circle cx="100" cy="90" r="48" fill="#27272a"/><circle cx="100" cy="90" r="25" fill="#18181b"/>
+    <text x="100" y="98" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle" fill="#fafafa">adlog</text>
+    <text x="100" y="160" font-family="monospace" font-size="14" text-anchor="middle" fill="#52525b">@.</text></svg>`
+},
+{
+  name: "@.adlog Path",
+  tags: ["@.log+adlog","terminal","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <text x="100" y="80" font-family="monospace" font-size="14" text-anchor="middle" fill="#475569">~/</text>
+    <text x="35" y="118" font-family="monospace" font-size="38" font-weight="300" fill="#475569">@.</text>
+    <text x="88" y="118" font-family="monospace" font-size="38" font-weight="800" fill="#38bdf8">adlog</text></svg>`
+},
+{
+  name: "@ Inside adlog",
+  tags: ["@.log+adlog","playful","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#faf5ff"/>
+    <text x="100" y="118" font-family="monospace" font-size="46" font-weight="800" text-anchor="middle" fill="#5b21b6"><tspan fill="#a78bfa">@</tspan><tspan fill="#c4b5fd">.</tspan>adlog</text></svg>`
+},
+{
+  name: "@ Overlap",
+  tags: ["@.log+adlog","cool","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <text x="70" y="120" font-family="monospace" font-size="80" font-weight="900" fill="#1e293b">@</text>
+    <text x="80" y="115" font-family="monospace" font-size="44" font-weight="bold" fill="#e2e8f0">adlog</text>
+    <circle cx="62" cy="130" r="4" fill="#38bdf8"/></svg>`
+},
+{
+  name: "@. Wave BG",
+  tags: ["@.log+adlog","organic","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0c4a6e"/>
+    <path d="M0,140 Q50,110 100,140 Q150,170 200,140 V200 H0 Z" fill="#0369a1" opacity="0.3"/>
+    <path d="M0,155 Q50,125 100,155 Q150,185 200,155 V200 H0 Z" fill="#0369a1" opacity="0.3"/>
+    <text x="100" y="60" font-family="monospace" font-size="20" text-anchor="middle" fill="#7dd3fc" opacity="0.4">@.</text>
+    <text x="100" y="108" font-family="monospace" font-size="46" font-weight="900" text-anchor="middle" fill="#f0f9ff">adlog</text></svg>`
+},
+{
+  name: "@. Scanline",
+  tags: ["@.log+adlog","retro","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0a0a0a"/>
+    <g opacity="0.08"><line x1="0" y1="2" x2="200" y2="2" stroke="#fff" stroke-width="1"/><line x1="0" y1="6" x2="200" y2="6" stroke="#fff" stroke-width="1"/>
+    <line x1="0" y1="10" x2="200" y2="10" stroke="#fff" stroke-width="1"/><line x1="0" y1="14" x2="200" y2="14" stroke="#fff" stroke-width="1"/></g>
+    <text x="100" y="130" font-family="monospace" font-size="100" font-weight="900" text-anchor="middle" fill="#111">@.</text>
+    <text x="100" y="112" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" fill="#22d3ee">adlog</text></svg>`
+},
+{
+  name: "@ Cut Out",
+  tags: ["@.log+adlog","bold","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#38bdf8"/>
+    <text x="100" y="130" font-family="monospace" font-size="130" font-weight="900" text-anchor="middle" fill="#0284c7">@</text>
+    <text x="100" y="112" font-family="monospace" font-size="40" font-weight="900" text-anchor="middle" fill="#fff">adlog</text>
+    <circle cx="158" cy="128" r="5" fill="#fff"/></svg>`
+},
+{
+  name: "@. Stencil Mask",
+  tags: ["@.log+adlog","bold","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f97316"/>
+    <text x="100" y="128" font-family="monospace" font-size="120" font-weight="900" text-anchor="middle" fill="#ea580c">@.</text>
+    <text x="100" y="112" font-family="monospace" font-size="42" font-weight="900" text-anchor="middle" fill="#fff">adlog</text></svg>`
+},
+{
+  name: "@ Dotted Halo",
+  tags: ["@.log+adlog","minimal","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafafa"/>
+    <circle cx="100" cy="95" r="65" fill="none" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="4,6"/>
+    <text x="100" y="80" font-family="monospace" font-size="16" text-anchor="middle" fill="#d4d4d8">@.</text>
+    <text x="100" y="112" font-family="system-ui" font-size="40" font-weight="800" text-anchor="middle" fill="#18181b">adlog</text></svg>`
+},
+{
+  name: "@ DNA Strand",
+  tags: ["@.log+adlog","organic","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#020617"/>
+    <path d="M30,20 Q170,60 30,100 Q170,140 30,180" fill="none" stroke="#1e3a5f" stroke-width="2"/>
+    <path d="M170,20 Q30,60 170,100 Q30,140 170,180" fill="none" stroke="#1e3a5f" stroke-width="2"/>
+    <text x="100" y="78" font-family="monospace" font-size="18" text-anchor="middle" fill="#334155">@.</text>
+    <text x="100" y="122" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "@ Radar BG",
+  tags: ["@.log+adlog","cool","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#022c22"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#166534" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="50" fill="none" stroke="#166534" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="30" fill="none" stroke="#166534" stroke-width="0.5"/>
+    <line x1="30" y1="100" x2="170" y2="100" stroke="#166534" stroke-width="0.3"/>
+    <line x1="100" y1="30" x2="100" y2="170" stroke="#166534" stroke-width="0.3"/>
+    <text x="100" y="65" font-family="monospace" font-size="16" text-anchor="middle" fill="#166534">@.</text>
+    <text x="100" y="115" font-family="monospace" font-size="40" font-weight="bold" text-anchor="middle" fill="#4ade80">adlog</text></svg>`
+},
+{
+  name: "@ Reflection",
+  tags: ["@.log+adlog","cool","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <text x="100" y="95" font-family="monospace" font-size="42" font-weight="800" text-anchor="middle" fill="#e2e8f0">adlog</text>
+    <text x="100" y="130" font-family="monospace" font-size="42" font-weight="800" text-anchor="middle" fill="#1e293b" transform="scale(1,-1) translate(0,-225)">adlog</text>
+    <line x1="30" y1="102" x2="170" y2="102" stroke="#1e3a5f" stroke-width="1"/>
+    <text x="100" y="165" font-family="monospace" font-size="14" text-anchor="middle" fill="#334155">@.log</text></svg>`
+},
+{
+  name: "@. Neon Box",
+  tags: ["@.log+adlog","neon","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0a0a0a"/>
+    <rect x="25" y="55" width="150" height="70" rx="8" fill="none" stroke="#6366f1" stroke-width="2"/>
+    <rect x="25" y="55" width="150" height="70" rx="8" fill="none" stroke="#6366f1" stroke-width="1" opacity="0.3" transform="translate(2,2)"/>
+    <text x="100" y="70" font-family="monospace" font-size="13" text-anchor="middle" fill="#4338ca">@.</text>
+    <text x="100" y="105" font-family="monospace" font-size="42" font-weight="900" text-anchor="middle" fill="#a5b4fc">adlog</text>
+    <text x="100" y="155" font-family="monospace" font-size="10" text-anchor="middle" fill="#312e81">log.atdot.net</text></svg>`
+},
+{
+  name: "@ Seal + adlog",
+  tags: ["@.log+adlog","retro","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fefce8"/>
+    <circle cx="100" cy="85" r="50" fill="none" stroke="#b45309" stroke-width="2.5"/>
+    <circle cx="100" cy="85" r="43" fill="none" stroke="#b45309" stroke-width="1"/>
+    <text x="100" y="78" font-family="monospace" font-size="18" text-anchor="middle" fill="#92400e">@.</text>
+    <text x="100" y="100" font-family="serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#78350f">adlog</text>
+    <text x="100" y="165" font-family="monospace" font-size="11" text-anchor="middle" fill="#a16207">log.atdot.net</text></svg>`
+},
+{
+  name: "@.adlog Ligature",
+  tags: ["@.log+adlog","minimal","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <text x="100" y="115" font-family="monospace" font-size="36" text-anchor="middle"><tspan fill="#c4b5fd" font-weight="300">@.</tspan><tspan fill="#18181b" font-weight="800">adlog</tspan></text></svg>`
+},
+{
+  name: "@ Circuit BG",
+  tags: ["@.log+adlog","cool","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <g stroke="#1e293b" stroke-width="1.5" fill="none">
+    <path d="M30,50 H70 V30"/><path d="M170,50 H140 V70"/><path d="M30,150 H60 V170"/><path d="M170,150 H150 V130"/>
+    <circle cx="70" cy="30" r="3" fill="#1e293b"/><circle cx="140" cy="70" r="3" fill="#1e293b"/>
+    <circle cx="60" cy="170" r="3" fill="#1e293b"/><circle cx="150" cy="130" r="3" fill="#1e293b"/></g>
+    <text x="100" y="78" font-family="monospace" font-size="16" text-anchor="middle" fill="#334155">@.</text>
+    <text x="100" y="118" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" fill="#38bdf8">adlog</text></svg>`
+},
+{
+  name: "@. Noise Grain",
+  tags: ["@.log+adlog","retro","organic"],
+  svg: `<svg viewBox="0 0 200 200"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic" mode="multiply"/></filter></defs>
+    <rect width="200" height="200" rx="32" fill="#d6d3d1"/>
+    <text x="100" y="125" font-family="monospace" font-size="100" font-weight="900" text-anchor="middle" fill="#c7c3bf">@.</text>
+    <text x="100" y="112" font-family="monospace" font-size="40" font-weight="800" text-anchor="middle" fill="#1c1917">adlog</text></svg>`
+},
+{
+  name: "@ = Home",
+  tags: ["@.log+adlog","cute","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#eff6ff"/>
+    <polygon points="100,35 155,80 155,135 45,135 45,80" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2.5"/>
+    <rect x="82" y="100" width="36" height="35" rx="3" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <text x="100" y="125" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="#3b82f6">@.</text>
+    <text x="100" y="172" font-family="monospace" font-size="32" font-weight="800" text-anchor="middle" fill="#1e40af">adlog</text></svg>`
+},
+
+// ---- 171-220: Text Search + @. + ad/log 色分け ----
+{
+  name: "TS: Classic @.",
+  tags: ["textsearch","@.log+adlog","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(55,30)"><rect width="95" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="72" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="84" height="10" rx="3" y="32" fill="#fbbf24" opacity="0.35"/><rect width="58" height="10" rx="3" y="48" fill="#d4d4d8"/><rect width="78" height="10" rx="3" y="64" fill="#d4d4d8"/><rect width="65" height="10" rx="3" y="80" fill="#d4d4d8"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="28" y="148" font-family="monospace" font-size="14" fill="#a1a1aa">@.</text>
+    <text x="50" y="148" font-family="system-ui" font-size="30" font-weight="700" fill="#b45309">ad</text><text x="96" y="148" font-family="system-ui" font-size="30" font-weight="700" fill="#1c1917">log</text></svg>`
+},
+{
+  name: "TS: Blue Accent",
+  tags: ["textsearch","@.log+adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <g transform="translate(55,28)"><rect width="90" height="10" rx="3" y="0" fill="#cbd5e1"/><rect width="68" height="10" rx="3" y="16" fill="#cbd5e1"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#3b82f6" opacity="0.25"/><rect width="55" height="10" rx="3" y="48" fill="#cbd5e1"/><rect width="75" height="10" rx="3" y="64" fill="#cbd5e1"/><rect width="62" height="10" rx="3" y="80" fill="#cbd5e1"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="#3b82f6" stroke-width="3.5"/><line x1="82" y1="74" x2="95" y2="87" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#94a3b8">@.</text>
+    <text x="50" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#3b82f6">ad</text><text x="96" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#0f172a">log</text></svg>`
+},
+{
+  name: "TS: Dark Mode",
+  tags: ["textsearch","@.log+adlog","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#1e293b"/><rect width="70" height="10" rx="3" y="16" fill="#1e293b"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#38bdf8" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#1e293b"/><rect width="72" height="10" rx="3" y="64" fill="#1e293b"/><rect width="64" height="10" rx="3" y="80" fill="#1e293b"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#334155">@.</text>
+    <text x="50" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#38bdf8">ad</text><text x="96" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#e2e8f0">log</text></svg>`
+},
+{
+  name: "TS: Violet Hit",
+  tags: ["textsearch","@.log+adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#faf5ff"/>
+    <g transform="translate(55,30)"><rect width="88" height="10" rx="3" y="0" fill="#e9d5ff"/><rect width="68" height="10" rx="3" y="16" fill="#e9d5ff"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#8b5cf6" opacity="0.25"/><rect width="56" height="10" rx="3" y="48" fill="#e9d5ff"/><rect width="74" height="10" rx="3" y="64" fill="#e9d5ff"/><rect width="60" height="10" rx="3" y="80" fill="#e9d5ff"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#8b5cf6" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#8b5cf6" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#c4b5fd">@.</text>
+    <text x="50" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#7c3aed">ad</text><text x="96" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#3b0764">log</text></svg>`
+},
+{
+  name: "TS: Rose Warm",
+  tags: ["textsearch","@.log+adlog","cute"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff1f2"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#fecdd3"/><rect width="65" height="10" rx="3" y="16" fill="#fecdd3"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#f43f5e" opacity="0.2"/><rect width="58" height="10" rx="3" y="48" fill="#fecdd3"/><rect width="76" height="10" rx="3" y="64" fill="#fecdd3"/><rect width="62" height="10" rx="3" y="80" fill="#fecdd3"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f43f5e" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#fda4af">@.</text>
+    <text x="50" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#e11d48">ad</text><text x="96" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#4c0519">log</text></svg>`
+},
+{
+  name: "TS: Green Terminal",
+  tags: ["textsearch","@.log+adlog","terminal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#052e16"/>
+    <g transform="translate(55,30)"><rect width="88" height="10" rx="3" y="0" fill="#14532d"/><rect width="70" height="10" rx="3" y="16" fill="#14532d"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#4ade80" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#14532d"/><rect width="72" height="10" rx="3" y="64" fill="#14532d"/><rect width="60" height="10" rx="3" y="80" fill="#14532d"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#4ade80" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#166534">@.</text>
+    <text x="50" y="150" font-family="monospace" font-size="28" font-weight="800" fill="#4ade80">ad</text><text x="94" y="150" font-family="monospace" font-size="28" font-weight="800" fill="#dcfce7">log</text></svg>`
+},
+{
+  name: "TS: Amber Ink",
+  tags: ["textsearch","@.log+adlog","retro"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fefce8"/>
+    <g transform="translate(55,30)"><rect width="92" height="9" rx="3" y="0" fill="#d4a574" opacity="0.3"/><rect width="70" height="9" rx="3" y="15" fill="#d4a574" opacity="0.3"/>
+    <rect width="82" height="9" rx="3" y="30" fill="#b45309" opacity="0.25"/><rect width="58" height="9" rx="3" y="45" fill="#d4a574" opacity="0.3"/><rect width="76" height="9" rx="3" y="60" fill="#d4a574" opacity="0.3"/><rect width="62" height="9" rx="3" y="75" fill="#d4a574" opacity="0.3"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="#b45309" stroke-width="3"/><line x1="82" y1="74" x2="95" y2="87" stroke="#b45309" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="148" font-family="monospace" font-size="13" fill="#a16207">@.</text>
+    <text x="50" y="148" font-family="serif" font-size="30" font-weight="700" fill="#92400e">ad</text><text x="94" y="148" font-family="serif" font-size="30" font-weight="700" fill="#451a03">log</text></svg>`
+},
+{
+  name: "TS: Mono White",
+  tags: ["textsearch","@.log+adlog","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g transform="translate(55,32)"><rect width="90" height="9" rx="2" y="0" fill="#e5e5e5"/><rect width="68" height="9" rx="2" y="15" fill="#e5e5e5"/>
+    <rect width="80" height="9" rx="2" y="30" fill="#a3a3a3" opacity="0.25"/><rect width="55" height="9" rx="2" y="45" fill="#e5e5e5"/><rect width="72" height="9" rx="2" y="60" fill="#e5e5e5"/><rect width="64" height="9" rx="2" y="75" fill="#e5e5e5"/></g>
+    <circle cx="68" cy="62" r="18" fill="none" stroke="#737373" stroke-width="2.5"/><line x1="80" y1="74" x2="92" y2="86" stroke="#737373" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="30" y="148" font-family="monospace" font-size="12" fill="#d4d4d4">@.</text>
+    <text x="50" y="148" font-family="system-ui" font-size="28" font-weight="700" fill="#525252">ad</text><text x="92" y="148" font-family="system-ui" font-size="28" font-weight="700" fill="#171717">log</text></svg>`
+},
+{
+  name: "TS: Multi Hit",
+  tags: ["textsearch","@.log+adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <g transform="translate(55,25)"><rect width="90" height="9" rx="3" y="0" fill="#cbd5e1"/><rect width="68" height="9" rx="3" y="14" fill="#cbd5e1"/>
+    <rect width="80" height="9" rx="3" y="28" fill="#3b82f6" opacity="0.2"/>
+    <rect width="55" height="9" rx="3" y="42" fill="#cbd5e1"/><rect width="72" height="9" rx="3" y="56" fill="#3b82f6" opacity="0.2"/>
+    <rect width="64" height="9" rx="3" y="70" fill="#cbd5e1"/><rect width="78" height="9" rx="3" y="84" fill="#3b82f6" opacity="0.2"/></g>
+    <circle cx="66" cy="53" r="18" fill="none" stroke="#3b82f6" stroke-width="3"/><line x1="79" y1="66" x2="90" y2="77" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="12" fill="#94a3b8">@.</text>
+    <text x="48" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#2563eb">ad</text><text x="94" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#0f172a">log</text>
+    <text x="140" y="150" font-family="monospace" font-size="11" fill="#94a3b8">3</text></svg>`
+},
+{
+  name: "TS: Neon Dark",
+  tags: ["textsearch","@.log+adlog","neon","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#09090b"/>
+    <g transform="translate(55,30)"><rect width="90" height="9" rx="3" y="0" fill="#27272a"/><rect width="68" height="9" rx="3" y="15" fill="#27272a"/>
+    <rect width="80" height="9" rx="3" y="30" fill="#22d3ee" opacity="0.15"/><rect width="55" height="9" rx="3" y="45" fill="#27272a"/><rect width="72" height="9" rx="3" y="60" fill="#27272a"/><rect width="64" height="9" rx="3" y="75" fill="#27272a"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="#22d3ee" stroke-width="2.5"/><line x1="82" y1="74" x2="95" y2="87" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#3f3f46">@.</text>
+    <text x="50" y="150" font-family="monospace" font-size="28" font-weight="800" fill="#22d3ee">ad</text><text x="94" y="150" font-family="monospace" font-size="28" font-weight="800" fill="#f4f4f5">log</text></svg>`
+},
+{
+  name: "TS: Big Lens",
+  tags: ["textsearch","@.log+adlog","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(50,25)"><rect width="100" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="75" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="90" height="10" rx="3" y="32" fill="#fbbf24" opacity="0.3"/><rect width="60" height="10" rx="3" y="48" fill="#d4d4d8"/><rect width="80" height="10" rx="3" y="64" fill="#d4d4d8"/><rect width="68" height="10" rx="3" y="80" fill="#d4d4d8"/></g>
+    <circle cx="110" cy="70" r="32" fill="#f59e0b" opacity="0.08"/><circle cx="110" cy="70" r="32" fill="none" stroke="#f59e0b" stroke-width="4"/><line x1="132" y1="92" x2="152" y2="112" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+    <text x="22" y="155" font-family="monospace" font-size="14" fill="#a1a1aa">@.</text>
+    <text x="46" y="155" font-family="system-ui" font-size="34" font-weight="800" fill="#b45309">ad</text><text x="98" y="155" font-family="system-ui" font-size="34" font-weight="800" fill="#1c1917">log</text></svg>`
+},
+{
+  name: "TS: Compact",
+  tags: ["textsearch","@.log+adlog","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g transform="translate(30,55)"><rect width="140" height="8" rx="2" y="0" fill="#e5e7eb"/><rect width="110" height="8" rx="2" y="13" fill="#e5e7eb"/>
+    <rect width="125" height="8" rx="2" y="26" fill="#3b82f6" opacity="0.15"/><rect width="95" height="8" rx="2" y="39" fill="#e5e7eb"/><rect width="120" height="8" rx="2" y="52" fill="#e5e7eb"/></g>
+    <circle cx="55" cy="81" r="15" fill="none" stroke="#3b82f6" stroke-width="2.5"/><line x1="65" y1="92" x2="74" y2="101" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="30" y="148" font-family="monospace" font-size="11" fill="#d4d4d8">@.</text>
+    <text x="48" y="148" font-family="system-ui" font-size="28" font-weight="800" fill="#2563eb">ad</text><text x="88" y="148" font-family="system-ui" font-size="28" font-weight="400" fill="#64748b">log</text></svg>`
+},
+{
+  name: "TS: Teal Pop",
+  tags: ["textsearch","@.log+adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f0fdfa"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#ccfbf1"/><rect width="70" height="10" rx="3" y="16" fill="#ccfbf1"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#14b8a6" opacity="0.2"/><rect width="58" height="10" rx="3" y="48" fill="#ccfbf1"/><rect width="75" height="10" rx="3" y="64" fill="#ccfbf1"/><rect width="62" height="10" rx="3" y="80" fill="#ccfbf1"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#14b8a6" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#14b8a6" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#99f6e4">@.</text>
+    <text x="50" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#0d9488">ad</text><text x="96" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#134e4a">log</text></svg>`
+},
+{
+  name: "TS: Coral Duo",
+  tags: ["textsearch","@.log+adlog","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff7ed"/>
+    <g transform="translate(55,30)"><rect width="88" height="10" rx="3" y="0" fill="#fed7aa"/><rect width="68" height="10" rx="3" y="16" fill="#fed7aa"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#f97316" opacity="0.2"/><rect width="56" height="10" rx="3" y="48" fill="#fed7aa"/><rect width="74" height="10" rx="3" y="64" fill="#fed7aa"/><rect width="62" height="10" rx="3" y="80" fill="#fed7aa"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f97316" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f97316" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#fdba74">@.</text>
+    <text x="50" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#ea580c">ad</text><text x="96" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#431407">log</text></svg>`
+},
+{
+  name: "TS: Indigo Deep",
+  tags: ["textsearch","@.log+adlog","dark","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1e1b4b"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#312e81"/><rect width="70" height="10" rx="3" y="16" fill="#312e81"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#818cf8" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#312e81"/><rect width="72" height="10" rx="3" y="64" fill="#312e81"/><rect width="64" height="10" rx="3" y="80" fill="#312e81"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#818cf8" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#818cf8" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#4338ca">@.</text>
+    <text x="50" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#a5b4fc">ad</text><text x="96" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#e0e7ff">log</text></svg>`
+},
+{
+  name: "TS: Lime Fresh",
+  tags: ["textsearch","@.log+adlog","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f7fee7"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#d9f99d"/><rect width="68" height="10" rx="3" y="16" fill="#d9f99d"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#84cc16" opacity="0.25"/><rect width="56" height="10" rx="3" y="48" fill="#d9f99d"/><rect width="74" height="10" rx="3" y="64" fill="#d9f99d"/><rect width="62" height="10" rx="3" y="80" fill="#d9f99d"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#84cc16" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#84cc16" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#a3e635">@.</text>
+    <text x="50" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#65a30d">ad</text><text x="96" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#1a2e05">log</text></svg>`
+},
+{
+  name: "TS: Centered Lens",
+  tags: ["textsearch","@.log+adlog","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(40,30)"><rect width="120" height="8" rx="2" y="0" fill="#d4d4d8"/><rect width="95" height="8" rx="2" y="14" fill="#d4d4d8"/>
+    <rect width="110" height="8" rx="2" y="28" fill="#d4d4d8"/><rect width="80" height="8" rx="2" y="42" fill="#f59e0b" opacity="0.25"/>
+    <rect width="100" height="8" rx="2" y="56" fill="#d4d4d8"/><rect width="85" height="8" rx="2" y="70" fill="#d4d4d8"/></g>
+    <circle cx="100" cy="72" r="25" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="117" y1="90" x2="132" y2="105" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="30" y="155" font-family="monospace" font-size="12" fill="#a1a1aa">@.</text>
+    <text x="50" y="155" font-family="system-ui" font-size="32" font-weight="800" fill="#d97706">ad</text><text x="98" y="155" font-family="system-ui" font-size="32" font-weight="800" fill="#292524">log</text></svg>`
+},
+{
+  name: "TS: Two Col",
+  tags: ["textsearch","@.log+adlog","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g transform="translate(25,35)"><rect width="65" height="7" rx="2" y="0" fill="#e5e7eb"/><rect width="50" height="7" rx="2" y="12" fill="#e5e7eb"/>
+    <rect width="58" height="7" rx="2" y="24" fill="#e5e7eb"/><rect width="45" height="7" rx="2" y="36" fill="#2563eb" opacity="0.15"/>
+    <rect width="60" height="7" rx="2" y="48" fill="#e5e7eb"/><rect width="52" height="7" rx="2" y="60" fill="#e5e7eb"/></g>
+    <g transform="translate(110,35)"><rect width="65" height="7" rx="2" y="0" fill="#e5e7eb"/><rect width="50" height="7" rx="2" y="12" fill="#e5e7eb"/>
+    <rect width="58" height="7" rx="2" y="24" fill="#2563eb" opacity="0.15"/><rect width="45" height="7" rx="2" y="36" fill="#e5e7eb"/>
+    <rect width="55" height="7" rx="2" y="48" fill="#e5e7eb"/><rect width="48" height="7" rx="2" y="60" fill="#e5e7eb"/></g>
+    <line x1="100" y1="35" x2="100" y2="102" stroke="#e5e7eb" stroke-width="1"/>
+    <circle cx="75" cy="71" r="16" fill="none" stroke="#2563eb" stroke-width="2.5"/><line x1="86" y1="82" x2="95" y2="91" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="22" y="148" font-family="monospace" font-size="11" fill="#d4d4d8">@.</text>
+    <text x="40" y="148" font-family="system-ui" font-size="28" font-weight="800" fill="#2563eb">ad</text><text x="78" y="148" font-family="system-ui" font-size="28" font-weight="400" fill="#6b7280">log</text></svg>`
+},
+{
+  name: "TS: Stacked Lines",
+  tags: ["textsearch","@.log+adlog","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <g transform="translate(30,28)"><rect width="140" height="7" rx="2" y="0" fill="#e2e8f0"/><rect width="115" height="7" rx="2" y="12" fill="#e2e8f0"/>
+    <rect width="130" height="7" rx="2" y="24" fill="#e2e8f0"/><rect width="100" height="7" rx="2" y="36" fill="#e2e8f0"/>
+    <rect width="125" height="7" rx="2" y="48" fill="#0ea5e9" opacity="0.15"/><rect width="108" height="7" rx="2" y="60" fill="#e2e8f0"/>
+    <rect width="118" height="7" rx="2" y="72" fill="#e2e8f0"/><rect width="95" height="7" rx="2" y="84" fill="#e2e8f0"/></g>
+    <circle cx="55" cy="76" r="16" fill="none" stroke="#0ea5e9" stroke-width="3"/><line x1="66" y1="87" x2="76" y2="97" stroke="#0ea5e9" stroke-width="3" stroke-linecap="round"/>
+    <text x="26" y="155" font-family="monospace" font-size="12" fill="#cbd5e1">@.</text>
+    <text x="44" y="155" font-family="system-ui" font-size="30" font-weight="800" fill="#0284c7">ad</text><text x="90" y="155" font-family="system-ui" font-size="30" font-weight="800" fill="#0f172a">log</text></svg>`
+},
+{
+  name: "TS: @ Watermark",
+  tags: ["textsearch","@.log+adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <text x="135" y="110" font-family="monospace" font-size="100" font-weight="900" text-anchor="middle" fill="#f5f5f4">@</text>
+    <g transform="translate(35,30)"><rect width="90" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="68" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#f59e0b" opacity="0.3"/><rect width="55" height="10" rx="3" y="48" fill="#d4d4d8"/><rect width="72" height="10" rx="3" y="64" fill="#d4d4d8"/><rect width="60" height="10" rx="3" y="80" fill="#d4d4d8"/></g>
+    <circle cx="56" cy="62" r="20" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="70" y1="76" x2="82" y2="88" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="30" y="155" font-family="system-ui" font-size="32" font-weight="800" fill="#b45309">ad</text><text x="78" y="155" font-family="system-ui" font-size="32" font-weight="800" fill="#1c1917">log</text></svg>`
+},
+{
+  name: "TS: Highlight Bar",
+  tags: ["textsearch","@.log+adlog","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(55,25)"><rect width="90" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="70" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect x="-5" y="30" width="100" height="14" rx="3" fill="#fbbf24" opacity="0.3"/><rect width="85" height="10" rx="3" y="32" fill="#a16207" opacity="0.4"/>
+    <rect width="60" height="10" rx="3" y="50" fill="#d4d4d8"/><rect width="75" height="10" rx="3" y="66" fill="#d4d4d8"/><rect width="55" height="10" rx="3" y="82" fill="#d4d4d8"/></g>
+    <circle cx="68" cy="57" r="22" fill="none" stroke="#d97706" stroke-width="4"/><line x1="84" y1="73" x2="98" y2="87" stroke="#d97706" stroke-width="4" stroke-linecap="round"/>
+    <text x="24" y="155" font-family="monospace" font-size="13" fill="#d4d4d4">@.</text>
+    <text x="46" y="155" font-family="system-ui" font-size="32" font-weight="900" fill="#d97706">ad</text><text x="96" y="155" font-family="system-ui" font-size="32" font-weight="900" fill="#1c1917">log</text></svg>`
+},
+{
+  name: "TS: Gradient Lens",
+  tags: ["textsearch","@.log+adlog","cool","neon"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="tlg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#ec4899"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#faf5ff"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#ede9fe"/><rect width="68" height="10" rx="3" y="16" fill="#ede9fe"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#8b5cf6" opacity="0.15"/><rect width="55" height="10" rx="3" y="48" fill="#ede9fe"/><rect width="72" height="10" rx="3" y="64" fill="#ede9fe"/><rect width="62" height="10" rx="3" y="80" fill="#ede9fe"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="url(#tlg1)" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="url(#tlg1)" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#c4b5fd">@.</text>
+    <text x="50" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#7c3aed">ad</text><text x="96" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#be185d">log</text></svg>`
+},
+{
+  name: "TS: Slate Pro",
+  tags: ["textsearch","@.log+adlog","dark","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1e293b"/>
+    <g transform="translate(55,30)"><rect width="90" height="9" rx="3" y="0" fill="#334155"/><rect width="68" height="9" rx="3" y="15" fill="#334155"/>
+    <rect width="80" height="9" rx="3" y="30" fill="#f59e0b" opacity="0.2"/><rect width="55" height="9" rx="3" y="45" fill="#334155"/><rect width="72" height="9" rx="3" y="60" fill="#334155"/><rect width="60" height="9" rx="3" y="75" fill="#334155"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="#f59e0b" stroke-width="3"/><line x1="82" y1="74" x2="95" y2="87" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="148" font-family="monospace" font-size="13" fill="#475569">@.</text>
+    <text x="50" y="148" font-family="system-ui" font-size="30" font-weight="800" fill="#fbbf24">ad</text><text x="96" y="148" font-family="system-ui" font-size="30" font-weight="800" fill="#f1f5f9">log</text></svg>`
+},
+{
+  name: "TS: Right Lens",
+  tags: ["textsearch","@.log+adlog","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(30,30)"><rect width="100" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="80" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="90" height="10" rx="3" y="32" fill="#d4d4d8"/><rect width="70" height="10" rx="3" y="48" fill="#fbbf24" opacity="0.35"/>
+    <rect width="85" height="10" rx="3" y="64" fill="#d4d4d8"/><rect width="75" height="10" rx="3" y="80" fill="#d4d4d8"/></g>
+    <circle cx="130" cy="78" r="22" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="145" y1="94" x2="158" y2="107" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="22" y="155" font-family="monospace" font-size="12" fill="#a1a1aa">@.</text>
+    <text x="40" y="155" font-family="system-ui" font-size="32" font-weight="800" fill="#b45309">ad</text><text x="90" y="155" font-family="system-ui" font-size="32" font-weight="800" fill="#292524">log</text></svg>`
+},
+{
+  name: "TS: Sky Mono",
+  tags: ["textsearch","@.log+adlog","cool","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f0f9ff"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#bae6fd"/><rect width="70" height="10" rx="3" y="16" fill="#bae6fd"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#0284c7" opacity="0.2"/><rect width="58" height="10" rx="3" y="48" fill="#bae6fd"/><rect width="75" height="10" rx="3" y="64" fill="#bae6fd"/><rect width="62" height="10" rx="3" y="80" fill="#bae6fd"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#0284c7" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#7dd3fc">@.</text>
+    <text x="50" y="150" font-family="monospace" font-size="28" font-weight="800" fill="#0369a1">ad</text><text x="94" y="150" font-family="monospace" font-size="28" font-weight="800" fill="#0c4a6e">log</text></svg>`
+},
+{
+  name: "TS: Crimson Edge",
+  tags: ["textsearch","@.log+adlog","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#292524"/><rect width="68" height="10" rx="3" y="16" fill="#292524"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#ef4444" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#292524"/><rect width="72" height="10" rx="3" y="64" fill="#292524"/><rect width="60" height="10" rx="3" y="80" fill="#292524"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#ef4444" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="150" font-family="monospace" font-size="13" fill="#44403c">@.</text>
+    <text x="50" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#ef4444">ad</text><text x="96" y="150" font-family="system-ui" font-size="30" font-weight="800" fill="#fafaf9">log</text></svg>`
+},
+{
+  name: "TS: Gold Luxe",
+  tags: ["textsearch","@.log+adlog","retro","bold"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="tgold" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#b45309"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <g transform="translate(55,30)"><rect width="90" height="9" rx="3" y="0" fill="#292524"/><rect width="68" height="9" rx="3" y="15" fill="#292524"/>
+    <rect width="80" height="9" rx="3" y="30" fill="#fbbf24" opacity="0.15"/><rect width="55" height="9" rx="3" y="45" fill="#292524"/><rect width="72" height="9" rx="3" y="60" fill="#292524"/><rect width="60" height="9" rx="3" y="75" fill="#292524"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="url(#tgold)" stroke-width="3"/><line x1="82" y1="74" x2="95" y2="87" stroke="url(#tgold)" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="148" font-family="monospace" font-size="13" fill="#78350f">@.</text>
+    <text x="50" y="148" font-family="serif" font-size="30" font-weight="800" fill="#fde68a">ad</text><text x="94" y="148" font-family="serif" font-size="30" font-weight="800" fill="#fef3c7">log</text></svg>`
+},
+{
+  name: "TS: Glassmorphism",
+  tags: ["textsearch","@.log+adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="tgls" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.6"/><stop offset="100%" stop-color="#ddd6fe" stop-opacity="0.6"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <g transform="translate(55,30)"><rect width="90" height="9" rx="3" y="0" fill="#1e293b"/><rect width="68" height="9" rx="3" y="14" fill="#1e293b"/>
+    <rect width="80" height="9" rx="3" y="28" fill="#38bdf8" opacity="0.15"/><rect width="55" height="9" rx="3" y="42" fill="#1e293b"/><rect width="72" height="9" rx="3" y="56" fill="#1e293b"/><rect width="60" height="9" rx="3" y="70" fill="#1e293b"/></g>
+    <rect x="42" y="38" width="55" height="55" rx="12" fill="url(#tgls)" stroke="#fff" stroke-width="0.5" stroke-opacity="0.2"/>
+    <circle cx="68" cy="58" r="16" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="79" y1="69" x2="88" y2="78" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="148" font-family="monospace" font-size="13" fill="#334155">@.</text>
+    <text x="50" y="148" font-family="system-ui" font-size="30" font-weight="800" fill="#7dd3fc">ad</text><text x="96" y="148" font-family="system-ui" font-size="30" font-weight="800" fill="#e2e8f0">log</text></svg>`
+},
+{
+  name: "TS: Round Icon",
+  tags: ["textsearch","@.log+adlog","cute","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <circle cx="100" cy="70" r="45" fill="#fef3c7"/>
+    <g transform="translate(65,40)"><rect width="70" height="8" rx="2" y="0" fill="#fde68a"/><rect width="52" height="8" rx="2" y="13" fill="#fde68a"/>
+    <rect width="62" height="8" rx="2" y="26" fill="#f59e0b" opacity="0.3"/><rect width="48" height="8" rx="2" y="39" fill="#fde68a"/></g>
+    <circle cx="85" cy="66" r="14" fill="none" stroke="#f59e0b" stroke-width="2.5"/><line x1="95" y1="76" x2="103" y2="84" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="36" y="152" font-family="monospace" font-size="12" fill="#d4d4d4">@.</text>
+    <text x="54" y="152" font-family="system-ui" font-size="28" font-weight="800" fill="#d97706">ad</text><text x="94" y="152" font-family="system-ui" font-size="28" font-weight="800" fill="#1c1917">log</text></svg>`
+},
+{
+  name: "TS: Pink Kawaii",
+  tags: ["textsearch","@.log+adlog","cute"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fdf2f8"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="5" y="0" fill="#fce7f3"/><rect width="68" height="10" rx="5" y="16" fill="#fce7f3"/>
+    <rect width="80" height="10" rx="5" y="32" fill="#ec4899" opacity="0.2"/><rect width="56" height="10" rx="5" y="48" fill="#fce7f3"/><rect width="74" height="10" rx="5" y="64" fill="#fce7f3"/><rect width="60" height="10" rx="5" y="80" fill="#fce7f3"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#ec4899" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#ec4899" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="68" cy="57" r="3" fill="#831843"/><circle cx="68" cy="57" r="1" fill="#fdf2f8"/>
+    <text x="28" y="152" font-family="monospace" font-size="13" fill="#f9a8d4">@.</text>
+    <text x="50" y="152" font-family="system-ui" font-size="30" font-weight="800" fill="#db2777">ad</text><text x="96" y="152" font-family="system-ui" font-size="30" font-weight="800" fill="#500724">log</text></svg>`
+},
+{
+  name: "TS: Loose Lines",
+  tags: ["textsearch","@.log+adlog","organic"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(45,28)" stroke-linecap="round">
+    <line x1="0" y1="5" x2="100" y2="5" stroke="#d4d4d8" stroke-width="4"/><line x1="5" y1="22" x2="78" y2="22" stroke="#d4d4d8" stroke-width="4"/>
+    <line x1="2" y1="39" x2="88" y2="39" stroke="#f59e0b" stroke-width="4" opacity="0.35"/><line x1="8" y1="56" x2="65" y2="56" stroke="#d4d4d8" stroke-width="4"/>
+    <line x1="0" y1="73" x2="82" y2="73" stroke="#d4d4d8" stroke-width="4"/><line x1="4" y1="90" x2="72" y2="90" stroke="#d4d4d8" stroke-width="4"/></g>
+    <circle cx="62" cy="67" r="20" fill="none" stroke="#d97706" stroke-width="3"/><line x1="76" y1="81" x2="88" y2="93" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
+    <text x="26" y="155" font-family="monospace" font-size="13" fill="#a1a1aa">@.</text>
+    <text x="48" y="155" font-family="system-ui" font-size="30" font-weight="800" fill="#92400e">ad</text><text x="94" y="155" font-family="system-ui" font-size="30" font-weight="700" fill="#44403c">log</text></svg>`
+},
+{
+  name: "TS: Mono Bold",
+  tags: ["textsearch","@.log+adlog","bold","terminal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <g transform="translate(50,28)"><rect width="100" height="10" rx="2" y="0" fill="#27272a"/><rect width="78" height="10" rx="2" y="16" fill="#27272a"/>
+    <rect width="90" height="10" rx="2" y="32" fill="#facc15" opacity="0.15"/><rect width="65" height="10" rx="2" y="48" fill="#27272a"/><rect width="82" height="10" rx="2" y="64" fill="#27272a"/><rect width="70" height="10" rx="2" y="80" fill="#27272a"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="#facc15" stroke-width="3"/><line x1="82" y1="74" x2="95" y2="87" stroke="#facc15" stroke-width="3" stroke-linecap="round"/>
+    <text x="24" y="150" font-family="monospace" font-size="13" fill="#3f3f46">@.</text>
+    <text x="46" y="150" font-family="monospace" font-size="30" font-weight="800" fill="#facc15">ad</text><text x="92" y="150" font-family="monospace" font-size="30" font-weight="800" fill="#fafafa">log</text></svg>`
+},
+{
+  name: "TS: Subtle @. BG",
+  tags: ["textsearch","@.log+adlog","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <text x="140" y="100" font-family="monospace" font-size="80" font-weight="900" text-anchor="middle" fill="#fafaf0">@.</text>
+    <g transform="translate(40,32)"><rect width="90" height="9" rx="3" y="0" fill="#d4d4d8"/><rect width="68" height="9" rx="3" y="14" fill="#d4d4d8"/>
+    <rect width="80" height="9" rx="3" y="28" fill="#f59e0b" opacity="0.3"/><rect width="55" height="9" rx="3" y="42" fill="#d4d4d8"/><rect width="72" height="9" rx="3" y="56" fill="#d4d4d8"/><rect width="60" height="9" rx="3" y="70" fill="#d4d4d8"/></g>
+    <circle cx="56" cy="60" r="18" fill="none" stroke="#f59e0b" stroke-width="3"/><line x1="69" y1="73" x2="80" y2="84" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+    <text x="32" y="152" font-family="system-ui" font-size="30" font-weight="800" fill="#b45309">ad</text><text x="78" y="152" font-family="system-ui" font-size="30" font-weight="800" fill="#1c1917">log</text></svg>`
+},
+{
+  name: "TS: No Text",
+  tags: ["textsearch","@.log+adlog","minimal","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g transform="translate(40,35)"><rect width="120" height="10" rx="3" y="0" fill="#e5e7eb"/><rect width="95" height="10" rx="3" y="16" fill="#e5e7eb"/>
+    <rect width="110" height="10" rx="3" y="32" fill="#3b82f6" opacity="0.15"/><rect width="80" height="10" rx="3" y="48" fill="#e5e7eb"/>
+    <rect width="100" height="10" rx="3" y="64" fill="#e5e7eb"/><rect width="85" height="10" rx="3" y="80" fill="#e5e7eb"/></g>
+    <circle cx="85" cy="67" r="28" fill="none" stroke="#3b82f6" stroke-width="4"/><line x1="105" y1="87" x2="120" y2="102" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+    <text x="40" y="162" font-family="system-ui" font-size="34" font-weight="900" fill="#2563eb">ad</text><text x="96" y="162" font-family="system-ui" font-size="34" font-weight="900" fill="#111827">log</text></svg>`
+},
+{
+  name: "TS: Badge Left",
+  tags: ["textsearch","@.log+adlog","bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <rect x="20" y="30" width="50" height="50" rx="12" fill="#0f172a"/>
+    <g transform="translate(26,38)"><rect width="38" height="6" rx="2" y="0" fill="#1e293b"/><rect width="28" height="6" rx="2" y="10" fill="#1e293b"/>
+    <rect width="34" height="6" rx="2" y="20" fill="#38bdf8" opacity="0.3"/><rect width="25" height="6" rx="2" y="30" fill="#1e293b"/></g>
+    <circle cx="42" cy="52" r="10" fill="none" stroke="#38bdf8" stroke-width="2"/><line x1="49" y1="59" x2="55" y2="65" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <text x="80" y="60" font-family="monospace" font-size="11" fill="#94a3b8">@.</text>
+    <text x="40" y="130" font-family="system-ui" font-size="40" font-weight="900" fill="#1e40af">ad</text><text x="105" y="130" font-family="system-ui" font-size="40" font-weight="900" fill="#0f172a">log</text></svg>`
+},
+{
+  name: "TS: Stamp Combo",
+  tags: ["textsearch","@.log+adlog","retro"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fef2f2"/>
+    <g transform="translate(55,25) rotate(-3,45,50)"><rect width="90" height="9" rx="3" y="0" fill="#fecdd3"/><rect width="68" height="9" rx="3" y="14" fill="#fecdd3"/>
+    <rect width="80" height="9" rx="3" y="28" fill="#ef4444" opacity="0.2"/><rect width="55" height="9" rx="3" y="42" fill="#fecdd3"/><rect width="72" height="9" rx="3" y="56" fill="#fecdd3"/><rect width="60" height="9" rx="3" y="70" fill="#fecdd3"/></g>
+    <circle cx="68" cy="55" r="20" fill="none" stroke="#ef4444" stroke-width="3" transform="rotate(-3,68,55)"/><line x1="82" y1="69" x2="95" y2="82" stroke="#ef4444" stroke-width="3" stroke-linecap="round" transform="rotate(-3,88,75)"/>
+    <text x="28" y="148" font-family="monospace" font-size="13" fill="#fca5a5">@.</text>
+    <text x="50" y="148" font-family="system-ui" font-size="30" font-weight="800" fill="#dc2626">ad</text><text x="96" y="148" font-family="system-ui" font-size="30" font-weight="800" fill="#450a0a">log</text></svg>`
+},
+{
+  name: "TS: ad Bold / log Light",
+  tags: ["textsearch","@.log+adlog","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="68" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#f59e0b" opacity="0.35"/><rect width="55" height="10" rx="3" y="48" fill="#d4d4d8"/><rect width="72" height="10" rx="3" y="64" fill="#d4d4d8"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="22" y="148" font-family="monospace" font-size="12" fill="#d4d4d4">@.</text>
+    <text x="42" y="148" font-family="system-ui" font-size="32" font-weight="900" fill="#1c1917">ad</text><text x="90" y="148" font-family="system-ui" font-size="32" font-weight="300" fill="#78716c">log</text></svg>`
+},
+{
+  name: "TS: log Bold / ad Light",
+  tags: ["textsearch","@.log+adlog","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="68" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#f59e0b" opacity="0.35"/><rect width="55" height="10" rx="3" y="48" fill="#d4d4d8"/><rect width="72" height="10" rx="3" y="64" fill="#d4d4d8"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="22" y="148" font-family="monospace" font-size="12" fill="#d4d4d4">@.</text>
+    <text x="42" y="148" font-family="system-ui" font-size="32" font-weight="300" fill="#78716c">ad</text><text x="86" y="148" font-family="system-ui" font-size="32" font-weight="900" fill="#1c1917">log</text></svg>`
+},
+{
+  name: "TS: @ Lens Center",
+  tags: ["textsearch","@.log+adlog","geometric","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <g transform="translate(55,28)"><rect width="90" height="9" rx="3" y="0" fill="#cbd5e1"/><rect width="68" height="9" rx="3" y="14" fill="#cbd5e1"/>
+    <rect width="80" height="9" rx="3" y="28" fill="#3b82f6" opacity="0.2"/><rect width="55" height="9" rx="3" y="42" fill="#cbd5e1"/><rect width="72" height="9" rx="3" y="56" fill="#cbd5e1"/><rect width="60" height="9" rx="3" y="70" fill="#cbd5e1"/></g>
+    <circle cx="80" cy="63" r="22" fill="none" stroke="#3b82f6" stroke-width="3"/>
+    <text x="80" y="70" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle" fill="#3b82f6">@.</text>
+    <line x1="96" y1="79" x2="108" y2="91" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    <text x="30" y="150" font-family="system-ui" font-size="32" font-weight="800" fill="#1e40af">ad</text><text x="82" y="150" font-family="system-ui" font-size="32" font-weight="800" fill="#0f172a">log</text></svg>`
+},
+{
+  name: "TS: Full Page",
+  tags: ["textsearch","@.log+adlog","dark","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <g transform="translate(30,22)"><rect width="140" height="7" rx="2" y="0" fill="#1e293b"/><rect width="115" height="7" rx="2" y="12" fill="#1e293b"/>
+    <rect width="130" height="7" rx="2" y="24" fill="#1e293b"/><rect width="105" height="7" rx="2" y="36" fill="#38bdf8" opacity="0.15"/>
+    <rect width="125" height="7" rx="2" y="48" fill="#1e293b"/><rect width="110" height="7" rx="2" y="60" fill="#1e293b"/>
+    <rect width="120" height="7" rx="2" y="72" fill="#1e293b"/><rect width="100" height="7" rx="2" y="84" fill="#1e293b"/>
+    <rect width="130" height="7" rx="2" y="96" fill="#1e293b"/></g>
+    <circle cx="60" cy="58" r="18" fill="none" stroke="#38bdf8" stroke-width="2.5"/><line x1="73" y1="71" x2="82" y2="80" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="24" y="155" font-family="monospace" font-size="12" fill="#334155">@.</text>
+    <text x="44" y="155" font-family="system-ui" font-size="30" font-weight="800" fill="#38bdf8">ad</text><text x="90" y="155" font-family="system-ui" font-size="30" font-weight="800" fill="#e2e8f0">log</text></svg>`
+},
+
+// ---- 221-270: Text Search + adlog (no @.) ----
+{
+  name: "TS2: Amber Classic",
+  tags: ["ts-adlog","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(55,30)"><rect width="95" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="72" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="84" height="10" rx="3" y="32" fill="#fbbf24" opacity="0.35"/><rect width="58" height="10" rx="3" y="48" fill="#d4d4d8"/><rect width="78" height="10" rx="3" y="64" fill="#d4d4d8"/><rect width="65" height="10" rx="3" y="80" fill="#d4d4d8"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#1c1917">adlog</text></svg>`
+},
+{
+  name: "TS2: Amber + Color",
+  tags: ["ts-adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(55,30)"><rect width="95" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="72" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="84" height="10" rx="3" y="32" fill="#fbbf24" opacity="0.35"/><rect width="58" height="10" rx="3" y="48" fill="#d4d4d8"/><rect width="78" height="10" rx="3" y="64" fill="#d4d4d8"/><rect width="65" height="10" rx="3" y="80" fill="#d4d4d8"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle"><tspan fill="#b45309">ad</tspan><tspan fill="#1c1917">log</tspan></text></svg>`
+},
+{
+  name: "TS2: Blue Clean",
+  tags: ["ts-adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#cbd5e1"/><rect width="68" height="10" rx="3" y="16" fill="#cbd5e1"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#3b82f6" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#cbd5e1"/><rect width="75" height="10" rx="3" y="64" fill="#cbd5e1"/><rect width="62" height="10" rx="3" y="80" fill="#cbd5e1"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#3b82f6" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#0f172a">adlog</text></svg>`
+},
+{
+  name: "TS2: Blue Split",
+  tags: ["ts-adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#cbd5e1"/><rect width="68" height="10" rx="3" y="16" fill="#cbd5e1"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#3b82f6" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#cbd5e1"/><rect width="75" height="10" rx="3" y="64" fill="#cbd5e1"/><rect width="62" height="10" rx="3" y="80" fill="#cbd5e1"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#3b82f6" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle"><tspan fill="#2563eb">ad</tspan><tspan fill="#0f172a">log</tspan></text></svg>`
+},
+{
+  name: "TS2: Dark Slate",
+  tags: ["ts-adlog","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#1e293b"/><rect width="70" height="10" rx="3" y="16" fill="#1e293b"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#38bdf8" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#1e293b"/><rect width="72" height="10" rx="3" y="64" fill="#1e293b"/><rect width="64" height="10" rx="3" y="80" fill="#1e293b"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "TS2: Dark Cyan",
+  tags: ["ts-adlog","dark","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#1e293b"/><rect width="70" height="10" rx="3" y="16" fill="#1e293b"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#38bdf8" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#1e293b"/><rect width="72" height="10" rx="3" y="64" fill="#1e293b"/><rect width="64" height="10" rx="3" y="80" fill="#1e293b"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle"><tspan fill="#38bdf8">ad</tspan><tspan fill="#e2e8f0">log</tspan></text></svg>`
+},
+{
+  name: "TS2: Dark Amber",
+  tags: ["ts-adlog","dark","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#292524"/><rect width="68" height="10" rx="3" y="16" fill="#292524"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#f59e0b" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#292524"/><rect width="72" height="10" rx="3" y="64" fill="#292524"/><rect width="60" height="10" rx="3" y="80" fill="#292524"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f59e0b" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle"><tspan fill="#fbbf24">ad</tspan><tspan fill="#fafaf9">log</tspan></text></svg>`
+},
+{
+  name: "TS2: Violet Light",
+  tags: ["ts-adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#faf5ff"/>
+    <g transform="translate(55,30)"><rect width="88" height="10" rx="3" y="0" fill="#e9d5ff"/><rect width="68" height="10" rx="3" y="16" fill="#e9d5ff"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#8b5cf6" opacity="0.25"/><rect width="56" height="10" rx="3" y="48" fill="#e9d5ff"/><rect width="74" height="10" rx="3" y="64" fill="#e9d5ff"/><rect width="60" height="10" rx="3" y="80" fill="#e9d5ff"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#8b5cf6" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#8b5cf6" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle"><tspan fill="#7c3aed">ad</tspan><tspan fill="#1c1917">log</tspan></text></svg>`
+},
+{
+  name: "TS2: Rose",
+  tags: ["ts-adlog","cute"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff1f2"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#fecdd3"/><rect width="65" height="10" rx="3" y="16" fill="#fecdd3"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#f43f5e" opacity="0.2"/><rect width="58" height="10" rx="3" y="48" fill="#fecdd3"/><rect width="76" height="10" rx="3" y="64" fill="#fecdd3"/><rect width="62" height="10" rx="3" y="80" fill="#fecdd3"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f43f5e" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f43f5e" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle"><tspan fill="#e11d48">ad</tspan><tspan fill="#1c1917">log</tspan></text></svg>`
+},
+{
+  name: "TS2: Green",
+  tags: ["ts-adlog","terminal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#052e16"/>
+    <g transform="translate(55,30)"><rect width="88" height="10" rx="3" y="0" fill="#14532d"/><rect width="70" height="10" rx="3" y="16" fill="#14532d"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#4ade80" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#14532d"/><rect width="72" height="10" rx="3" y="64" fill="#14532d"/><rect width="60" height="10" rx="3" y="80" fill="#14532d"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#4ade80" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="monospace" font-size="30" font-weight="800" text-anchor="middle" fill="#4ade80">adlog</text></svg>`
+},
+{
+  name: "TS2: Teal",
+  tags: ["ts-adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f0fdfa"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#ccfbf1"/><rect width="70" height="10" rx="3" y="16" fill="#ccfbf1"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#14b8a6" opacity="0.2"/><rect width="58" height="10" rx="3" y="48" fill="#ccfbf1"/><rect width="75" height="10" rx="3" y="64" fill="#ccfbf1"/><rect width="62" height="10" rx="3" y="80" fill="#ccfbf1"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#14b8a6" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#14b8a6" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle"><tspan fill="#0d9488">ad</tspan><tspan fill="#134e4a">log</tspan></text></svg>`
+},
+{
+  name: "TS2: Orange Pop",
+  tags: ["ts-adlog","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff7ed"/>
+    <g transform="translate(55,30)"><rect width="88" height="10" rx="3" y="0" fill="#fed7aa"/><rect width="68" height="10" rx="3" y="16" fill="#fed7aa"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#f97316" opacity="0.2"/><rect width="56" height="10" rx="3" y="48" fill="#fed7aa"/><rect width="74" height="10" rx="3" y="64" fill="#fed7aa"/><rect width="62" height="10" rx="3" y="80" fill="#fed7aa"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f97316" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f97316" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle"><tspan fill="#ea580c">ad</tspan><tspan fill="#431407">log</tspan></text></svg>`
+},
+{
+  name: "TS2: Mono Black",
+  tags: ["ts-adlog","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g transform="translate(55,32)"><rect width="90" height="9" rx="2" y="0" fill="#e5e5e5"/><rect width="68" height="9" rx="2" y="15" fill="#e5e5e5"/>
+    <rect width="80" height="9" rx="2" y="30" fill="#a3a3a3" opacity="0.25"/><rect width="55" height="9" rx="2" y="45" fill="#e5e5e5"/><rect width="72" height="9" rx="2" y="60" fill="#e5e5e5"/><rect width="64" height="9" rx="2" y="75" fill="#e5e5e5"/></g>
+    <circle cx="68" cy="62" r="18" fill="none" stroke="#737373" stroke-width="2.5"/><line x1="80" y1="74" x2="92" y2="86" stroke="#737373" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="100" y="152" font-family="system-ui" font-size="30" font-weight="800" text-anchor="middle" fill="#171717">adlog</text></svg>`
+},
+{
+  name: "TS2: Big Lens",
+  tags: ["ts-adlog","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(50,25)"><rect width="100" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="75" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="90" height="10" rx="3" y="32" fill="#fbbf24" opacity="0.3"/><rect width="60" height="10" rx="3" y="48" fill="#d4d4d8"/><rect width="80" height="10" rx="3" y="64" fill="#d4d4d8"/><rect width="68" height="10" rx="3" y="80" fill="#d4d4d8"/></g>
+    <circle cx="110" cy="70" r="32" fill="#f59e0b" opacity="0.06"/><circle cx="110" cy="70" r="32" fill="none" stroke="#f59e0b" stroke-width="4.5"/><line x1="132" y1="92" x2="152" y2="112" stroke="#f59e0b" stroke-width="4.5" stroke-linecap="round"/>
+    <text x="100" y="158" font-family="system-ui" font-size="36" font-weight="900" text-anchor="middle" fill="#1c1917">adlog</text></svg>`
+},
+{
+  name: "TS2: Highlight Bar",
+  tags: ["ts-adlog","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(55,25)"><rect width="90" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="70" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect x="-5" y="30" width="100" height="14" rx="3" fill="#fbbf24" opacity="0.3"/><rect width="85" height="10" rx="3" y="32" fill="#a16207" opacity="0.4"/>
+    <rect width="60" height="10" rx="3" y="50" fill="#d4d4d8"/><rect width="75" height="10" rx="3" y="66" fill="#d4d4d8"/><rect width="55" height="10" rx="3" y="82" fill="#d4d4d8"/></g>
+    <circle cx="68" cy="57" r="22" fill="none" stroke="#d97706" stroke-width="4"/><line x1="84" y1="73" x2="98" y2="87" stroke="#d97706" stroke-width="4" stroke-linecap="round"/>
+    <text x="100" y="158" font-family="system-ui" font-size="34" font-weight="900" text-anchor="middle" fill="#1c1917">adlog</text></svg>`
+},
+{
+  name: "TS2: Indigo Deep",
+  tags: ["ts-adlog","dark","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1e1b4b"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#312e81"/><rect width="70" height="10" rx="3" y="16" fill="#312e81"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#818cf8" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#312e81"/><rect width="72" height="10" rx="3" y="64" fill="#312e81"/><rect width="64" height="10" rx="3" y="80" fill="#312e81"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#818cf8" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#818cf8" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#c7d2fe">adlog</text></svg>`
+},
+{
+  name: "TS2: Multi Hit",
+  tags: ["ts-adlog","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <g transform="translate(55,22)"><rect width="90" height="9" rx="3" y="0" fill="#cbd5e1"/><rect width="68" height="9" rx="3" y="14" fill="#cbd5e1"/>
+    <rect width="80" height="9" rx="3" y="28" fill="#3b82f6" opacity="0.2"/>
+    <rect width="55" height="9" rx="3" y="42" fill="#cbd5e1"/><rect width="72" height="9" rx="3" y="56" fill="#3b82f6" opacity="0.2"/>
+    <rect width="64" height="9" rx="3" y="70" fill="#cbd5e1"/><rect width="78" height="9" rx="3" y="84" fill="#3b82f6" opacity="0.2"/></g>
+    <circle cx="66" cy="50" r="18" fill="none" stroke="#3b82f6" stroke-width="3"/><line x1="79" y1="63" x2="90" y2="74" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#0f172a">adlog</text></svg>`
+},
+{
+  name: "TS2: Right Lens",
+  tags: ["ts-adlog","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(30,30)"><rect width="100" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="80" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="90" height="10" rx="3" y="32" fill="#d4d4d8"/><rect width="70" height="10" rx="3" y="48" fill="#fbbf24" opacity="0.35"/>
+    <rect width="85" height="10" rx="3" y="64" fill="#d4d4d8"/><rect width="75" height="10" rx="3" y="80" fill="#d4d4d8"/></g>
+    <circle cx="135" cy="78" r="22" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="150" y1="94" x2="162" y2="106" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="158" font-family="system-ui" font-size="34" font-weight="800" text-anchor="middle" fill="#1c1917">adlog</text></svg>`
+},
+{
+  name: "TS2: Centered",
+  tags: ["ts-adlog","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(40,28)"><rect width="120" height="9" rx="3" y="0" fill="#d4d4d8"/><rect width="95" height="9" rx="3" y="14" fill="#d4d4d8"/>
+    <rect width="110" height="9" rx="3" y="28" fill="#d4d4d8"/><rect width="80" height="9" rx="3" y="42" fill="#f59e0b" opacity="0.25"/>
+    <rect width="100" height="9" rx="3" y="56" fill="#d4d4d8"/><rect width="85" height="9" rx="3" y="70" fill="#d4d4d8"/></g>
+    <circle cx="100" cy="70" r="25" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="117" y1="88" x2="132" y2="103" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="158" font-family="system-ui" font-size="34" font-weight="800" text-anchor="middle" fill="#1c1917">adlog</text></svg>`
+},
+{
+  name: "TS2: Compact",
+  tags: ["ts-adlog","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g transform="translate(30,50)"><rect width="140" height="8" rx="2" y="0" fill="#e5e7eb"/><rect width="110" height="8" rx="2" y="13" fill="#e5e7eb"/>
+    <rect width="125" height="8" rx="2" y="26" fill="#3b82f6" opacity="0.15"/><rect width="95" height="8" rx="2" y="39" fill="#e5e7eb"/><rect width="120" height="8" rx="2" y="52" fill="#e5e7eb"/></g>
+    <circle cx="55" cy="76" r="15" fill="none" stroke="#3b82f6" stroke-width="2.5"/><line x1="65" y1="87" x2="74" y2="96" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="100" y="152" font-family="system-ui" font-size="30" font-weight="800" text-anchor="middle" fill="#0f172a">adlog</text></svg>`
+},
+{
+  name: "TS2: Full Page Dark",
+  tags: ["ts-adlog","dark","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <g transform="translate(30,20)"><rect width="140" height="7" rx="2" y="0" fill="#1e293b"/><rect width="115" height="7" rx="2" y="12" fill="#1e293b"/>
+    <rect width="130" height="7" rx="2" y="24" fill="#1e293b"/><rect width="105" height="7" rx="2" y="36" fill="#38bdf8" opacity="0.15"/>
+    <rect width="125" height="7" rx="2" y="48" fill="#1e293b"/><rect width="110" height="7" rx="2" y="60" fill="#1e293b"/>
+    <rect width="120" height="7" rx="2" y="72" fill="#1e293b"/><rect width="100" height="7" rx="2" y="84" fill="#1e293b"/>
+    <rect width="130" height="7" rx="2" y="96" fill="#1e293b"/></g>
+    <circle cx="60" cy="56" r="18" fill="none" stroke="#38bdf8" stroke-width="2.5"/><line x1="73" y1="69" x2="82" y2="78" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="100" y="158" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "TS2: Sepia",
+  tags: ["ts-adlog","retro"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fefce8"/>
+    <g transform="translate(55,30)"><rect width="92" height="9" rx="3" y="0" fill="#d4a574" opacity="0.3"/><rect width="70" height="9" rx="3" y="15" fill="#d4a574" opacity="0.3"/>
+    <rect width="82" height="9" rx="3" y="30" fill="#b45309" opacity="0.25"/><rect width="58" height="9" rx="3" y="45" fill="#d4a574" opacity="0.3"/><rect width="76" height="9" rx="3" y="60" fill="#d4a574" opacity="0.3"/><rect width="62" height="9" rx="3" y="75" fill="#d4a574" opacity="0.3"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="#b45309" stroke-width="3"/><line x1="82" y1="74" x2="95" y2="87" stroke="#b45309" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="152" font-family="serif" font-size="32" font-weight="700" text-anchor="middle" fill="#78350f">adlog</text></svg>`
+},
+{
+  name: "TS2: Gold Dark",
+  tags: ["ts-adlog","retro","dark"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="tg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#b45309"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <g transform="translate(55,30)"><rect width="90" height="9" rx="3" y="0" fill="#292524"/><rect width="68" height="9" rx="3" y="15" fill="#292524"/>
+    <rect width="80" height="9" rx="3" y="30" fill="#fbbf24" opacity="0.15"/><rect width="55" height="9" rx="3" y="45" fill="#292524"/><rect width="72" height="9" rx="3" y="60" fill="#292524"/><rect width="60" height="9" rx="3" y="75" fill="#292524"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="url(#tg2)" stroke-width="3"/><line x1="82" y1="74" x2="95" y2="87" stroke="url(#tg2)" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="150" font-family="serif" font-size="32" font-weight="800" text-anchor="middle" fill="#fde68a">adlog</text></svg>`
+},
+{
+  name: "TS2: Gradient Lens",
+  tags: ["ts-adlog","cool","neon"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="tgl2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#ec4899"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#faf5ff"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#ede9fe"/><rect width="68" height="10" rx="3" y="16" fill="#ede9fe"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#8b5cf6" opacity="0.15"/><rect width="55" height="10" rx="3" y="48" fill="#ede9fe"/><rect width="72" height="10" rx="3" y="64" fill="#ede9fe"/><rect width="62" height="10" rx="3" y="80" fill="#ede9fe"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="url(#tgl2)" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="url(#tgl2)" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle"><tspan fill="#7c3aed">ad</tspan><tspan fill="#db2777">log</tspan></text></svg>`
+},
+{
+  name: "TS2: Crimson Dark",
+  tags: ["ts-adlog","dark","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1c1917"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#292524"/><rect width="68" height="10" rx="3" y="16" fill="#292524"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#ef4444" opacity="0.2"/><rect width="55" height="10" rx="3" y="48" fill="#292524"/><rect width="72" height="10" rx="3" y="64" fill="#292524"/><rect width="60" height="10" rx="3" y="80" fill="#292524"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#ef4444" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle"><tspan fill="#ef4444">ad</tspan><tspan fill="#fafaf9">log</tspan></text></svg>`
+},
+{
+  name: "TS2: Slate Pro",
+  tags: ["ts-adlog","dark","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#1e293b"/>
+    <g transform="translate(55,30)"><rect width="90" height="9" rx="3" y="0" fill="#334155"/><rect width="68" height="9" rx="3" y="15" fill="#334155"/>
+    <rect width="80" height="9" rx="3" y="30" fill="#f59e0b" opacity="0.2"/><rect width="55" height="9" rx="3" y="45" fill="#334155"/><rect width="72" height="9" rx="3" y="60" fill="#334155"/><rect width="60" height="9" rx="3" y="75" fill="#334155"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="#f59e0b" stroke-width="3"/><line x1="82" y1="74" x2="95" y2="87" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="150" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#f1f5f9">adlog</text></svg>`
+},
+{
+  name: "TS2: Pink Soft",
+  tags: ["ts-adlog","cute"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fdf2f8"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="5" y="0" fill="#fce7f3"/><rect width="68" height="10" rx="5" y="16" fill="#fce7f3"/>
+    <rect width="80" height="10" rx="5" y="32" fill="#ec4899" opacity="0.2"/><rect width="56" height="10" rx="5" y="48" fill="#fce7f3"/><rect width="74" height="10" rx="5" y="64" fill="#fce7f3"/><rect width="60" height="10" rx="5" y="80" fill="#fce7f3"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#ec4899" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#ec4899" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#9d174d">adlog</text></svg>`
+},
+{
+  name: "TS2: Glass Dark",
+  tags: ["ts-adlog","cool","dark"],
+  svg: `<svg viewBox="0 0 200 200"><defs><linearGradient id="tgls2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.5"/><stop offset="100%" stop-color="#ddd6fe" stop-opacity="0.5"/></linearGradient></defs>
+    <rect width="200" height="200" rx="32" fill="#0f172a"/>
+    <g transform="translate(55,30)"><rect width="90" height="9" rx="3" y="0" fill="#1e293b"/><rect width="68" height="9" rx="3" y="14" fill="#1e293b"/>
+    <rect width="80" height="9" rx="3" y="28" fill="#38bdf8" opacity="0.15"/><rect width="55" height="9" rx="3" y="42" fill="#1e293b"/><rect width="72" height="9" rx="3" y="56" fill="#1e293b"/><rect width="60" height="9" rx="3" y="70" fill="#1e293b"/></g>
+    <rect x="42" y="38" width="55" height="55" rx="12" fill="url(#tgls2)" stroke="#fff" stroke-width="0.5" stroke-opacity="0.15"/>
+    <circle cx="68" cy="58" r="16" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="79" y1="69" x2="88" y2="78" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="150" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#e2e8f0">adlog</text></svg>`
+},
+{
+  name: "TS2: Two Column",
+  tags: ["ts-adlog","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g transform="translate(25,35)"><rect width="65" height="7" rx="2" y="0" fill="#e5e7eb"/><rect width="50" height="7" rx="2" y="12" fill="#e5e7eb"/>
+    <rect width="58" height="7" rx="2" y="24" fill="#e5e7eb"/><rect width="45" height="7" rx="2" y="36" fill="#2563eb" opacity="0.15"/>
+    <rect width="60" height="7" rx="2" y="48" fill="#e5e7eb"/><rect width="52" height="7" rx="2" y="60" fill="#e5e7eb"/></g>
+    <g transform="translate(110,35)"><rect width="65" height="7" rx="2" y="0" fill="#e5e7eb"/><rect width="50" height="7" rx="2" y="12" fill="#e5e7eb"/>
+    <rect width="58" height="7" rx="2" y="24" fill="#2563eb" opacity="0.15"/><rect width="45" height="7" rx="2" y="36" fill="#e5e7eb"/>
+    <rect width="55" height="7" rx="2" y="48" fill="#e5e7eb"/><rect width="48" height="7" rx="2" y="60" fill="#e5e7eb"/></g>
+    <line x1="100" y1="35" x2="100" y2="100" stroke="#e5e7eb" stroke-width="1"/>
+    <circle cx="75" cy="71" r="16" fill="none" stroke="#2563eb" stroke-width="2.5"/><line x1="86" y1="82" x2="95" y2="91" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="100" y="148" font-family="system-ui" font-size="30" font-weight="800" text-anchor="middle" fill="#0f172a">adlog</text></svg>`
+},
+{
+  name: "TS2: Round Badge",
+  tags: ["ts-adlog","cute","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <circle cx="100" cy="68" r="48" fill="#fef3c7"/>
+    <g transform="translate(62,38)"><rect width="76" height="8" rx="2" y="0" fill="#fde68a"/><rect width="56" height="8" rx="2" y="13" fill="#fde68a"/>
+    <rect width="66" height="8" rx="2" y="26" fill="#f59e0b" opacity="0.3"/><rect width="50" height="8" rx="2" y="39" fill="#fde68a"/></g>
+    <circle cx="88" cy="64" r="15" fill="none" stroke="#f59e0b" stroke-width="2.5"/><line x1="98" y1="74" x2="107" y2="83" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="30" font-weight="800" text-anchor="middle" fill="#1c1917">adlog</text></svg>`
+},
+{
+  name: "TS2: Left Badge",
+  tags: ["ts-adlog","bold","cool"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f8fafc"/>
+    <rect x="20" y="30" width="55" height="55" rx="14" fill="#0f172a"/>
+    <g transform="translate(26,38)"><rect width="42" height="6" rx="2" y="0" fill="#1e293b"/><rect width="30" height="6" rx="2" y="10" fill="#1e293b"/>
+    <rect width="36" height="6" rx="2" y="20" fill="#38bdf8" opacity="0.3"/><rect width="28" height="6" rx="2" y="30" fill="#1e293b"/></g>
+    <circle cx="44" cy="54" r="11" fill="none" stroke="#38bdf8" stroke-width="2"/><line x1="52" y1="62" x2="58" y2="68" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <text x="100" y="135" font-family="system-ui" font-size="42" font-weight="900" text-anchor="middle" fill="#0f172a">adlog</text></svg>`
+},
+{
+  name: "TS2: Sketch Style",
+  tags: ["ts-adlog","organic"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(45,28)" stroke-linecap="round">
+    <line x1="0" y1="5" x2="100" y2="6" stroke="#d4d4d8" stroke-width="4"/><line x1="5" y1="22" x2="78" y2="23" stroke="#d4d4d8" stroke-width="4"/>
+    <line x1="2" y1="39" x2="88" y2="40" stroke="#f59e0b" stroke-width="4" opacity="0.35"/><line x1="8" y1="56" x2="65" y2="57" stroke="#d4d4d8" stroke-width="4"/>
+    <line x1="0" y1="73" x2="82" y2="74" stroke="#d4d4d8" stroke-width="4"/><line x1="4" y1="90" x2="72" y2="91" stroke="#d4d4d8" stroke-width="4"/></g>
+    <circle cx="62" cy="67" r="20" fill="none" stroke="#d97706" stroke-width="3"/><line x1="76" y1="81" x2="88" y2="93" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="158" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#1c1917">adlog</text></svg>`
+},
+{
+  name: "TS2: Mono Terminal",
+  tags: ["ts-adlog","terminal","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#18181b"/>
+    <g transform="translate(50,28)"><rect width="100" height="10" rx="2" y="0" fill="#27272a"/><rect width="78" height="10" rx="2" y="16" fill="#27272a"/>
+    <rect width="90" height="10" rx="2" y="32" fill="#facc15" opacity="0.15"/><rect width="65" height="10" rx="2" y="48" fill="#27272a"/><rect width="82" height="10" rx="2" y="64" fill="#27272a"/><rect width="70" height="10" rx="2" y="80" fill="#27272a"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="#facc15" stroke-width="3"/><line x1="82" y1="74" x2="95" y2="87" stroke="#facc15" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="monospace" font-size="30" font-weight="800" text-anchor="middle" fill="#fafafa">adlog</text></svg>`
+},
+{
+  name: "TS2: Sky Light",
+  tags: ["ts-adlog","cool","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f0f9ff"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#bae6fd"/><rect width="70" height="10" rx="3" y="16" fill="#bae6fd"/>
+    <rect width="82" height="10" rx="3" y="32" fill="#0284c7" opacity="0.2"/><rect width="58" height="10" rx="3" y="48" fill="#bae6fd"/><rect width="75" height="10" rx="3" y="64" fill="#bae6fd"/><rect width="62" height="10" rx="3" y="80" fill="#bae6fd"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#0284c7" stroke-width="3"/><line x1="82" y1="76" x2="95" y2="89" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#0c4a6e">adlog</text></svg>`
+},
+{
+  name: "TS2: Lime",
+  tags: ["ts-adlog","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#f7fee7"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#d9f99d"/><rect width="68" height="10" rx="3" y="16" fill="#d9f99d"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#84cc16" opacity="0.25"/><rect width="56" height="10" rx="3" y="48" fill="#d9f99d"/><rect width="74" height="10" rx="3" y="64" fill="#d9f99d"/><rect width="62" height="10" rx="3" y="80" fill="#d9f99d"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#84cc16" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#84cc16" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#3f6212">adlog</text></svg>`
+},
+{
+  name: "TS2: Neon Cyan",
+  tags: ["ts-adlog","neon","dark"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#09090b"/>
+    <g transform="translate(55,30)"><rect width="90" height="9" rx="3" y="0" fill="#27272a"/><rect width="68" height="9" rx="3" y="15" fill="#27272a"/>
+    <rect width="80" height="9" rx="3" y="30" fill="#22d3ee" opacity="0.15"/><rect width="55" height="9" rx="3" y="45" fill="#27272a"/><rect width="72" height="9" rx="3" y="60" fill="#27272a"/><rect width="64" height="9" rx="3" y="75" fill="#27272a"/></g>
+    <circle cx="68" cy="60" r="20" fill="none" stroke="#22d3ee" stroke-width="2.5"/><line x1="82" y1="74" x2="95" y2="87" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="100" y="152" font-family="monospace" font-size="30" font-weight="800" text-anchor="middle" fill="#22d3ee">adlog</text></svg>`
+},
+{
+  name: "TS2: No Text Lines",
+  tags: ["ts-adlog","bold","geometric"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g transform="translate(40,30)"><rect width="120" height="11" rx="3" y="0" fill="#e5e7eb"/><rect width="95" height="11" rx="3" y="18" fill="#e5e7eb"/>
+    <rect width="110" height="11" rx="3" y="36" fill="#3b82f6" opacity="0.15"/><rect width="80" height="11" rx="3" y="54" fill="#e5e7eb"/>
+    <rect width="100" height="11" rx="3" y="72" fill="#e5e7eb"/></g>
+    <circle cx="88" cy="66" r="30" fill="none" stroke="#3b82f6" stroke-width="4.5"/><line x1="109" y1="88" x2="126" y2="105" stroke="#3b82f6" stroke-width="4.5" stroke-linecap="round"/>
+    <text x="100" y="162" font-family="system-ui" font-size="38" font-weight="900" text-anchor="middle" fill="#111827">adlog</text></svg>`
+},
+{
+  name: "TS2: Stamp Tilt",
+  tags: ["ts-adlog","retro","playful"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fef2f2"/>
+    <g transform="translate(55,25) rotate(-3,45,50)"><rect width="90" height="9" rx="3" y="0" fill="#fecdd3"/><rect width="68" height="9" rx="3" y="14" fill="#fecdd3"/>
+    <rect width="80" height="9" rx="3" y="28" fill="#ef4444" opacity="0.2"/><rect width="55" height="9" rx="3" y="42" fill="#fecdd3"/><rect width="72" height="9" rx="3" y="56" fill="#fecdd3"/><rect width="60" height="9" rx="3" y="70" fill="#fecdd3"/></g>
+    <circle cx="68" cy="53" r="20" fill="none" stroke="#ef4444" stroke-width="3" transform="rotate(-3,68,53)"/><line x1="82" y1="67" x2="95" y2="80" stroke="#ef4444" stroke-width="3" stroke-linecap="round" transform="rotate(-3,88,73)"/>
+    <text x="100" y="155" font-family="system-ui" font-size="32" font-weight="800" text-anchor="middle" fill="#991b1b">adlog</text></svg>`
+},
+{
+  name: "TS2: Thick Lines",
+  tags: ["ts-adlog","bold"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(50,28)"><rect width="100" height="13" rx="4" y="0" fill="#d4d4d8"/><rect width="78" height="13" rx="4" y="20" fill="#d4d4d8"/>
+    <rect width="90" height="13" rx="4" y="40" fill="#f59e0b" opacity="0.3"/><rect width="65" height="13" rx="4" y="60" fill="#d4d4d8"/><rect width="80" height="13" rx="4" y="80" fill="#d4d4d8"/></g>
+    <circle cx="72" cy="68" r="24" fill="none" stroke="#d97706" stroke-width="5"/><line x1="89" y1="85" x2="105" y2="101" stroke="#d97706" stroke-width="5" stroke-linecap="round"/>
+    <text x="100" y="162" font-family="system-ui" font-size="36" font-weight="900" text-anchor="middle" fill="#1c1917">adlog</text></svg>`
+},
+{
+  name: "TS2: Thin Lines",
+  tags: ["ts-adlog","minimal"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fff"/>
+    <g transform="translate(55,32)"><rect width="90" height="5" rx="1.5" y="0" fill="#f0f0f0"/><rect width="68" height="5" rx="1.5" y="10" fill="#f0f0f0"/>
+    <rect width="80" height="5" rx="1.5" y="20" fill="#3b82f6" opacity="0.12"/><rect width="55" height="5" rx="1.5" y="30" fill="#f0f0f0"/><rect width="72" height="5" rx="1.5" y="40" fill="#f0f0f0"/>
+    <rect width="60" height="5" rx="1.5" y="50" fill="#f0f0f0"/><rect width="75" height="5" rx="1.5" y="60" fill="#f0f0f0"/><rect width="50" height="5" rx="1.5" y="70" fill="#f0f0f0"/></g>
+    <circle cx="68" cy="52" r="16" fill="none" stroke="#3b82f6" stroke-width="2"/><line x1="79" y1="64" x2="88" y2="73" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+    <text x="100" y="150" font-family="system-ui" font-size="28" font-weight="700" text-anchor="middle" fill="#18181b">adlog</text></svg>`
+},
+{
+  name: "TS2: ad Bold",
+  tags: ["ts-adlog","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="70" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#fbbf24" opacity="0.35"/><rect width="55" height="10" rx="3" y="48" fill="#d4d4d8"/><rect width="72" height="10" rx="3" y="64" fill="#d4d4d8"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="34" text-anchor="middle"><tspan font-weight="900" fill="#1c1917">ad</tspan><tspan font-weight="400" fill="#78716c">log</tspan></text></svg>`
+},
+{
+  name: "TS2: log Bold",
+  tags: ["ts-adlog","simple"],
+  svg: `<svg viewBox="0 0 200 200"><rect width="200" height="200" rx="32" fill="#fafaf9"/>
+    <g transform="translate(55,30)"><rect width="90" height="10" rx="3" y="0" fill="#d4d4d8"/><rect width="70" height="10" rx="3" y="16" fill="#d4d4d8"/>
+    <rect width="80" height="10" rx="3" y="32" fill="#fbbf24" opacity="0.35"/><rect width="55" height="10" rx="3" y="48" fill="#d4d4d8"/><rect width="72" height="10" rx="3" y="64" fill="#d4d4d8"/></g>
+    <circle cx="68" cy="62" r="20" fill="none" stroke="#f59e0b" stroke-width="3.5"/><line x1="82" y1="76" x2="95" y2="89" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+    <text x="100" y="155" font-family="system-ui" font-size="34" text-anchor="middle"><tspan font-weight="400" fill="#78716c">ad</tspan><tspan font-weight="900" fill="#1c1917">log</tspan></text></svg>`
+}
+];
+
+const grid = document.getElementById('grid');
+
+function render(filter) {
+  grid.innerHTML = '';
+  logos.forEach((logo, i) => {
+    if (filter && !logo.tags.includes(filter)) return;
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.setAttribute('data-tags', logo.tags.join(','));
+    card.innerHTML = `<div class="num">#${i+1}</div>${logo.svg}<div class="name">${logo.name}</div><div class="tags">${logo.tags.map(t=>'#'+t).join(' ')}</div>`;
+    grid.appendChild(card);
+  });
+}
+
+function filterTag(tag) {
+  document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  render(tag);
+}
+
+function filterAll() {
+  document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  render(null);
+}
+
+render(null);
+</script>
+</body>
+</html>
